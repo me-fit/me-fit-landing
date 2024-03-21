@@ -15,15 +15,22 @@ function Footer({ locale }: FooterProps) {
   const intl = getIntl(locale);
   return (
     <footer className={styles.footer}>
-      <Flex rowGap="2rem" flexWrap="wrap" className={styles.flexContainer} justifyContent="space-between">
+      <Flex
+        rowGap="2rem"
+        flexWrap="wrap"
+        className={styles.flexContainer}
+        justifyContent="space-between"
+      >
         <div>
-          <Image
-            className={styles.logo}
-            width={115}
-            height={106}
-            src="/img/me-fit-logo-white-background.svg"
-            alt="ME Fit Logo"
-          ></Image>
+          <Link href="/">
+            <Image
+              className={styles.logo}
+              width={115}
+              height={106}
+              src="/img/me-fit-logo-white-background.svg"
+              alt="ME Fit Logo"
+            ></Image>
+          </Link>
           <StoreButtons locale={locale} />
         </div>
 

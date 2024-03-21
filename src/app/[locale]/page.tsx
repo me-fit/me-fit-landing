@@ -45,8 +45,8 @@ export default function Home({ params: { locale } }: HomeProps) {
   return (
     <main className={styles.main}>
       <section className={styles.firstSection}>
-        <Flex flexWrap="wrap">
-          <div>
+        <Flex gap="1rem" flexWrap="wrap" justifyContent="space-between">
+          <div className={styles.firstSectionLeftBlock}>
             <h6 className={styles.title}>
               {intl.formatMessage({ id: "page.home.header.one" })}
             </h6>

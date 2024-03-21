@@ -3,19 +3,38 @@
 }
 
 .me-fit-pro-exercise-library {
-    max-width: 40vw;
+    width: calc(60% - 2rem);
     object-fit: contain;
-    flex-grow: 1;
 }
 
+.firstSectionLeftBlock {
+    width: calc(40% - 2rem);
+}
 
 .main section:nth-child(1) {
-    clip-path: ellipse(200% 100% at 50% 0%);
+    clip-path: ellipse(300% 100% at 50% 0%);
 
     background: var(--background-dark);
     color: var(--text-on-dark);
 
-    padding-bottom: 5rem;
+    padding: 5rem;
+}
+
+@media (max-width: 1000px) {
+    .me-fit-pro-exercise-library {
+        width: 100%;
+    }
+
+    .firstSectionLeftBlock {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .main section:nth-child(1) {
+        padding: 1rem;
+    }
 }
 
 .main section:nth-child(2) {

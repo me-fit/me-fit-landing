@@ -14,10 +14,15 @@ function Header({locale}: HeaderProps) {
   const intl = getIntl(defaultLocale);
   return (
     <header className={styles.header}>
-
-      <Image className={styles.logo} width={115} height={106} src='/img/me-fit-logo-white-background.svg' alt="ME Fit Logo" >
-
-      </Image>
+      <Link href="/">
+        <Image
+          className={styles.logo}
+          width={115}
+          height={106}
+          src="/img/me-fit-logo-white-background.svg"
+          alt="ME Fit Logo"
+        ></Image>
+      </Link>
 
       <div className="languages">
         {[...locales].sort().map((locale) => (
