@@ -39,7 +39,7 @@ function Footer({ locale }: FooterProps) {
             <li className={styles["list-item"]}>
               <Link href="/">{intl.formatMessage({ id: "home" })}</Link>
             </li>
-            <li className={styles["list-item"]}>
+            {/* <li className={styles["list-item"]}>
               <Link href="/">{intl.formatMessage({ id: "home" })}</Link>
             </li>
             <li className={styles["list-item"]}>
@@ -47,7 +47,7 @@ function Footer({ locale }: FooterProps) {
             </li>
             <li className={styles["list-item"]}>
               <Link href="/">{intl.formatMessage({ id: "home" })}</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </Flex>
