@@ -1,0 +1,28 @@
+.main section {
+    padding: 1.25rem;
+}
+
+.me-fit-pro-exercise-library {
+    max-width: 40vw;
+    object-fit: contain;
+    flex-grow: 1;
+}
+
+
+.main section:nth-child(1) {
+    clip-path: ellipse(200% 100% at 50% 0%);
+
+    background: var(--background-dark);
+    color: var(--text-on-dark);
+
+    padding-bottom: 5rem;
+}
+
+.main section:nth-child(2) {
+    background-color: var(--background-light);
+}
+
+.main section:nth-child(3) {
+    background-color: var(--background-dark);
+    color: var(--text-on-dark);
+}
