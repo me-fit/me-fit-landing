@@ -24,7 +24,7 @@ function Header({locale}: HeaderProps) {
         ></Image>
       </Link>
 
-      <div className="languages">
+      {/* <div className="languages">
         {[...locales].sort().map((locale) => (
           <Link
             key={locale}
@@ -33,7 +33,7 @@ function Header({locale}: HeaderProps) {
             {locale}
           </Link>
         ))}
-      </div>
+      </div> */}
 
       {/* <Link href={'/me-fit-pro'}>
             ME Fit Pro
