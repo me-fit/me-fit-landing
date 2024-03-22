@@ -34,7 +34,12 @@ function Footer({ locale }: FooterProps) {
 
           <h5>ME Fit Pro</h5>
           <p>{formatMessage({ id: "footer.get.me.fit.pro" })}</p>
-          <button>{formatMessage({ id: "signup.call.to.action" })}</button>
+          <Link
+            className={`button-like button-on-dark small`}
+            href="https://admin.mefit.pro/onboarding"
+          >
+            {formatMessage({ id: "signup.call.to.action" })}
+          </Link>
 
           <StoreButtons locale={locale} />
         </div>

@@ -27,11 +27,13 @@ export default function Page({ params: { locale } }: PageProps) {
 
       <hr />
 
-
       <Flex flexDirection="column" alignItems="center">
         <p>{formatMessage({ id: "physiotherapy.page.header.five" })}</p>
-        <Link href="https://admin.mefit.pro/onboarding">
-          <button>{formatMessage({ id: "signup.call.to.action" })}</button>
+        <Link
+          className={`button-like ${styles.signup}`}
+          href="https://admin.mefit.pro/onboarding"
+        >
+          {formatMessage({ id: "signup.call.to.action" })}
         </Link>
       </Flex>
     </main>

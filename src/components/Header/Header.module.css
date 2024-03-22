@@ -7,3 +7,13 @@
     color: var(--text-on-dark);
 }
 
+.container {
+    width: 100%;
+}
+
+.container .signup, .container .login {
+    padding: 0.5rem 0.75rem;
+}
+
+
+

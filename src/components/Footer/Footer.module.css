@@ -1,29 +1,33 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 2rem 1rem 2rem;
-    background: var(--background-dark);
-    color: var(--text-on-dark);
-    max-width: 100%;
-    overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem 1rem 2rem;
+  background: var(--background-dark);
+  color: var(--text-on-dark);
+  max-width: 100%;
+  overflow: hidden;
 }
 
-
 .list-item {
-    list-style: none;
+  list-style: none;
 }
 
 .flexContainer {
-    width: 100%;
+  width: 100%;
 }
 
 .nav {
-    text-align: center;
-    flex-grow: 1;
+  text-align: center;
+  flex-grow: 1;
 }
 
 .nav ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+}
+
+a.signup {
+  display: block;
+  width: max-content;
 }
