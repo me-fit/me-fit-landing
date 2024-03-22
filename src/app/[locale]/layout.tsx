@@ -26,6 +26,11 @@ export default function RootLayout({ params, children }: LayoutProps) {
           sizes="any"
           type="image/png"
         />
+        <meta property="og:title" content="Me Fit"></meta>
+        <meta
+          property="og:image"
+          content="/img/me-fit-logo-black-background.png"
+        ></meta>
         <link
           rel="icon"
           href="/img/me-fit-logo-white-background.svg"

@@ -19,20 +19,9 @@ export function generateMetadata(
   const { formatMessage } = getIntl(props.params.locale);
 
   return {
-    title: formatMessage({ id: "page.home.header.one" }),
-    description: formatMessage({
-      id: "page.home.header.one",
-    }),
-    alternates: {
-      canonical: "https://example.com",
-      // languages: {
-      //   ar: "http://example.com/ar",
-      //   en: "http://example.com",
-      //   fr: "http://example.com/fr",
-      //   "nl-NL": "http://example.com/nl-NL",
-      //   "x-default": "http://example.com",
-      // },
-    },
+    title: `ME Fit Pro | ${formatMessage({ id: "mefit.pro.landing" })}`,
+    description
+    openGraph: {},
   };
 }
 
