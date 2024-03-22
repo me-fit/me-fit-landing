@@ -1,6 +1,7 @@
 .container {
   width: 100%;
   gap: 1rem;
+  margin-top: 3rem;
 }
 
 .benefitCard {

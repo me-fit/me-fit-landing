@@ -1,12 +1,11 @@
 import { Metadata, ResolvingMetadata } from "next";
 
-import { getIntl } from "../../lib/intl";
-import styles from "./page.module.css";
+import AppBenefits from "@/components/AppBenefits/AppBenefits";
+import Flex from "@/components/Flex";
 import { Locale } from "@/lib/i18n-config";
 import Image from "next/image";
-import Flex from "@/components/Flex";
-import FeatureCard from "@/components/FeatureCard/FeatureCard";
-import AppBenefits from "@/components/AppBenefits/AppBenefits";
+import { getIntl } from "../../lib/intl";
+import styles from "./page.module.css";
 
 type RouteProps = {
   params: { locale: Locale };
@@ -120,10 +119,13 @@ export default function Home({ params: { locale } }: HomeProps) {
       </section>
 
       <section>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, porro
-        veniam error adipisci earum praesentium reiciendis fugiat ab a nihil
-        expedita. Nostrum, est! Perspiciatis dolorem fugit velit sed, expedita
-        ipsum?
+        <h4>{formatMessage({ id: "testimonials.subheader" })}</h4>
+        <h2>{formatMessage({ id: "testimonials.header" })}</h2>
+        <p>
+          {formatMessage({
+            id: "testimonials.paragraph",
+          })}
+        </p>
       </section>
     </main>
   );
