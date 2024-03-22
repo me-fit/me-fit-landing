@@ -52,15 +52,12 @@ function Footer({ locale }: FooterProps) {
             <li className={styles["list-item"]}>
               <Link href="/">{formatMessage({ id: "home" })}</Link>
             </li>
-            {/* <li className={styles["list-item"]}>
-              <Link href="/">{intl.formatMessage({ id: "home" })}</Link>
+            <li className={styles["list-item"]}>
+              <Link href="/pro">{formatMessage({ id: "mefit.pro" })}</Link>
             </li>
             <li className={styles["list-item"]}>
-              <Link href="/">{intl.formatMessage({ id: "home" })}</Link>
+              <Link href="/app">{formatMessage({ id: "mefit.app" })}</Link>
             </li>
-            <li className={styles["list-item"]}>
-              <Link href="/">{intl.formatMessage({ id: "home" })}</Link>
-            </li> */}
           </ul>
         </nav>
       </Flex>
