@@ -20,8 +20,6 @@ export function generateMetadata(
 
   return {
     title: `ME Fit Pro | ${formatMessage({ id: "mefit.pro.landing" })}`,
-    description
-    openGraph: {},
   };
 }
 
