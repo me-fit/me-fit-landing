@@ -41,6 +41,9 @@ function Footer({ locale }: FooterProps) {
             {formatMessage({ id: "signup.call.to.action" })}
           </Link>
 
+          <br />
+          <br />
+
           <StoreButtons locale={locale} />
         </div>
 

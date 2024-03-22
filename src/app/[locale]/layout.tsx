@@ -1,6 +1,6 @@
 import { Locale } from "@/lib/i18n-config";
 import { Poppins } from "next/font/google";
-import Header from "../../components/Header/Header";
+import Header from "@/components/Header/Header";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 
@@ -20,6 +20,7 @@ export default function RootLayout({ params, children }: LayoutProps) {
   return (
     <html lang={locale}>
       <head>
+        <title>ME Fit</title>
         <link
           rel="icon"
           href="/img/me-fit-logo-black-background.png"

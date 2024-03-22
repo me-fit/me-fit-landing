@@ -1,27 +1,11 @@
-import { Metadata, ResolvingMetadata } from "next";
-
 import AppBenefits from "@/components/AppBenefits/AppBenefits";
 import Flex from "@/components/Flex";
 import { Locale } from "@/lib/i18n-config";
 import Image from "next/image";
+import Link from "next/link";
 import { getIntl } from "../../lib/intl";
 import styles from "./page.module.css";
 
-type RouteProps = {
-  params: { locale: Locale };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-export function generateMetadata(
-  props: RouteProps,
-  parent: ResolvingMetadata
-): Metadata {
-  const { formatMessage } = getIntl(props.params.locale);
-
-  return {
-    title: `ME Fit Pro | ${formatMessage({ id: "mefit.pro.landing" })}`,
-  };
-}
 
 type HomeProps = {
   params: { locale: Locale };
@@ -49,24 +33,32 @@ export default function Home({ params: { locale } }: HomeProps) {
 
             <ul>
               <li>
-                {formatMessage({
-                  id: "page.home.paragraph.list.one",
-                })}
+                <Link href="/physiotherapy">
+                  {formatMessage({
+                    id: "page.home.paragraph.list.one",
+                  })}
+                </Link>
               </li>
               <li>
-                {formatMessage({
-                  id: "page.home.paragraph.list.two",
-                })}
+                <Link href="/personal-training">
+                  {formatMessage({
+                    id: "page.home.paragraph.list.two",
+                  })}
+                </Link>
               </li>
               <li>
-                {formatMessage({
-                  id: "page.home.paragraph.list.three",
-                })}
+                <Link href="pro-sport-organization">
+                  {formatMessage({
+                    id: "page.home.paragraph.list.three",
+                  })}
+                </Link>
               </li>
               <li>
-                {formatMessage({
-                  id: "page.home.paragraph.list.four",
-                })}
+                <Link href="/amateur-sport">
+                  {formatMessage({
+                    id: "page.home.paragraph.list.four",
+                  })}
+                </Link>
               </li>
             </ul>
           </div>

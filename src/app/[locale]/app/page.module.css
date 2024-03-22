@@ -1,0 +1,14 @@
+.padding {
+    padding: 1.25rem;
+}
+
+.benefits {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    background-color: var(--background-dark);
+    color: var(--text-on-dark);
+}
+
+.screenshots {
+    padding: 5rem;
+}
