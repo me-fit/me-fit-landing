@@ -12,7 +12,7 @@ interface FooterProps {
 }
 
 function Footer({ locale }: FooterProps) {
-  const intl = getIntl(locale);
+  const {formatMessage} = getIntl(locale);
   return (
     <footer className={styles.footer}>
       <Flex
@@ -22,7 +22,7 @@ function Footer({ locale }: FooterProps) {
         justifyContent="space-between"
       >
         <div>
-          <Link href="/">
+          <Link href="/" className="image-link">
             <Image
               className={styles.logo}
               width={115}
@@ -31,13 +31,18 @@ function Footer({ locale }: FooterProps) {
               alt="ME Fit Logo"
             ></Image>
           </Link>
+
+          <h5>ME Fit Pro</h5>
+          <p>{formatMessage({ id: "footer.get.me.fit.pro" })}</p>
+          <button>{formatMessage({ id: "signup.call.to.action" })}</button>
+
           <StoreButtons locale={locale} />
         </div>
 
         <nav className={styles.nav}>
           <ul>
             <li className={styles["list-item"]}>
-              <Link href="/">{intl.formatMessage({ id: "home" })}</Link>
+              <Link href="/">{formatMessage({ id: "home" })}</Link>
             </li>
             {/* <li className={styles["list-item"]}>
               <Link href="/">{intl.formatMessage({ id: "home" })}</Link>

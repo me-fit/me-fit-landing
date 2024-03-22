@@ -1,0 +1,24 @@
+.card {
+    background-color: var(--background-light);
+    color: var(--text-on-light);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    overflow: hidden;
+    container-type: inline-size;
+}
+
+.img {
+    border-radius: 1rem;
+    object-fit: contain;
+}
+
+.flexContainer {
+    flex-direction: row;
+  }
+
+@container (max-width: 420px) {
+  .flexContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}

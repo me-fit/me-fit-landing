@@ -44,4 +44,5 @@
 .main section:nth-child(3) {
     background-color: var(--background-dark);
     color: var(--text-on-dark);
+    padding-bottom: 5rem;
 }

@@ -12,9 +12,9 @@ function StoreButtons({locale}: StoreButtonsProps) {
 const {formatMessage} = getIntl(locale);
   return (
     <>
-      <h5 className={styles.header}>
-        {formatMessage({ id: "download.app.call.to.action" })}
-      </h5>
+      <h5 className={styles.header}>ME Fit App</h5>
+
+      <p> {formatMessage({ id: "mefit.app.text" })}</p>
       <Flex gap="0.5rem">
         <a href="https://apps.apple.com/app/me-fit/id1514761739?ign-itscg=30200&ign-itsct=apps_box_link">
           <Image
