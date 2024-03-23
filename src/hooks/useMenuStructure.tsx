@@ -32,7 +32,7 @@ const useMenuStructure = ({ locale }: MenuStructureProps) => {
       { label: formatMessage({ id: 'mefit.app' }), href: '/app' },
       { label: formatMessage({ id: 'contact.us' }), href: '/contact' }
     ];
-  }, [formatMessage, locale]);
+  }, [formatMessage]);
 
   return menuStructure;
 };
