@@ -1,4 +1,5 @@
 import React, { ReactNode, CSSProperties } from "react";
+import styles from './Flex.module.css';
 
 interface FlexProps {
   children: ReactNode;
@@ -27,11 +28,10 @@ interface FlexProps {
 
 const Flex: React.FC<FlexProps> = ({ className, children, ...flexProps }) => {
   const flexStyles: CSSProperties = {
-    display: "flex",
     ...flexProps,
   };
 
-  return <div className={className} style={flexStyles}>{children}</div>;
+  return <div className={`${className ? className : ''} ${styles.flexContainer}`} style={flexStyles}>{children}</div>;
 };
 
 export default Flex;

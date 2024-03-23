@@ -1,6 +1,6 @@
 import AppBenefits from "@/components/AppBenefits/AppBenefits";
-import Flex from "@/components/Flex";
-import { Locale } from "@/lib/i18n-config";
+import Flex from "@/components/Flex/Flex";
+import { Locale } from "@/lib/intl";
 import Image from "next/image";
 import Link from "next/link";
 import { getIntl } from "../../lib/intl";

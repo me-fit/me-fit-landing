@@ -4,6 +4,7 @@
   --primary-tint: #ffda1a;
   --background-dark: #121212;
   --background-dark-shade: #101010; 
+  --background-dark-tint: #111;
   --background-light: whitesmoke;
   --text-on-dark: #BCBCBC;
   --text-on-dark-shade: #ededed;
@@ -11,6 +12,8 @@
   --text-on-light: black;
   --text-on-light-shade: rgba(0,0,0,0.7);
   --border-color: #ffffff24;
+  --menu-z-index: 2;
+  --header-height: 77px;
 }
 
 body {
@@ -53,15 +56,29 @@ button, a.button {
   border: none;
   padding: 1rem 1.5rem;
   margin: 0;
-  background: none;
   color: var(--text-on-light);
   background-color: var(--primary);
   border-radius: 0.5rem;
   transition: background-color 0.3s;
   cursor: pointer;
+  box-sizing: content-box;
+  font-size: 1rem;
 }
 
-button:hover, .button {
+button.round {
+  border-radius: 50%;
+}
+
+button.icon {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover, .button:hover {
   background-color: var(--primary-shade);
 }
 
@@ -84,7 +101,7 @@ button.small, a.small {
 
 
 
-a.button:focus-within {
+a.button:focus-within, button:focus-within {
   outline: 1px solid currentColor;
   outline-offset: 2px;
 }
@@ -127,6 +144,10 @@ hr {
   width: 50%;
 }
 
+.logo-link {
+  display: flex;
+}
+
 .image-link {
   display: inline-block; /* Ensures the anchor tag takes up only the necessary space */
 }
@@ -146,4 +167,12 @@ hr {
   p {
     color: var(--text-on-light-shade);
   }
+}
+
+svg {
+  fill: currentColor;
+}
+
+.text-align-center {
+  text-align: center;
 }

@@ -1,0 +1,38 @@
+.popover {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .popoverButton {
+    cursor: pointer;
+  }
+  
+  .popoverWrapper {
+    display: none;
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    padding-top: 1rem;
+  }
+  
+  .popoverContent {
+    background-color: var(--background-dark-shade);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem;
+  }
+  
+  .popoverWrapper a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .popover:hover .popoverWrapper {
+    display: block;
+  }
+  
+  .popover:focus-within .popoverWrapper {
+    display: block;
+  }
+  

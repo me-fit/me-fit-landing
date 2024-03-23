@@ -1,5 +1,5 @@
-import { Locale } from "@/lib/i18n-config";
-import Flex from "../Flex";
+import { Locale } from "@/lib/intl";
+import Flex from "../Flex/Flex";
 import Image from "next/image";
 import { getIntl } from "@/lib/intl";
 import styles from "./StoreButtons.module.css";

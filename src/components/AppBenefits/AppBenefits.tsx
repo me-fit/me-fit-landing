@@ -1,8 +1,8 @@
-import { Locale } from "@/lib/i18n-config";
+import { Locale } from "@/lib/intl";
 import FeatureCard from "../FeatureCard/FeatureCard"; 
 import { getIntl } from "@/lib/intl";
 import styles from "./AppBenefits.module.css";
-import Flex from "../Flex";
+import Flex from "../Flex/Flex";
 
 interface AppBenefitsProps {
     locale: Locale;

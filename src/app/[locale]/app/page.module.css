@@ -3,10 +3,7 @@
 }
 
 .benefits {
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding: 2rem 2rem 5rem 2rem;
     background-color: var(--background-dark);
     color: var(--text-on-dark);
 }

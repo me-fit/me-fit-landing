@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./FeatureCard.module.css";
-import Flex from "../Flex";
+import Flex from "../Flex/Flex";
 
 interface FeatureCardProps {
   imgSrc: string;

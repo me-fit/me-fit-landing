@@ -1,65 +1,87 @@
+"use client";
 import Link from "next/link";
 
+import useMenuStructure, { MenuItemWithHref } from "@/hooks/useMenuStructure";
+import { Locale, getIntl } from "@/lib/intl";
 import Image from "next/image";
-import { getIntl } from "@/lib/intl";
-import { Locale, i18n } from "@/lib/i18n-config";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import Flex from "../Flex/Flex";
+import Popover from "../Popover/Popover";
 import styles from "./Header.module.css";
-import Flex from "../Flex";
+import HeaderMobileMenu from "./HeaderMobileMenu/HeaderMobileMenu";
+
 
 interface HeaderProps {
   locale: Locale;
 }
 
 function Header({ locale }: HeaderProps) {
-  const { locales, defaultLocale } = i18n;
-  const { formatMessage } = getIntl(defaultLocale);
+  const { formatMessage } = getIntl(locale);
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const menuStructure = useMenuStructure({ locale });
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  
+
+  useEffect(() => {
+    const url = `${pathname}?${searchParams}`;
+
+    console.log("[Header] url change, closing popover");
+    // If the url changes, we want to close the popover
+    setPopoverOpen(false);
+  }, [pathname, searchParams]);
+
+
   return (
     <header className={styles.header}>
-      <Flex className={styles.container} alignItems="center" justifyContent="space-between">
-        <Link href="/">
+      <HeaderMobileMenu className={styles.mobileMenu} locale={locale} />
+
+      <Flex
+        className={styles.desktopMenu}
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Link href="/" className="logo-link">
           <Image
-            className={styles.logo}
             width={115}
             height={106}
             src="/img/me-fit-logo-white-background.svg"
             alt="ME Fit Logo"
+            className={styles.logo}
           ></Image>
         </Link>
 
         <nav>
           <Flex alignItems="center" gap="1rem">
-          <Link href="/">{formatMessage({ id: "mefit.pro" })}</Link>
-            <div className={styles.dropdown}>
-              <a tabIndex={0} className={styles.dropdownButton}>
-                {formatMessage({ id: "header.solutions" })}
-              </a>
-              <div className={styles.dropdownWrapper}>
-                <div className={styles.dropdownContent}>
-                  <Link href="/physiotherapy">
-                    {formatMessage({
-                      id: "page.home.paragraph.list.one",
-                    })}
-                  </Link>
-                  <Link href="/personal-training">
-                    {formatMessage({
-                      id: "page.home.paragraph.list.two",
-                    })}
-                  </Link>
-                  <Link href="pro-sport-organization">
-                    {formatMessage({
-                      id: "page.home.paragraph.list.three",
-                    })}
-                  </Link>
-                  <Link href="/amateur-sport">
-                    {formatMessage({
-                      id: "page.home.paragraph.list.four",
-                    })}
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <Link href="/app">{formatMessage({ id: "mefit.app" })}</Link>
-            <Link href="/contact">{formatMessage({ id: "contact.us" })}</Link>
+            {menuStructure.map((menuItem, index) =>
+              "href" in menuItem ? (
+                <Link key={index} href={menuItem.href}>
+                  {menuItem.label}
+                </Link>
+              ) : (
+                <Popover
+                  key={index}
+                  isOpen={popoverOpen}
+                  onOpen={setPopoverOpen}
+                  trigger={
+                    <a tabIndex={0} className={styles.dropdownButton}>
+                      {menuItem.label}
+                    </a>
+                  }
+                >
+                  {menuItem.items?.map((subMenuItem, subIndex) => (
+                    <Link
+                      key={subIndex}
+                      href={(subMenuItem as MenuItemWithHref).href}
+                    >
+                      {subMenuItem.label}
+                    </Link>
+                  ))}
+                </Popover>
+              )
+            )}
           </Flex>
         </nav>
 

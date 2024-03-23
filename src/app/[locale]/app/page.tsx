@@ -1,8 +1,8 @@
-import { Locale } from "@/lib/i18n-config";
+import { Locale } from "@/lib/intl";
 import styles from "./page.module.css";
 import { getIntl } from "@/lib/intl";
 import AppBenefits from "@/components/AppBenefits/AppBenefits";
-import Flex from "@/components/Flex";
+import Flex from "@/components/Flex/Flex";
 import Image from "next/image";
 type PageProps = {
   params: { locale: Locale };
@@ -26,7 +26,7 @@ export default function Page({ params: { locale } }: PageProps) {
               id: "mefit.app.page.benefits.header",
             })}
           </h4>
-          <h1>
+          <h1 className="text-align-center">
             {formatMessage({
               id: "mefit.app.page.benefits.header.subheader",
             })}

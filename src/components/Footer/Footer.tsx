@@ -1,10 +1,9 @@
 import Link from "next/link";
 
 import Image from "next/image";
-import { getIntl } from "@/lib/intl";
-import { Locale, i18n } from "@/lib/i18n-config";
+import { Locale, getIntl } from "@/lib/intl";
 import styles from "./Footer.module.css";
-import Flex from "../Flex";
+import Flex from "../Flex/Flex";
 import StoreButtons from "../StoreButtons/StoreButtons";
 
 interface FooterProps {
@@ -22,7 +21,7 @@ function Footer({ locale }: FooterProps) {
         justifyContent="space-between"
       >
         <div>
-          <Link href="/" className="image-link">
+          <Link href="/" className={styles.logoLink}>
             <Image
               className={styles.logo}
               width={115}

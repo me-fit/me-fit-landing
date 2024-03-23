@@ -4,7 +4,8 @@
 
 .me-fit-pro-exercise-library {
     width: calc(60% - 2rem);
-    object-fit: contain;
+    height: auto;
+
 }
 
 .firstSectionLeftBlock {

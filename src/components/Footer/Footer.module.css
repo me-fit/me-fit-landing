@@ -6,6 +6,12 @@
   overflow: hidden;
 }
 
+.logo {
+  width: 75px;
+  padding: 0;
+  height: auto;
+}
+
 .list-item {
   list-style: none;
 }
@@ -42,4 +48,8 @@ a.signup {
 
 .footerGetMeFitPro {
   margin-top: 0.25rem;
+}
+
+.logoLink {
+  display: inline-block;
 }

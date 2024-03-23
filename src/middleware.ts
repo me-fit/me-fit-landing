@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import { I18nConfig, i18n } from "./lib/i18n-config";
+import { I18nConfig, i18n } from "./lib/intl";
 
 function getLocale(request: NextRequest, i18nConfig: I18nConfig): string {
   const { locales, defaultLocale } = i18nConfig;

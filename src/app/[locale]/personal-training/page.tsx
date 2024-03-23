@@ -1,8 +1,8 @@
-import { Locale } from "@/lib/i18n-config";
+import { Locale } from "@/lib/intl";
 import styles from "./page.module.css";
 import { getIntl } from "@/lib/intl";
 import Link from "next/link";
-import Flex from "@/components/Flex";
+import Flex from "@/components/Flex/Flex";
 
 type PageProps = {
   params: { locale: Locale };

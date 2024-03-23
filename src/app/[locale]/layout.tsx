@@ -1,8 +1,9 @@
-import { Locale } from "@/lib/i18n-config";
+import { Locale } from "@/lib/intl";
 import { Poppins } from "next/font/google";
 import Header from "@/components/Header/Header";
 import "./styles/globals.scss";
 import Footer from "@/components/Footer/Footer";
+import Script from "next/script";
 
 type LayoutProps = {
   params: { locale: Locale };
