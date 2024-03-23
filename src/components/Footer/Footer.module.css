@@ -1,7 +1,4 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 4rem 2rem 1rem 2rem;
   background: var(--background-dark);
   color: var(--text-on-dark);
@@ -30,4 +27,19 @@
 a.signup {
   display: block;
   width: max-content;
+}
+
+
+.company-name {
+  padding-top: 1rem;
+  margin-top: auto;
+  color: var(--text-on-dark-secondary);
+}
+
+.header {
+  margin-bottom: 0;
+}
+
+.footerGetMeFitPro {
+  margin-top: 0.25rem;
 }

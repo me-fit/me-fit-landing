@@ -3,6 +3,8 @@
 }
 
 .benefits {
+    padding-left: 2rem;
+    padding-bottom: 2rem;
     padding-top: 2rem;
     padding-bottom: 5rem;
     background-color: var(--background-dark);
@@ -11,4 +13,9 @@
 
 .screenshots {
     padding: 5rem;
+}
+
+.screenshot {
+    max-width: 300px;
+    object-fit: contain;
 }

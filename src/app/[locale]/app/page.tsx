@@ -12,7 +12,7 @@ export default function Page({ params: { locale } }: PageProps) {
   const {formatMessage} = getIntl(locale);
   return (
     <main>
-      <section className={styles.padding}>
+      <section className={`${styles.padding} light-background`}>
         <h1>{formatMessage({ id: "mefit.app.page.title" })}</h1>
         <p>{formatMessage({ id: "mefit.app.page.paragraph.one" })}</p>
         <p>{formatMessage({ id: "mefit.app.page.paragraph.two" })}</p>
@@ -36,20 +36,23 @@ export default function Page({ params: { locale } }: PageProps) {
       </section>
 
       <section className={styles.screenshots}>
-        <Flex justifyContent="center" gap="2rem">
+        <Flex justifyContent="center" gap="2rem" flexWrap="wrap">
           <Image
+            className={styles.screenshot}
             width={384}
             height={792}
             alt=""
             src="/img/me-fit-app-workout.jpg"
           ></Image>
           <Image
+            className={styles.screenshot}
             width={384}
             height={792}
             alt=""
             src="/img/me-fit-app-exercise.jpg"
           ></Image>
           <Image
+            className={styles.screenshot}
             width={384}
             height={792}
             alt=""

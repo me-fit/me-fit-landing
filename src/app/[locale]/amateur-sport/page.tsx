@@ -11,7 +11,7 @@ type PageProps = {
 export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} light-background`}>
       <h1>{formatMessage({ id: "amateur.sports.page.header" })}</h1>
       <h6>{formatMessage({ id: "amateur.sports.page.sub.header" })}</h6>
       <p>{formatMessage({ id: "amateur.sports.page.header.one" })}</p>
@@ -31,7 +31,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <Flex flexDirection="column" alignItems="center">
         <p>{formatMessage({ id: "amateur.sports.page.header.six" })}</p>
         <Link
-          className={`button-like ${styles.signup}`}
+          className={`button ${styles.signup}`}
           href="/contact"
         >
           {formatMessage({ id: "contact.us" })}

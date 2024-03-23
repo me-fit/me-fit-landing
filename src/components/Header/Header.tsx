@@ -10,16 +10,12 @@ interface HeaderProps {
   locale: Locale;
 }
 
-function Header({locale}: HeaderProps) {
+function Header({ locale }: HeaderProps) {
   const { locales, defaultLocale } = i18n;
-  const {formatMessage} = getIntl(defaultLocale);
+  const { formatMessage } = getIntl(defaultLocale);
   return (
     <header className={styles.header}>
-      <Flex
-        className={styles.container}
-        justifyContent="space-between"
-        alignItems="center"
-      >
+      <Flex className={styles.container} alignItems="center" justifyContent="space-between">
         <Link href="/">
           <Image
             className={styles.logo}
@@ -30,14 +26,54 @@ function Header({locale}: HeaderProps) {
           ></Image>
         </Link>
 
-        <Flex alignItems="center" gap="1rem">
+        <nav>
+          <Flex alignItems="center" gap="1rem">
+          <Link href="/">{formatMessage({ id: "mefit.pro" })}</Link>
+            <div className={styles.dropdown}>
+              <a tabIndex={0} className={styles.dropdownButton}>
+                {formatMessage({ id: "header.solutions" })}
+              </a>
+              <div className={styles.dropdownWrapper}>
+                <div className={styles.dropdownContent}>
+                  <Link href="/physiotherapy">
+                    {formatMessage({
+                      id: "page.home.paragraph.list.one",
+                    })}
+                  </Link>
+                  <Link href="/personal-training">
+                    {formatMessage({
+                      id: "page.home.paragraph.list.two",
+                    })}
+                  </Link>
+                  <Link href="pro-sport-organization">
+                    {formatMessage({
+                      id: "page.home.paragraph.list.three",
+                    })}
+                  </Link>
+                  <Link href="/amateur-sport">
+                    {formatMessage({
+                      id: "page.home.paragraph.list.four",
+                    })}
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <Link href="/app">{formatMessage({ id: "mefit.app" })}</Link>
+            <Link href="/contact">{formatMessage({ id: "contact.us" })}</Link>
+          </Flex>
+        </nav>
+
+        <Flex alignItems="center" gap="1rem" className={styles.headerButtons}>
           <Link
-            className={`button-like button-on-dark ${styles.signup}`}
+            className={`button button-on-dark ${styles.signup}`}
             href="https://admin.mefit.pro/onboarding"
           >
             {formatMessage({ id: "signup.call.to.action" })}
           </Link>
-          <Link className={` ${styles.login}`} href="https://admin.mefit.pro">
+          <Link
+            className={` ${styles.login} button button-on-dark secondary`}
+            href="https://admin.mefit.pro"
+          >
             {formatMessage({ id: "login.call.to.action" })}
           </Link>
         </Flex>

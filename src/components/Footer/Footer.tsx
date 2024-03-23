@@ -32,10 +32,10 @@ function Footer({ locale }: FooterProps) {
             ></Image>
           </Link>
 
-          <h5>ME Fit Pro</h5>
-          <p>{formatMessage({ id: "footer.get.me.fit.pro" })}</p>
+          <h5 className={styles.header}>ME Fit Pro</h5>
+          <p className={styles.footerGetMeFitPro}>{formatMessage({ id: "footer.get.me.fit.pro" })}</p>
           <Link
-            className={`button-like button-on-dark small`}
+            className={`button button-on-dark small`}
             href="https://admin.mefit.pro/onboarding"
           >
             {formatMessage({ id: "signup.call.to.action" })}
@@ -50,17 +50,22 @@ function Footer({ locale }: FooterProps) {
         <nav className={styles.nav}>
           <ul>
             <li className={styles["list-item"]}>
-              <Link href="/">{formatMessage({ id: "home" })}</Link>
-            </li>
-            <li className={styles["list-item"]}>
-              <Link href="/pro">{formatMessage({ id: "mefit.pro" })}</Link>
+              <Link href="/">{formatMessage({ id: "mefit.pro" })}</Link>
             </li>
             <li className={styles["list-item"]}>
               <Link href="/app">{formatMessage({ id: "mefit.app" })}</Link>
             </li>
+            <li className={styles["list-item"]}>
+              <Link href="/contact">{formatMessage({ id: "contact.us" })}</Link>
+            </li>
           </ul>
         </nav>
       </Flex>
+
+      <Flex justifyContent="flex-end">
+        <small className={styles['company-name']}>© 2024 ME Fit B.V.</small>
+      </Flex>
+      
     </footer>
   );
 }

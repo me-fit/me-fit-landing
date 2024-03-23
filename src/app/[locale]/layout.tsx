@@ -1,7 +1,7 @@
 import { Locale } from "@/lib/i18n-config";
 import { Poppins } from "next/font/google";
 import Header from "@/components/Header/Header";
-import "./globals.css";
+import "./styles/globals.scss";
 import Footer from "@/components/Footer/Footer";
 
 type LayoutProps = {

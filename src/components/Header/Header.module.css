@@ -22,3 +22,41 @@
         padding-bottom: 1rem;
     }
 }
+
+/* dropdown code start */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownButton {
+  cursor: pointer;
+}
+
+.dropdownWrapper {
+  display: none;
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+  padding-top: 1rem;
+}
+
+.dropdownContent {
+  background-color: var(--background-dark-shade);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  padding: 0.25rem;
+}
+
+.dropdownWrapper a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdownWrapper {display: block;}
+.dropdown:focus-within .dropdownWrapper {display: block;}
+
+
+/* dropdown code end */

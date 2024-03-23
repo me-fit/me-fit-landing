@@ -13,8 +13,12 @@
 }
 
 .flexContainer {
-    flex-direction: row;
-  }
+  flex-direction: row;
+}
+
+.header {
+  color: var(--text-on-light);
+}
 
 @container (max-width: 420px) {
   .flexContainer {

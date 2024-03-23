@@ -11,7 +11,7 @@ type PageProps = {
 export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} light-background`}>
       <h1>{formatMessage({ id: "pro.sport.organization.page.header" })}</h1>
       <h6>{formatMessage({ id: "pro.sport.organization.page.sub.header" })}</h6>
       <h2>{formatMessage({ id: "pro.sport.organization.page.header.one" })}</h2>
@@ -61,7 +61,7 @@ export default function Page({ params: { locale } }: PageProps) {
           })}
         </p>
         <Link
-          className={`button-like ${styles.signup}`}
+          className={`button ${styles.signup}`}
           href="https://admin.mefit.pro/onboarding"
         >
           {formatMessage({ id: "signup.call.to.action" })}
