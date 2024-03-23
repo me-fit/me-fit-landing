@@ -23,10 +23,10 @@ const useMenuStructure = ({ locale }: MenuStructureProps) => {
       {
         label: formatMessage({ id: 'header.solutions' }),
         items: [
-          { label: formatMessage({ id: 'page.home.paragraph.list.one' }), href: '/physiotherapy' },
-          { label: formatMessage({ id: 'page.home.paragraph.list.two' }), href: '/personal-training' },
-          { label: formatMessage({ id: 'page.home.paragraph.list.three' }), href: '/pro-sport-organization' },
-          { label: formatMessage({ id: 'page.home.paragraph.list.four' }), href: '/amateur-sport' }
+          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.one' }), href: '/physiotherapy' },
+          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.two' }), href: '/personal-training' },
+          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.three' }), href: '/pro-sport-organization' },
+          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.four' }), href: '/amateur-sport' }
         ]
       },
       { label: formatMessage({ id: 'mefit.app' }), href: '/app' },

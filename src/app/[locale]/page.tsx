@@ -1,5 +1,5 @@
-import AppBenefits from "@/components/AppBenefits/AppBenefits";
 import Flex from "@/components/Flex/Flex";
+import ProBenefits from "@/components/ProBenefits/ProBenefits";
 import { Locale } from "@/lib/intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,14 +20,14 @@ export default function Home({ params: { locale } }: HomeProps) {
         <Flex gap="1rem" flexWrap="wrap" justifyContent="space-between">
           <div className={styles.firstSectionLeftBlock}>
             <h4 className={styles.title}>
-              {formatMessage({ id: "page.home.header.one" })}
+              {formatMessage({ id: "mefit.pro.page.header.one" })}
             </h4>
 
-            <h2>{formatMessage({ id: "page.home.header.two" })}</h2>
+            <h2>{formatMessage({ id: "mefit.pro.page.header.two" })}</h2>
 
             <p>
               {formatMessage({
-                id: "page.home.paragraph.one",
+                id: "mefit.pro.page.paragraph.one",
               })}
             </p>
 
@@ -35,28 +35,28 @@ export default function Home({ params: { locale } }: HomeProps) {
               <li>
                 <Link href="/physiotherapy">
                   {formatMessage({
-                    id: "page.home.paragraph.list.one",
+                    id: "mefit.pro.page.paragraph.list.one",
                   })}
                 </Link>
               </li>
               <li>
                 <Link href="/personal-training">
                   {formatMessage({
-                    id: "page.home.paragraph.list.two",
+                    id: "mefit.pro.page.paragraph.list.two",
                   })}
                 </Link>
               </li>
               <li>
                 <Link href="pro-sport-organization">
                   {formatMessage({
-                    id: "page.home.paragraph.list.three",
+                    id: "mefit.pro.page.paragraph.list.three",
                   })}
                 </Link>
               </li>
               <li>
                 <Link href="/amateur-sport">
                   {formatMessage({
-                    id: "page.home.paragraph.list.four",
+                    id: "mefit.pro.page.paragraph.list.four",
                   })}
                 </Link>
               </li>
@@ -85,15 +85,15 @@ export default function Home({ params: { locale } }: HomeProps) {
         <Flex flexDirection="column" alignItems="center">
           <h4>
             {formatMessage({
-              id: "page.home.benefits.header",
+              id: "mefit.pro.page.benefits.header",
             })}
           </h4>
-          <h1>
+          <h1 className="text-align-center">
             {formatMessage({
-              id: "page.home.benefits.subheader",
+              id: "mefit.pro.page.benefits.subheader",
             })}
           </h1>
-          <AppBenefits locale={locale} />
+          <ProBenefits locale={locale} />
         </Flex>
       </section>
 
