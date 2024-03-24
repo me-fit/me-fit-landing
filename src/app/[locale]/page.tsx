@@ -98,15 +98,7 @@ export default function Home({ params: { locale } }: HomeProps) {
         </Flex>
       </section>
 
-      <section>
-        <h4>{formatMessage({ id: "testimonials.subheader" })}</h4>
-        <h2>{formatMessage({ id: "testimonials.header" })}</h2>
-        <p>
-          {formatMessage({
-            id: "testimonials.paragraph",
-          })}
-        </p>
-      </section>
+      
     </main>
   );
 }

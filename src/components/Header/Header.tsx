@@ -10,6 +10,7 @@ import Flex from "../Flex/Flex";
 import Popover from "../Popover/Popover";
 import styles from "./Header.module.css";
 import HeaderMobileMenu from "./HeaderMobileMenu/HeaderMobileMenu";
+import ChevronMore from "../icons/ChevronMoreIcon";
 
 
 interface HeaderProps {
@@ -68,6 +69,7 @@ function Header({ locale }: HeaderProps) {
                   trigger={
                     <a tabIndex={0} className={styles.dropdownButton}>
                       {menuItem.label}
+                      <ChevronMore />
                     </a>
                   }
                 >
@@ -76,7 +78,7 @@ function Header({ locale }: HeaderProps) {
                       key={subIndex}
                       href={(subMenuItem as MenuItemWithHref).href}
                     >
-                      {subMenuItem.label}
+                      {subMenuItem.label} 
                     </Link>
                   ))}
                 </Popover>

@@ -43,6 +43,7 @@
 }
 
 .main section:nth-child(3) {
+    clip-path: ellipse(300% 100% at 50% 100%);
     background-color: var(--background-dark);
     color: var(--text-on-dark);
     padding-bottom: 5rem;

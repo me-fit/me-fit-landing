@@ -10,7 +10,7 @@ import styles from "./HeaderMobileMenu.module.css";
 import { useEffect, useState } from "react";
 import { Locale, getIntl } from "@/lib/intl";
 import useMenuStructure, { MenuItemWithHref } from "@/hooks/useMenuStructure";
-import ChevronMore from "@/components/icons/ChevronMore";
+import ChevronMore from "@/components/icons/ChevronMoreIcon";
 import React from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import FocusLock from "react-focus-lock";

@@ -60,6 +60,16 @@ export default function Page({ params: { locale } }: PageProps) {
           ></Image>
         </Flex>
       </section>
+
+      <section>
+        <h4>{formatMessage({ id: "testimonials.subheader" })}</h4>
+        <h2>{formatMessage({ id: "testimonials.header" })}</h2>
+        <p>
+          {formatMessage({
+            id: "testimonials.paragraph",
+          })}
+        </p>
+      </section>
     </main>
   );
 }
