@@ -1,6 +1,6 @@
 import { createIntl } from "@formatjs/intl";
-import en from '../lang/en.json';
-import nl from '../lang/nl.json';
+import en from "../lang/en.json";
+import nl from "../lang/nl.json";
 
 
 export const i18n = {

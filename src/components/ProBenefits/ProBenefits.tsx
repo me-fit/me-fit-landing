@@ -3,6 +3,10 @@ import FeatureCard from "../FeatureCard/FeatureCard";
 import { getIntl } from "@/lib/intl";
 import styles from "./ProBenefits.module.css";
 import Flex from "../Flex/Flex";
+import TrackIcon from "../icons/TrackIcon";
+import EditSquareIcon from "../icons/EditSquareIcon";
+import CalendarMonth from "../icons/CalendarMonthIcon";
+import CheckListIcon from "../icons/CheckListIcon";
 
 interface ProBenefitsProps {
     locale: Locale;
@@ -13,22 +17,22 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
 
   const benefits = [
     {
-      imgSrc: "/img/me-fit-app-one.webp",
+      icon: <EditSquareIcon width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.one" }),
       description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.one" }),
     },
     {
-      imgSrc: "/img/me-fit-app-two.webp",
+      icon: <TrackIcon width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.two" }),
       description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.two" }),
     },
     {
-      imgSrc: "/img/me-fit-app-three.webp",
+      icon: <CalendarMonth width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.three" }),
       description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.three" }),
     },
     {
-      imgSrc: "/img/me-fit-app-four.webp",
+      icon: <CheckListIcon width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.four" }),
       description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.four" }),
     },
@@ -40,7 +44,7 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
         <FeatureCard
           className={styles.benefitCard}
           key={index}
-          imgSrc={benefit.imgSrc}
+          icon={benefit.icon}
           title={benefit.title}
           description={benefit.description}
         />

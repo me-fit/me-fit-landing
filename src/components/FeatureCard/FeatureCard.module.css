@@ -12,8 +12,15 @@
     object-fit: contain;
 }
 
+.flexContainer svg {
+  margin-top: auto;
+  margin-bottom: auto;
+  fill: var(--text-on-light);
+}
+
 .flexContainer {
   flex-direction: row;
+  color: var(--text-on-light-shade);
 }
 
 .header {

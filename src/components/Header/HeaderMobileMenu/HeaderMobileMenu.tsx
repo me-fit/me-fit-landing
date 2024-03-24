@@ -139,7 +139,7 @@ const HeaderMobileMenu = ({ locale, className }: HeaderMobileMenuProps) => {
                     <Link
                       key={index}
                       href={menuItem.href}
-                      className={`button secondary`}
+                      className={"button secondary"}
                     >
                       {menuItem.label}
                     </Link>

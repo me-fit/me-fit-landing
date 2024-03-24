@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getIntl } from "../../lib/intl";
 import styles from "./page.module.css";
-
+import BoltIcon from "@/components/icons/BoltIcon";
 
 type HomeProps = {
   params: { locale: Locale };
@@ -17,7 +17,7 @@ export default function Home({ params: { locale } }: HomeProps) {
   return (
     <main className={styles.main}>
       <section className={styles.firstSection}>
-        <Flex gap="1rem" flexWrap="wrap" justifyContent="space-between">
+        <Flex gap="1rem" rowGap="4rem" flexWrap="wrap" justifyContent="space-between">
           <div className={styles.firstSectionLeftBlock}>
             <h4 className={styles.title}>
               {formatMessage({ id: "mefit.pro.page.header.one" })}
@@ -33,34 +33,35 @@ export default function Home({ params: { locale } }: HomeProps) {
 
             <ul>
               <li>
-                <Link href="/physiotherapy">
-                  {formatMessage({
-                    id: "mefit.pro.page.paragraph.list.one",
-                  })}
-                </Link>
+                {formatMessage({
+                  id: "mefit.pro.page.paragraph.list.one",
+                })}
               </li>
               <li>
-                <Link href="/personal-training">
-                  {formatMessage({
-                    id: "mefit.pro.page.paragraph.list.two",
-                  })}
-                </Link>
+                {formatMessage({
+                  id: "mefit.pro.page.paragraph.list.two",
+                })}
               </li>
               <li>
-                <Link href="pro-sport-organization">
-                  {formatMessage({
-                    id: "mefit.pro.page.paragraph.list.three",
-                  })}
-                </Link>
+                {formatMessage({
+                  id: "mefit.pro.page.paragraph.list.three",
+                })}
               </li>
               <li>
-                <Link href="/amateur-sport">
-                  {formatMessage({
-                    id: "mefit.pro.page.paragraph.list.four",
-                  })}
-                </Link>
+                {formatMessage({
+                  id: "mefit.pro.page.paragraph.list.four",
+                })}
               </li>
             </ul>
+
+            <button className={styles.firstSignUpButton}>
+              {formatMessage({ id: "signup.call.to.action" })}
+            </button>
+
+            <Flex gap="1rem" alignItems="center">
+              <BoltIcon />
+              {formatMessage({ id: "mefit.pro.page.signup.callout" })}
+            </Flex>
           </div>
 
           <Image

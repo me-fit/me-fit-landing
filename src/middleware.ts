@@ -53,7 +53,7 @@ export function middleware(request: NextRequest) {
 
     const url = basePath + newPath;
 
-    console.log('url', request.url);
+    console.log("url", request.url);
 
     response =
       locale === defaultLocale

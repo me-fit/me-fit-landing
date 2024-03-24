@@ -29,7 +29,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <hr />
 
       <Flex flexDirection="column" alignItems="center">
-        <p>{formatMessage({ id: "amateur.sports.page.header.six" })}</p>
+        <p className="text-align-center">{formatMessage({ id: "amateur.sports.page.header.six" })}</p>
         <Link
           className={`button ${styles.signup}`}
           href="/contact"

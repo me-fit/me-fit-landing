@@ -55,7 +55,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <hr />
 
       <Flex flexDirection="column" alignItems="center">
-        <p>
+        <p className="text-align-center">
           {formatMessage({
             id: "pro.sport.organization.signup.call.to.action",
           })}

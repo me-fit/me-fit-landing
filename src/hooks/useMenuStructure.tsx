@@ -1,5 +1,5 @@
-import { Locale, getIntl } from '@/lib/intl';
-import { useMemo } from 'react';
+import { Locale, getIntl } from "@/lib/intl";
+import { useMemo } from "react";
 
 interface MenuItem {
   label: string;
@@ -19,18 +19,18 @@ const useMenuStructure = ({ locale }: MenuStructureProps) => {
 
   const menuStructure: MenuItemExclusive[] = useMemo(() => {
     return [
-      { label: formatMessage({ id: 'mefit.pro' }), href: '/' },
+      { label: formatMessage({ id: "mefit.pro" }), href: "/" },
       {
-        label: formatMessage({ id: 'header.solutions' }),
+        label: formatMessage({ id: "header.solutions" }),
         items: [
-          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.one' }), href: '/physiotherapy' },
-          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.two' }), href: '/personal-training' },
-          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.three' }), href: '/pro-sport-organization' },
-          { label: formatMessage({ id: 'mefit.pro.page.paragraph.list.four' }), href: '/amateur-sport' }
+          { label: formatMessage({ id: "mefit.pro.page.paragraph.list.one" }), href: "/physiotherapy" },
+          { label: formatMessage({ id: "mefit.pro.page.paragraph.list.two" }), href: "/personal-training" },
+          { label: formatMessage({ id: "mefit.pro.page.paragraph.list.three" }), href: "/pro-sport-organization" },
+          { label: formatMessage({ id: "mefit.pro.page.paragraph.list.four" }), href: "/amateur-sport" }
         ]
       },
-      { label: formatMessage({ id: 'mefit.app' }), href: '/app' },
-      { label: formatMessage({ id: 'contact.us' }), href: '/contact' }
+      { label: formatMessage({ id: "mefit.app" }), href: "/app" },
+      { label: formatMessage({ id: "contact.us" }), href: "/contact" }
     ];
   }, [formatMessage]);
 

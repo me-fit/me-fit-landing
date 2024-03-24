@@ -11,7 +11,7 @@ type LayoutProps = {
 };
 
 const poppins = Poppins({ 
-  weight: ['700', '500', '400'],
+  weight: ["700", "500", "400"],
   subsets: ["latin"] 
 });
 

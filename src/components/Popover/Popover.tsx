@@ -1,6 +1,6 @@
-'use client';
-import React, { useState } from 'react';
-import styles from './Popover.module.css';
+"use client";
+import React, { useState } from "react";
+import styles from "./Popover.module.css";
 
 interface PopoverProps {
   trigger: React.ReactNode;

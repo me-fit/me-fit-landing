@@ -34,7 +34,7 @@ function Footer({ locale }: FooterProps) {
           <h5 className={styles.header}>ME Fit Pro</h5>
           <p className={styles.footerGetMeFitPro}>{formatMessage({ id: "footer.get.me.fit.pro" })}</p>
           <Link
-            className={`button button-on-dark small`}
+            className={"button button-on-dark small"}
             href="https://admin.mefit.pro/onboarding"
           >
             {formatMessage({ id: "signup.call.to.action" })}
@@ -62,7 +62,7 @@ function Footer({ locale }: FooterProps) {
       </Flex>
 
       <Flex justifyContent="flex-end">
-        <small className={styles['company-name']}>© 2024 ME Fit B.V.</small>
+        <small className={styles["company-name"]}>© 2024 ME Fit B.V.</small>
       </Flex>
       
     </footer>
