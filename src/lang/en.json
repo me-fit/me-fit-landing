@@ -52,8 +52,6 @@
   "mefit.pro.page.benefits.paragraph.three": "Effectively map out your clients' fitness journeys with ME Fit Pro's comprehensive planning tools, making the process seamless and effortlessly customizing it to their individual requirements.",
   "mefit.pro.page.benefits.title.four": "Test",
   "mefit.pro.page.benefits.paragraph.four": "Assess your clients' physical capabilities and mental state comprehensively with ME Fit Pro's testing functionalities. Utilize the insights gained to refine your workout strategies for optimal results.",
-
-  
   
   "personalTrainer.page.header": "Personal Trainers",
   "personalTrainer.page.sub.header": "ME Fit Pro for Personal Trainers",
@@ -106,5 +104,13 @@
   "mefit.app.page.paragraph.two": "The ME Fit workouts can be done by your clients in a variety of ways with equipment or without, in the gym or from the comfort of home.",
   "mefit.app.page.paragraph.three": "Furthermore, the ME Fit App facilitates progress tracking for your clients.",
   "mefit.app.page.benefits.header": "Benefits",
-  "mefit.app.page.benefits.header.subheader": "The benefits of using the ME Fit App"
+  "mefit.app.page.benefits.header.subheader": "The benefits of using the ME Fit App",
+
+  "language": "Language",
+  "contact.page.header": "Contact us",
+  "contact.page.paragraph.one": "Do you have a question, feedback or just want to tell us how awesome we are? Shoot us a message through the form",
+  "contact.page.name.placeholder": "Your name",
+  "contact.page.email.placeholder": "Your email",
+  "contact.page.message.placeholder": "Message",
+  "contact.page.send.message": "Send message"
 }
