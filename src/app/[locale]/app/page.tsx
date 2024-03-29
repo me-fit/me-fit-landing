@@ -4,12 +4,13 @@ import { getIntl } from "@/lib/intl";
 import AppBenefits from "@/components/AppBenefits/AppBenefits";
 import Flex from "@/components/Flex/Flex";
 import Image from "next/image";
+import TestimonialsList from "@/components/TestimonialsList/TestimonialsList";
 type PageProps = {
   params: { locale: Locale };
 };
 
 export default function Page({ params: { locale } }: PageProps) {
-  const {formatMessage} = getIntl(locale);
+  const { formatMessage } = getIntl(locale);
   return (
     <main>
       <section className={`${styles.padding} light-background`}>
@@ -61,14 +62,18 @@ export default function Page({ params: { locale } }: PageProps) {
         </Flex>
       </section>
 
-      <section>
-        <h4>{formatMessage({ id: "testimonials.subheader" })}</h4>
-        <h2>{formatMessage({ id: "testimonials.header" })}</h2>
-        <p>
-          {formatMessage({
-            id: "testimonials.paragraph",
-          })}
-        </p>
+      <section className="light-background">
+        <Flex flexDirection="column" alignItems="center">
+          <h4>{formatMessage({ id: "testimonials.subheader" })}</h4>
+          <h2>{formatMessage({ id: "testimonials.header" })}</h2>
+          <p className="no-margin">
+            {formatMessage({
+              id: "testimonials.paragraph",
+            })}
+          </p>
+
+          <TestimonialsList />
+        </Flex>
       </section>
     </main>
   );

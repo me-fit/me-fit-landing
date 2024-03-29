@@ -5,8 +5,9 @@
 .me-fit-pro-exercise-library {
     width: calc(60% - 2rem);
     height: auto;
-
+    object-fit: contain;
 }
+
 
 .firstSectionLeftBlock {
     width: calc(40% - 2rem);
@@ -14,10 +15,6 @@
 
 .main section:nth-child(1) {
     clip-path: ellipse(300% 100% at 50% 0%);
-
-    background: var(--background-dark);
-    color: var(--text-on-dark);
-
     padding: 5rem;
 }
 
@@ -38,27 +35,19 @@
     }
 }
 
-.main section:nth-child(2) {
-    background-color: var(--background-light);
-}
 
 .main section:nth-child(3) {
     clip-path: ellipse(300% 100% at 50% 100%);
-    background-color: var(--background-dark);
-    color: var(--text-on-dark);
     padding-bottom: 5rem;
 }
 
-.main section:nth-child(4) h4,
-.main section:nth-child(4) h2 {
-    color: var(--text-on-light);
-}
-
-.main section:nth-child(4) p {
-    color: var(--text-on-light-shade);
-}
-
-.firstSignUpButton {
+a.signup {
+    display: inline-block;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.customersList {
+    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
 }

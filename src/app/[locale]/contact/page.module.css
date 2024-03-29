@@ -1,3 +1,18 @@
 .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 1.25rem;
+}
+
+.main section, .form {
+    max-width: var(--content-width);
+}
+
+.form {
+    width: 100%;
+    display: block;
+    margin-bottom: 4rem;
+    box-sizing: border-box;
 }

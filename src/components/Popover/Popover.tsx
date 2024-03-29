@@ -12,9 +12,15 @@ interface PopoverProps {
 
 const Popover: React.FC<PopoverProps> = ({ trigger, children, onOpen, isOpen }) => {
  
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if ( e.key === "Enter" ) {
+      onOpen(true);
+    }
+  }
+
   return (
     <div className={styles.popover}>
-      <div className={styles.popoverButton} onPointerOver={() => onOpen(true)} onClick={() => onOpen(true)}>
+      <div className={styles.popoverButton} onKeyDown={handleKeyDown} onPointerOver={() => onOpen(true)} onClick={() => onOpen(true)}>
         {trigger}
       </div>
       {isOpen && (

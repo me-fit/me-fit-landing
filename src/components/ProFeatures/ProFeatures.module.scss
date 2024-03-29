@@ -1,0 +1,72 @@
+.header {
+    padding-top: 1.25rem;
+}
+
+.screenshotContainer {
+    padding: 1.25rem;
+}
+
+.screenshotContainer:nth-child(odd) {
+    background-color: var(--background-light-shade);
+}
+
+.screenshot {
+    width: calc(60% - 2rem);
+    height: auto;
+    object-fit: contain;
+    transition: width var(--animation-speed);
+    flex-grow: 1;
+}
+
+.textBlock {
+    flex-shrink: 1;
+}
+
+.swapChildrenOrder {
+    .textBlock {
+        order: 2;
+    }
+
+    .screenshot {
+        order: 1;
+    }
+}
+
+
+@media (min-width: 1000px) {
+    // On desktop we want a hover effect that enlarge the screenshot
+    .screenshotContainer {
+        padding: 1.25rem;
+    }
+    
+    // On desktop we want spacing to be bigger
+    .screenshotContainer {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    
+
+    .screenshotContainer:hover {
+        .screenshot {
+            width: calc(80% - 2rem);
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .screenshotContainer {
+        flex-direction: column;
+    }
+
+    .textBlock, .screenshot {
+        width: 100%;
+    }
+
+    .screenshotContainer .textBlock {
+        order: 1;
+    }
+
+    .screenshotContainer .screenshot {
+        order: 2;
+    }
+}

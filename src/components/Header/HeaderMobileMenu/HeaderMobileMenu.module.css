@@ -21,11 +21,11 @@
 
 @media (max-width: 800px) {
   div.desktopMenu {
-      display: none;
+    display: none;
   }
 
-div.mobileMenu {
-      display: flex;
+  div.mobileMenu {
+    display: flex;
   }
 }
 
@@ -40,7 +40,7 @@ a.menuItem {
 
 .menuItem:hover {
   background-color: var(--background-dark-tint);
-  border-radius: 0.5rem;
+  border-radius: var(--interactive-element-border-radius);
 }
 
 .menuItemsContainer {
@@ -56,7 +56,7 @@ a.menuItem {
 .chevron {
   height: 24px;
   width: 24px;
-  transition: transform 300ms;
+  transition: transform var(--animation-speed);
 }
 
 .menuItemIsOpen {

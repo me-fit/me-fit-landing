@@ -12,7 +12,6 @@ import styles from "./Header.module.css";
 import HeaderMobileMenu from "./HeaderMobileMenu/HeaderMobileMenu";
 import ChevronMore from "../icons/ChevronMoreIcon";
 
-
 interface HeaderProps {
   locale: Locale;
 }
@@ -24,7 +23,6 @@ function Header({ locale }: HeaderProps) {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  
 
   useEffect(() => {
     const url = `${pathname}?${searchParams}`;
@@ -33,7 +31,6 @@ function Header({ locale }: HeaderProps) {
     // If the url changes, we want to close the popover
     setPopoverOpen(false);
   }, [pathname, searchParams]);
-
 
   return (
     <header className={styles.header}>
@@ -78,7 +75,7 @@ function Header({ locale }: HeaderProps) {
                       key={subIndex}
                       href={(subMenuItem as MenuItemWithHref).href}
                     >
-                      {subMenuItem.label} 
+                      {subMenuItem.label}
                     </Link>
                   ))}
                 </Popover>

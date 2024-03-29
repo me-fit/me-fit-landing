@@ -2,10 +2,11 @@
   --primary: #ffd600;
   --primary-shade: #e0bc00;
   --primary-tint: #ffda1a;
-  --background-dark: #121212;
+  --background-dark: #070707;
   --background-dark-shade: #101010; 
   --background-dark-tint: #111;
   --background-light: whitesmoke;
+  --background-light-shade: white;
   --text-on-dark: #BCBCBC;
   --text-on-dark-shade: #ededed;
   --text-on-dark-secondary: #888;
@@ -15,16 +16,28 @@
   --menu-z-index: 2;
   --header-height: 77px;
   --header-z-index: 1;
+  --interactive-element-border-radius: 0.5rem;
+  // Will be used for centered content, so it aligns with the menu
+  --content-width: 600px;
+  --animation-speed: 300ms;
+}
+
+html {
+  height: 100%;
 }
 
 body {
   padding: 0;
   margin: 0;
   font-family: Poppins;
-  color: var(--text-on-light);
   height: 100%;
   width: 100%;
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
+  color: var(--text-on-dark);
+  --header-color: var(--text-on-dark-shade);
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
 }
 
 
@@ -32,38 +45,57 @@ a {
   text-decoration: none;
   outline: none;
   color: currentColor;
-  transition: color 0.3s;
-  padding: 0.5rem;
-  border: 1px solid transparent;
-}
+  transition: color var(--animation-speed);
+  padding: var(--interactive-element-border-radius);
+  border-radius: var(--interactive-element-border-radius);
 
-a:visited {
-  text-decoration: none;
-  outline: none;
-  color: currentColor;
-}
+  &:visited {
+    text-decoration: none;
+    outline: none;
+    color: currentColor;
+  }
 
-a:hover {
-  color: var(--primary);
-}
+  &:hover {
+    color: var(--primary);
+    outline: 1px solid var(--anchor-focus-outline, var(--button-focus-outline));
+    outline-offset: 2px;
+  }
 
-a:focus-within {
-  border: 1px solid var(--primary);
-  border-radius: 0.5rem;
+  &:focus-within {
+    outline: 1px solid var(--anchor-focus-outline, var(--primary));
+    outline-offset: 2px;
+  }
 }
-
 
 button, a.button {
-  border: none;
+  color: var(--button-color, var(--text-on-light));
+  background-color: var(--button-background, var(--primary));
+  border-radius: var(--button-border-radius, var(--interactive-element-border-radius));
+  border: var(--button-border, 1px solid var(--border-color));
   padding: 1rem 1.5rem;
   margin: 0;
-  color: var(--text-on-light);
-  background-color: var(--primary);
-  border-radius: 0.5rem;
-  transition: background-color 0.3s;
+  transition: background-color var(--animation-speed);
   cursor: pointer;
   box-sizing: content-box;
   font-size: 1rem;
+  display: inline-block;
+  font-family: inherit;
+
+  &:focus-within {
+    outline: 1px solid var(--button-focus-outline, var(--text-on-dark));
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    background-color: var(--button-hover-background-color, var(--primary-shade));
+  }
+}
+
+button.secondary, a.button.secondary {
+  --button-color: var(--text-on-dark);
+  --button-background: transparent;
+  --button-hover-background-color: var(--background-dark-shade);
+  border: 1px solid var(--border-color);
 }
 
 button.round {
@@ -79,41 +111,9 @@ button.icon {
   align-items: center;
 }
 
-button:hover, .button:hover {
-  background-color: var(--primary-shade);
-}
-
-button.secondary, a.button.secondary {
-  background-color: transparent;
-  color: var(--text-on-dark);
-  border: 1px solid var(--border-color);
-}
-
-button.small, a.small {
+button.button-small, a.button-small {
   padding: 0.5rem 0.75rem;
-  
 }
-
-.button-on-dark {
-  background-color: transparent;
-  color: var(--text-on-dark);
-  border: 1px solid var(--border-color); 
-}
-
-
-
-a.button:focus-within, button:focus-within {
-  outline: 1px solid currentColor;
-  outline-offset: 2px;
-}
-
-
-a.button-on-dark:focus-within,
-button.button-on-dark:focus-within {
-  outline: 1px solid var(--text-on-dark);
-  outline-offset: 2px;
-}
-
 
 h4, h5, h6 {
   letter-spacing: 2px;
@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   font-weight: 500;
-  color: var(--text-on-dark-shade);
+  color: var(--header-color, currentColor);
 }
 
 p {
@@ -149,24 +149,17 @@ hr {
   display: flex;
 }
 
-.image-link {
-  display: inline-block; /* Ensures the anchor tag takes up only the necessary space */
-}
-
-.image-link img {
-  display: block; /* Ensures the image doesn't have any extra space around it */
-
-  height: auto; /* Allows the image to maintain its aspect ratio */
-}
-
-
 .light-background {
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-on-light);
-  }
-
+  background-color: var(--background-light);
+  --header-color: var(--text-on-light);
+  --anchor-focus-outline: var(--background-dark-shade);
   p {
     color: var(--text-on-light-shade);
+  }
+
+  // Margins look bigger when the background is light, and we have a pattern
+  h4 + h2 {
+    margin-top: 0;
   }
 }
 
@@ -176,4 +169,88 @@ svg {
 
 .text-align-center {
   text-align: center;
+}
+
+select {
+  appearance: none;
+  outline: none;
+  padding: 8px 16px;
+  border: 1px solid var(--border-color); 
+  background-color: var(--background-dark);
+  color: currentColor;
+  cursor: pointer;
+  border-radius: var(--interactive-element-border-radius);
+}
+
+/* Styling the arrow icon */
+select::-ms-expand {
+  display: none;
+}
+
+select::-webkit-select-arrow {
+  display: none;
+}
+
+/* Hover effect */
+select:hover {
+  background-color: var(--background-dark-shade); 
+}
+
+select:focus-within {
+  outline: 1px solid var(--button-focus-outline, var(--text-on-dark));
+  outline-offset: 2px;
+}
+
+label {
+  line-height: 0;
+}
+
+input, textarea {
+  /* Resetting margins, padding, and borders */
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: none;
+
+  /* Resetting font styles */
+  font-family: inherit;
+  font-size: inherit;
+
+  /* Resetting other styles */
+  background-color: transparent;
+  color: currentColor;
+  outline: none; 
+  resize: none;
+
+  border: 1px solid var(--border-color); 
+  border-radius: var(--interactive-element-border-radius);
+}
+
+input:focus-within, textarea:focus-within {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+
+// Autcomplete styles
+// @see https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-on-light);
+  box-shadow: 0 0 0px 100px var(--background-light) inset;
+}
+
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
 }

@@ -35,15 +35,11 @@ const HeaderMobileMenu = ({ locale, className }: HeaderMobileMenuProps) => {
 
     console.log("[HeaderMobileMenu] url change, closing popover", url);
     // If the url changes, we want to close the menu
-    updateMobileMenuOpen(false);
+    setMobileMenuOpen(false);
   }, [pathname, searchParams]);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const menuStructure = useMenuStructure({ locale });
-
-  const updateMobileMenuOpen = (openState: boolean) => {
-    setMobileMenuOpen(openState);
-  };
 
   const handleItemClick = (index: number) => {
     if (index === expandedItemIndex) {
@@ -54,8 +50,15 @@ const HeaderMobileMenu = ({ locale, className }: HeaderMobileMenuProps) => {
   };
 
   return (
-    <FocusOn enabled={mobileMenuOpen}>
-      <Flex justifyContent="space-between" alignItems="center" className={className}>
+    <FocusOn
+      enabled={mobileMenuOpen}
+      onEscapeKey={() => setMobileMenuOpen(false)}
+    >
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        className={className}
+      >
         <Link href="/" className="logo-link">
           <Image
             width={115}
@@ -68,7 +71,7 @@ const HeaderMobileMenu = ({ locale, className }: HeaderMobileMenuProps) => {
 
         <button
           className="round button-on-dark icon secondary"
-          onClick={() => updateMobileMenuOpen(!mobileMenuOpen)}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {!mobileMenuOpen && <MenuIcon />}
           {mobileMenuOpen && <CloseIcon />}

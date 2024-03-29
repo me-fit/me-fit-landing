@@ -1,9 +1,10 @@
 .footer {
-  padding: 4rem 2rem 1rem 2rem;
+  padding: 2rem 2rem 1rem 2rem;
   background: var(--background-dark);
   color: var(--text-on-dark);
   max-width: 100%;
   overflow: hidden;
+  border-top: 1px solid var(--border-color);
 }
 
 .logo {
@@ -20,11 +21,6 @@
   width: 100%;
 }
 
-.nav {
-  text-align: center;
-  flex-grow: 1;
-}
-
 .nav ul {
   padding: 0;
   margin: 0;
@@ -37,13 +33,8 @@ a.signup {
 
 
 .company-name {
-  padding-top: 1rem;
-  margin-top: auto;
+  margin-left: auto;
   color: var(--text-on-dark-secondary);
-}
-
-.header {
-  margin-bottom: 0;
 }
 
 .footerGetMeFitPro {
@@ -52,4 +43,9 @@ a.signup {
 
 .logoLink {
   display: inline-block;
+  width: min-content;
+}
+
+.bottomSection {
+  margin-top: 3rem;
 }
