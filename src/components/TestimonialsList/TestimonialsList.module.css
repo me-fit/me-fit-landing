@@ -1,0 +1,15 @@
+.testimonialsContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonialsContainer .testimonialCard {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: var(--background-dark);
+    max-width: 300px;
+}
+
+.testimonialCardAuthor {
+    color: var(--primary);
+}

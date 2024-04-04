@@ -1,12 +1,10 @@
-.header {
-    margin-bottom:0;
-}
-
 .text {
     margin-top: 0.25rem;
     margin-bottom: 0;
 }
 
 .link {
-    padding-left: 0;
+    margin-top: 0.5rem;
+    padding: 0.1rem;
+    height: 37px;
 }

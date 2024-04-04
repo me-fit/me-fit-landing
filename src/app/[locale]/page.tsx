@@ -6,6 +6,8 @@ import Link from "next/link";
 import { getIntl } from "../../lib/intl";
 import styles from "./page.module.css";
 import BoltIcon from "@/components/icons/BoltIcon";
+import CustomersList from "@/components/CustomersList/CustomersList";
+import ProFeatures from "@/components/ProFeatures/ProFeatures";
 
 type HomeProps = {
   params: { locale: Locale };
@@ -16,12 +18,15 @@ export default function Home({ params: { locale } }: HomeProps) {
 
   return (
     <main className={styles.main}>
-      <section className={styles.firstSection}>
-        <Flex gap="1rem" rowGap="4rem" flexWrap="wrap" justifyContent="space-between">
+      <section className={`${styles.firstSection}`}>
+        <Flex
+          gap="1rem"
+          rowGap="4rem"
+          flexWrap="wrap"
+          justifyContent="space-between"
+        >
           <div className={styles.firstSectionLeftBlock}>
-            <h4 className={styles.title}>
-              {formatMessage({ id: "mefit.pro.page.header.one" })}
-            </h4>
+            <h4>{formatMessage({ id: "mefit.pro.page.header.one" })}</h4>
 
             <h2>{formatMessage({ id: "mefit.pro.page.header.two" })}</h2>
 
@@ -54,9 +59,12 @@ export default function Home({ params: { locale } }: HomeProps) {
               </li>
             </ul>
 
-            <button className={styles.firstSignUpButton}>
+            <Link
+              className={`button ${styles.signup}`}
+              href="https://admin.mefit.pro/onboarding"
+            >
               {formatMessage({ id: "signup.call.to.action" })}
-            </button>
+            </Link>
 
             <Flex gap="1rem" alignItems="center">
               <BoltIcon />
@@ -68,18 +76,17 @@ export default function Home({ params: { locale } }: HomeProps) {
             className={styles["me-fit-pro-exercise-library"]}
             priority={true}
             src="/img/me-fit-pro-exercise-library.png"
-            alt="ME Fit Pro Exercise Library"
+            alt={formatMessage({
+              id: "mefit.pro.exercise.library.screenshot.alt",
+            })}
             width={1278}
             height={685}
           />
         </Flex>
       </section>
 
-      <section>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, porro
-        veniam error adipisci earum praesentium reiciendis fugiat ab a nihil
-        expedita. Nostrum, est! Perspiciatis dolorem fugit velit sed, expedita
-        ipsum?
+      <section className={"light-background no-padding"}>
+        <ProFeatures locale={locale} />
       </section>
 
       <section>
@@ -98,7 +105,22 @@ export default function Home({ params: { locale } }: HomeProps) {
         </Flex>
       </section>
 
-      
+      <section className={"light-background"}>
+        <Flex flexDirection="column" alignItems="center">
+          <h4>
+            {formatMessage({
+              id: "mefit.pro.page.customers.header",
+            })}
+          </h4>
+          <h1 className={"text-align-center"}>
+            {formatMessage({
+              id: "mefit.pro.page.customers.subheader",
+            })}
+          </h1>
+        </Flex>
+
+        <CustomersList className={styles.customersList} locale={locale} />
+      </section>
     </main>
   );
 }

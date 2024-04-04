@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.main article {
+  max-width: var(--content-width);
+  padding: 4rem;
+  margin-top: 2rem;
+}
