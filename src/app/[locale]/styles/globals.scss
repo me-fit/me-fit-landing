@@ -30,8 +30,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: Poppins;
-  height: 100%;
-  width: 100%;
   background-color: var(--background-dark);
   color: var(--text-on-dark);
   --header-color: var(--text-on-dark-shade);
@@ -153,6 +151,7 @@ hr {
   background-color: var(--background-light);
   --header-color: var(--text-on-light);
   --anchor-focus-outline: var(--background-dark-shade);
+  --border-color: var(--background-dark);
   p {
     color: var(--text-on-light-shade);
   }
