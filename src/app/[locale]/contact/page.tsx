@@ -1,21 +1,26 @@
 "use client";
-import { Locale } from "@/lib/intl";
-import styles from "./page.module.css";
-import { getIntl } from "@/lib/intl";
 import Flex from "@/components/Flex/Flex";
-import { FormEvent } from "react";
+import { Locale, getIntl } from "@/lib/intl";
+import styles from "./page.module.css";
+import submitContactForm, {
+  SubmitContactFormState,
+} from "./server-actions/submitContactForm";
+import { useFormState } from "react-dom";
 
 type PageProps = {
   params: { locale: Locale };
 };
 
+const submitContactFormState: SubmitContactFormState = {
+  success: false,
+};
+
 export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
-
-  const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log(event);
-  } 
+  const [state, formAction] = useFormState(
+    submitContactForm,
+    submitContactFormState
+  );
 
   return (
     <main className={styles.main}>
@@ -25,9 +30,10 @@ export default function Page({ params: { locale } }: PageProps) {
         <p>{formatMessage({ id: "contact.page.paragraph.one" })}</p>
       </section>
 
-      <form className={`${styles.form}`} onSubmit={onFormSubmit}>
+      <form className={`${styles.form}`} action={formAction}>
         <Flex flexDirection="column">
           <input
+            name="userName"
             autoComplete="name"
             type="text"
             placeholder={formatMessage({ id: "contact.page.name.placeholder" })}
@@ -37,6 +43,7 @@ export default function Page({ params: { locale } }: PageProps) {
           <br />
 
           <input
+            name="userEmail"
             autoComplete="email"
             type="email"
             placeholder={formatMessage({
@@ -48,6 +55,7 @@ export default function Page({ params: { locale } }: PageProps) {
           <br />
 
           <textarea
+            name="message"
             rows={4}
             placeholder={formatMessage({
               id: "contact.page.message.placeholder",
@@ -57,6 +65,7 @@ export default function Page({ params: { locale } }: PageProps) {
 
           <br />
           <br />
+
           <Flex justifyContent="flex-end">
             <button>
               {formatMessage({ id: "contact.page.send.message" })}
