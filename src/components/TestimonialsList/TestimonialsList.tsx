@@ -3,25 +3,24 @@ import styles from "./TestimonialsList.module.css";
 
 const testimonials = [
   {
-    author: "Angela Barez",
-    testimonial: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-        itaque quam eos totam hic illum reiciendis quia pariatur eveniet
-        nam, animi ratione quaerat possimus explicabo quas at?
-        Exercitationem, voluptas fugiat.`,
+    author: "Faytopia",
+    testimonial:
+      "I’m using this app after I was desperate to get back in shape, but didn’t know how. My instructor helped me with finding a suitable workout.",
   },
   {
-    author: "Angela Barez",
-    testimonial: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-        itaque quam eos totam hic illum reiciendis quia pariatur eveniet
-        nam, animi ratione quaerat possimus explicabo quas at?
-        Exercitationem, voluptas fugiat.`,
+    author: "Myrthe",
+    testimonial:
+      "Having experienced the app for a while now I can conclude the interactions are easy, clear examples on what you need to do and definitely in use separating itself from other apps and also more personal detail on what is beneficial for your own growth.",
   },
   {
-    author: "Angela Barez",
-    testimonial: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-        itaque quam eos totam hic illum reiciendis quia pariatur eveniet
-        nam, animi ratione quaerat possimus explicabo quas at?
-        Exercitationem, voluptas fugiat.`,
+    author: "Paula",
+    testimonial:
+      "I started using this app for the preparation and revalidation of my surgery. Not only is the layout of the app very neat and practical, it also helped me alot to stay consistent and to keep track of my improvements. They are very open for feedback and have many different exercises to choose from. Would definitely recommend!!!",
+  },
+  {
+    author: "timeisindifferent",
+    testimonial:
+      "Having experienced the app for a while now I can conclude the interactions are easy, clear examples on what you need to do and definitely in use separating itself from other apps and also more personal detail on what is beneficial for your own growth. A blessing and would definitely recommend in both personal use and possibly other atmospheres too.",
   },
 ] as const;
 
@@ -39,12 +38,10 @@ function TestimonialsList({}: TestimonialsListProps) {
       {testimonials.map((testimonial) => {
         return (
           <div className={styles.testimonialCard} key={testimonial.author}>
-            {testimonial.testimonial}
-            <Flex justifyContent="flex-end">
-              <small className={styles.testimonialCardAuthor}>
-                <i>{testimonial.author}</i>
-              </small>
-            </Flex>
+            <p>{testimonial.testimonial}</p>
+            <small className={styles.testimonialCardAuthor}>
+              <i>{testimonial.author}</i>
+            </small>
           </div>
         );
       })}
