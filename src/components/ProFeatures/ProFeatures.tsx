@@ -6,6 +6,12 @@ import classNames from "classnames";
 
 const screenshots = [
   {
+    imgSrc: "/img/me-fit-pro-workout-crud.png",
+    altTranslationKey: "mefit.pro.exercise.workout.crud.screenshot.alt",
+    headerTranslationKey: "mefit.pro.workout.crud.title",
+    textTranslationKey: "mefit.pro.workout.crud.text",
+  },
+  {
     imgSrc: "/img/me-fit-pro-exercise-list.png",
     altTranslationKey: "mefit.pro.exercise.list.screenshot.alt",
     headerTranslationKey: "mefit.pro.exercise.list.title",
@@ -16,12 +22,6 @@ const screenshots = [
     altTranslationKey: "mefit.pro.exercise.workout.log.screenshot.alt",
     headerTranslationKey: "mefit.pro.workout.log.title",
     textTranslationKey: "mefit.pro.workout.log.text",
-  },
-  {
-    imgSrc: "/img/me-fit-pro-workout-crud.png",
-    altTranslationKey: "mefit.pro.exercise.workout.crud.screenshot.alt",
-    headerTranslationKey: "mefit.pro.workout.crud.title",
-    textTranslationKey: "mefit.pro.workout.crud.text",
   },
   {
     imgSrc: "/img/me-fit-pro-calendar.png",
