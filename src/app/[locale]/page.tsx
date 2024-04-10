@@ -73,7 +73,7 @@ export default function Home({ params: { locale } }: HomeProps) {
           </div>
 
           <Image
-            className={styles["me-fit-pro-exercise-library"]}
+            className={styles.proMainScreenshot}
             priority={true}
             src="/img/me-fit-pro-exercise-library.png"
             alt={formatMessage({
