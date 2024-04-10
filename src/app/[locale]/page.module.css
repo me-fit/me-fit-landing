@@ -2,7 +2,7 @@
     padding: 1.25rem;
 }
 
-.me-fit-pro-exercise-library {
+.proMainScreenshot {
     width: calc(60% - 2rem);
     height: auto;
     object-fit: contain;
@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 1000px) {
-    .me-fit-pro-exercise-library {
+    .proMainScreenshot {
         width: 100%;
     }
 
