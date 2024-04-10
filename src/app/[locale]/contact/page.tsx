@@ -73,6 +73,11 @@ export default function Page({ params: { locale } }: PageProps) {
           </Flex>
         </Flex>
       </form>
+
+      <section className={styles.contactUs}>
+        <h2>{formatMessage({ id: "about.us.title" })}</h2>
+        <p>{formatMessage({ id: "about.us.page.text" })}</p>
+      </section>
     </main>
   );
 }
