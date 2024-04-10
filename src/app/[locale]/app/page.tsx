@@ -15,9 +15,7 @@ export default function Page({ params: { locale } }: PageProps) {
     <main>
       <section className={`${styles.padding} light-background`}>
         <h1>{formatMessage({ id: "mefit.app.page.title" })}</h1>
-        <p>{formatMessage({ id: "mefit.app.page.paragraph.one" })}</p>
-        <p>{formatMessage({ id: "mefit.app.page.paragraph.two" })}</p>
-        <p>{formatMessage({ id: "mefit.app.page.paragraph.three" })}</p>
+        <p>{formatMessage({ id: "mefit.app.page.paragraph" })}</p>
       </section>
 
       <section className={styles.benefits}>
