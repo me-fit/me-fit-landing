@@ -16,3 +16,33 @@
     max-width: 300px;
     object-fit: contain;
 }
+
+.firstSection {
+    padding: 5rem;
+}
+
+.appMainScreenshot {
+    width: calc(60% - 2rem);
+    max-height: 75vh;
+    object-fit: contain;
+}
+
+
+.firstSectionLeftBlock {
+    width: calc(40% - 2rem);
+}
+
+.main section:nth-child(1) {
+    clip-path: ellipse(300% 100% at 50% 0%);
+    padding: 5rem;
+}
+
+@media (max-width: 1000px) {
+    .appMainScreenshot {
+        width: 100%;
+    }
+
+    .firstSectionLeftBlock {
+        width: 100%;
+    }
+}
