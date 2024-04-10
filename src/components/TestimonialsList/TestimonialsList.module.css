@@ -17,4 +17,5 @@
 .testimonialCardAuthor {
     margin-top: auto;
     margin-left: auto;
+    color: var(--text-on-light-shade);
 }
