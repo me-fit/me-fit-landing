@@ -14,7 +14,6 @@
     width: calc(60% - 2rem);
     height: auto;
     object-fit: contain;
-    transition: width var(--animation-speed);
     flex-grow: 1;
 }
 
@@ -34,7 +33,6 @@
 
 
 @media (min-width: 1000px) {
-    // On desktop we want a hover effect that enlarge the screenshot
     .screenshotContainer {
         padding: 1.25rem;
     }
@@ -45,12 +43,6 @@
         padding-bottom: 8rem;
     }
     
-
-    .screenshotContainer:hover {
-        .screenshot {
-            width: calc(80% - 2rem);
-        }
-    }
 }
 
 @media (max-width: 1000px) {
