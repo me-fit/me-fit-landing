@@ -51,3 +51,8 @@ a.signup {
     margin-top: 1.25rem;
     margin-bottom: 2.5rem;
 }
+
+.bannerText {
+    margin: 4rem auto 0rem auto;
+    max-width: var(--content-width);
+}

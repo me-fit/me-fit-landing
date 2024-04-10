@@ -103,6 +103,12 @@ export default function Home({ params: { locale } }: HomeProps) {
           </h1>
           <ProBenefits locale={locale} />
         </Flex>
+
+        <p className={`text-align-center ${styles.bannerText}`}>
+          {formatMessage({
+            id: "mefit.pro.page.banner.text",
+          })}
+        </p>
       </section>
 
       <section className={"light-background"}>
