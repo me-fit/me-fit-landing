@@ -48,7 +48,7 @@ function Footer({ locale }: FooterProps) {
 
         <div>
           <h5 className={"no-margin"}>{formatMessage({ id: "mefit.pro" })}</h5>
-          <p className={styles.footerGetMeFitPro}>
+          <p className={styles.footerParagraphAboveCallToActionSpacing}>
             {formatMessage({ id: "footer.get.me.fit.pro" })}
           </p>
           <Link
@@ -60,6 +60,11 @@ function Footer({ locale }: FooterProps) {
         </div>
 
         <div>
+          <h5 className={"no-margin"}>{formatMessage({ id: "mefit.app" })}</h5>
+
+          <p className={styles.footerParagraphAboveCallToActionSpacing}>
+            {formatMessage({ id: "mefit.app.text" })}
+          </p>
           <StoreButtons locale={locale} />
         </div>
       </Flex>

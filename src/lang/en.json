@@ -96,7 +96,8 @@
   "amateur.sports.page.paragraph.five": "Propel your athletes to excellence through ME Fit's professional-grade coaching software. Experience personalized workouts, accessible resources, and comprehensive progress tracking. ME Fit aims to redefine the way your athletes train and perform. Reach out today to discover how ME Fit can transform your athletes' journey and elevate their performance.",
   "amateur.sports.page.header.six": "Curious about how ME Fit can benefit your amateur club? Contact us now to find out more and get started for free!",
   "contact.us": "Contact Us",
-  "mefit.app.page.title": "ME Fit App",
+  "mefit.app.page.header.one": "ME Fit App",
+  "mefit.app.page.header.two": "Enhance client experience with the ME Fit App",
   "mefit.app.page.paragraph": "ME Fit Pro users can share unlimited training programs with their clients that can be done anytime and anywhere. The ME Fit workouts can be done by your clients in a variety of ways with equipment or without, in the gym or from the comfort of home. Furthermore, the ME Fit App facilitates progress tracking for your clients.",
   "mefit.app.page.benefits.header": "Benefits",
   "mefit.app.page.benefits.header.subheader": "The benefits of using the ME Fit App",
@@ -124,5 +125,6 @@
   "mefit.pro.page.features.subheader": "What can it do?",
   "about.us.page.text": "ME Fit specializes in crafting world class coaching software designed for sports organizations, physiotherapists, personal trainers, strength & conditioning coaches and performance coaches. Our software serves as a versatile platform for these professionals, facilitating the creation, sharing, and planning of customized workouts and training programs. It also simplifies the tracking of training results, providing options for in-person input by the professional or player self-logging through a dedicated app. The primary objective of our software is to enhance and streamline the coaching and training processes for professionals across the healthcare and sports industry. It caters to various training phases, ranging from pre-operation, rehabilitation and prehabilitation to postseason, pre-season, and in-season activities.",
   "about.us.title": "About us",
-  "mefit.pro.page.banner.text": "ME Fit Pro is the ultimate solution for professionals in the physiotherapy, personal training, sports medicine, and sports performance industry. Experience unparalleled efficiency, customization, and client engagement like never before."
+  "mefit.pro.page.banner.text": "ME Fit Pro is the ultimate solution for professionals in the physiotherapy, personal training, sports medicine, and sports performance industry. Experience unparalleled efficiency, customization, and client engagement like never before.",
+  "mefit.app.page.photo.alt.text": "ME Fit App screenshot"
 }
