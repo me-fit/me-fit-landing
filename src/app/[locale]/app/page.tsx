@@ -14,7 +14,7 @@ export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
   return (
     <main>
-      <section className={`${styles.firstSection} light-background`}>
+      <section className={styles.firstSection}>
         <Flex
           gap="1rem"
           rowGap="4rem"
@@ -85,7 +85,7 @@ export default function Page({ params: { locale } }: PageProps) {
         </Flex>
       </section>
 
-      <section className="light-background">
+      <section className={styles.testimonials}>
         <Flex flexDirection="column" alignItems="center">
           <h4>{formatMessage({ id: "testimonials.subheader" })}</h4>
           <h2>{formatMessage({ id: "testimonials.header" })}</h2>
