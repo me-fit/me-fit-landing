@@ -3,6 +3,7 @@
   gap: 1rem;
   margin-top: 3rem;
   box-sizing: border-box;
+  --card-background: var(--background-dark-tint);
 }
 
 .benefitCard {
@@ -10,8 +11,7 @@
 }
 
 @media (max-width: 1000px) {
-    .benefitCard {
-        width: 100%;
-    }
+  .benefitCard {
+    width: 100%;
+  }
 }
-
