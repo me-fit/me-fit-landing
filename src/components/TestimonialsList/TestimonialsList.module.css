@@ -1,6 +1,5 @@
 .testimonialsContainer {
     margin-top: 2rem;
-    margin-bottom: 2rem;
     padding: 1rem;
 }
 
@@ -17,5 +16,5 @@
 .testimonialCardAuthor {
     margin-top: auto;
     margin-left: auto;
-    color: var(--text-on-light-shade);
+    color: var(--text-on-dark-shade);
 }

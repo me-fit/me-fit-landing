@@ -88,8 +88,6 @@ export default function Home({ params: { locale } }: HomeProps) {
       </section>
 
       <ProFeatures locale={locale} />
-      {/* <section className={"light-background no-padding"}>
-      </section> */}
 
       <section>
         <Flex flexDirection="column" alignItems="center">
@@ -113,7 +111,7 @@ export default function Home({ params: { locale } }: HomeProps) {
         </p>
       </section>
 
-      <section className={"light-background"}>
+      <section className={styles.customerListContainer}>
         <Flex flexDirection="column" alignItems="center">
           <h4>
             {formatMessage({

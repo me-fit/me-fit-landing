@@ -2,10 +2,9 @@
     padding: 1.25rem;
 }
 
-.benefits {
+.testimonials, .benefits {
     padding: 2rem 2rem 5rem 2rem;
-    background-color: var(--background-dark);
-    color: var(--text-on-dark);
+    background-color: var(--background-dark-tint);
 }
 
 .screenshots {

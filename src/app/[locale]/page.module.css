@@ -68,3 +68,7 @@ a.signup {
     margin: 4rem auto 0rem auto;
     max-width: var(--content-width);
 }
+
+.customerListContainer {
+    background-color: var(--background-dark-tint);
+}
