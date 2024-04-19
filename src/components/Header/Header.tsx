@@ -86,13 +86,13 @@ function Header({ locale }: HeaderProps) {
 
         <Flex alignItems="center" gap="1rem" className={styles.headerButtons}>
           <Link
-            className={`button button-on-dark ${styles.signup}`}
+            className={`button ${styles.signup}`}
             href="https://admin.mefit.pro/onboarding"
           >
             {formatMessage({ id: "signup.call.to.action" })}
           </Link>
           <Link
-            className={` ${styles.login} button button-on-dark secondary`}
+            className={` ${styles.login} button secondary`}
             href="https://admin.mefit.pro"
           >
             {formatMessage({ id: "login.call.to.action" })}
