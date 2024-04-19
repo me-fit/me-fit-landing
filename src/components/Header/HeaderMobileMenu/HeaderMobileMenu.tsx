@@ -70,7 +70,7 @@ const HeaderMobileMenu = ({ locale, className }: HeaderMobileMenuProps) => {
         </Link>
 
         <button
-          className="round button-on-dark icon secondary"
+          className="round icon secondary"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {!mobileMenuOpen && <MenuIcon />}
@@ -91,7 +91,7 @@ const HeaderMobileMenu = ({ locale, className }: HeaderMobileMenuProps) => {
                 {formatMessage({ id: "login.call.to.action" })}
               </Link>
               <Link
-                className={`button button-on-dark ${styles.signup}`}
+                className={`button ${styles.signup}`}
                 href="https://admin.mefit.pro/onboarding"
               >
                 {formatMessage({ id: "signup.call.to.action" })}
