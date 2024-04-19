@@ -1,13 +1,19 @@
+.container {
+    --section-horizontal-padding: 3rem;
+    padding: 2rem var(--section-horizontal-padding);
+    background-color: var(--background-dark-tint);
+}
+
 .header {
     padding-top: 1.25rem;
 }
 
-.screenshotContainer {
-    padding: 1.25rem;
+.sectionsSliderContainer {
+    margin-top: 3rem;
 }
 
-.screenshotContainer:nth-child(odd) {
-    background-color: var(--background-light-shade);
+.screenshotContainer {
+    padding: 1.25rem;
 }
 
 .screenshot {
@@ -19,30 +25,9 @@
 
 .textBlock {
     flex-shrink: 1;
-}
-
-.swapChildrenOrder {
-    .textBlock {
-        order: 2;
-    }
-
-    .screenshot {
-        order: 1;
-    }
-}
-
-
-@media (min-width: 1000px) {
-    .screenshotContainer {
-        padding: 1.25rem;
-    }
-    
-    // On desktop we want spacing to be bigger
-    .screenshotContainer {
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-    }
-    
+    padding: 2rem;
+    white-space: wrap;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1000px) {
@@ -54,11 +39,9 @@
         width: 100%;
     }
 
-    .screenshotContainer .textBlock {
-        order: 1;
+    .container {
+        --section-horizontal-padding: 0rem;
+        --section-slider-slide-border-radius: 0rem;
     }
-
-    .screenshotContainer .screenshot {
-        order: 2;
-    }
+    
 }

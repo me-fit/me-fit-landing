@@ -3,6 +3,7 @@ import styles from "./ProFeatures.module.scss";
 import Image from "next/image";
 import Flex from "../Flex/Flex";
 import classNames from "classnames";
+import SectionsSlider from "../SectionsSlider/SectionsSlider";
 
 const screenshots = [
   {
@@ -38,42 +39,45 @@ interface ProFeaturesProps {
 function ProFeatures({ locale }: ProFeaturesProps) {
   const { formatMessage } = getIntl(locale);
 
+  const slides = screenshots.map((screenshot, index) => {
+    return (
+      <Flex
+        key={screenshot.imgSrc}
+        gap="1rem"
+        rowGap="4rem"
+        justifyContent="space-between"
+        className={styles.screenshotContainer}
+      >
+        <Image
+          className={styles["screenshot"]}
+          priority={true}
+          src={screenshot.imgSrc}
+          alt={formatMessage({ id: screenshot.altTranslationKey })}
+          width={1278}
+          height={685}
+        />
+
+        <div className={styles.textBlock}>
+          <h3>{formatMessage({ id: screenshot.headerTranslationKey })}</h3>
+
+          <p>{formatMessage({ id: screenshot.textTranslationKey })}</p>
+        </div>
+      </Flex>
+    );
+  });
+
   return (
-    <>
+    <div className={styles.container}>
       <h4 className={`text-align-center ${styles.header}`}>
         {formatMessage({ id: "mefit.pro.page.features.header" })}
       </h4>
-      <h1 className="text-align-center">
+      <h1 className={`text-align-center ${styles.subheader}`}>
         {formatMessage({ id: "mefit.pro.page.features.subheader" })}
       </h1>
-      {screenshots.map((screenshot, index) => {
-        return (
-          <Flex
-            key={screenshot.imgSrc}
-            gap="1rem"
-            rowGap="4rem"
-            justifyContent="space-between"
-            className={classNames(styles.screenshotContainer, {
-              [styles.swapChildrenOrder]: Boolean((index + 1) % 2),
-            })}
-          >
-            <div className={styles.textBlock}>
-              <h3>{formatMessage({ id: screenshot.headerTranslationKey })}</h3>
-
-              <p>{formatMessage({ id: screenshot.textTranslationKey })}</p>
-            </div>
-            <Image
-              className={styles["screenshot"]}
-              priority={true}
-              src={screenshot.imgSrc}
-              alt={formatMessage({ id: screenshot.altTranslationKey })}
-              width={1278}
-              height={685}
-            />
-          </Flex>
-        );
-      })}
-    </>
+      <div className={styles.sectionsSliderContainer}>
+        <SectionsSlider slides={slides} />
+      </div>
+    </div>
   );
 }
 

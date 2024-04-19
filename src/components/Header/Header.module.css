@@ -4,7 +4,7 @@
     color: var(--text-on-dark);
     height: var(--header-height);
     box-sizing: border-box;
-    --header-logo-width: 50px;  
+    --header-logo-width: 50px;
     --header-logo-height: auto;
     position: sticky;
     top: 0;
@@ -32,10 +32,10 @@
 
 .mobileMenu {
     display: none !important;
- 
+
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     div.desktopMenu {
         display: none !important;
     }

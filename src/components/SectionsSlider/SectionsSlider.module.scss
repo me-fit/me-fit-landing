@@ -1,0 +1,65 @@
+.container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pictureFrameSlidesContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: 300ms ease-in-out;
+}
+
+.pictureFrame {
+    flex-shrink: 0;
+    background-color: var(--background-dark);
+    flex-grow: 1;
+    width: 100%;
+    border-radius: var(--section-slider-slide-border-radius, 1.75rem);
+}
+
+.controlsBar {
+    margin: 2rem auto 0rem auto;
+    padding: 1rem;
+    background-color: rgba(var(--background-dark-rgb), 0.7);
+    backdrop-filter: blur(7px);
+    width: fit-content;
+    border-radius: 24px;
+    border-radius: 4rem;
+    position: sticky;
+    bottom: 1rem;
+}
+
+
+.circle {
+    border-radius: 4rem;
+    width: 8px;
+    height: 8px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: var(--background-dark-tint);
+    transition: background-color 300ms, width 300ms;
+    overflow: hidden;
+}
+
+.circleActive {
+    width: 48px;
+    background-color: var(--background-light);
+}
+
+@keyframes circleProgressBar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.circleProgressBar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--text-on-dark);
+    animation: var(--animation-duration) linear circleProgressBar forwards;
+}

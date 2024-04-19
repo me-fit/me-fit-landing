@@ -1,13 +1,13 @@
+import CustomersList from "@/components/CustomersList/CustomersList";
 import Flex from "@/components/Flex/Flex";
 import ProBenefits from "@/components/ProBenefits/ProBenefits";
+import ProFeatures from "@/components/ProFeatures/ProFeatures";
+import BoltIcon from "@/components/icons/BoltIcon";
 import { Locale } from "@/lib/intl";
 import Image from "next/image";
 import Link from "next/link";
 import { getIntl } from "../../lib/intl";
 import styles from "./page.module.css";
-import BoltIcon from "@/components/icons/BoltIcon";
-import CustomersList from "@/components/CustomersList/CustomersList";
-import ProFeatures from "@/components/ProFeatures/ProFeatures";
 
 type HomeProps = {
   params: { locale: Locale };
@@ -18,12 +18,14 @@ export default function Home({ params: { locale } }: HomeProps) {
 
   return (
     <main className={styles.main}>
-      <section className={`${styles.firstSection}`}>
+      <section className={styles.firstSection}>
         <Flex
+          className={styles.firstSectionContainer}
           gap="1rem"
           rowGap="4rem"
           flexWrap="wrap"
           justifyContent="space-between"
+          alignContent="center"
         >
           <div className={styles.firstSectionLeftBlock}>
             <h4>{formatMessage({ id: "mefit.pro.page.header.one" })}</h4>
@@ -85,9 +87,9 @@ export default function Home({ params: { locale } }: HomeProps) {
         </Flex>
       </section>
 
-      <section className={"light-background no-padding"}>
-        <ProFeatures locale={locale} />
-      </section>
+      <ProFeatures locale={locale} />
+      {/* <section className={"light-background no-padding"}>
+      </section> */}
 
       <section>
         <Flex flexDirection="column" alignItems="center">
