@@ -148,21 +148,6 @@ hr {
   display: flex;
 }
 
-.light-background {
-  background-color: var(--background-light);
-  --header-color: var(--text-on-light);
-  --anchor-focus-outline: var(--background-dark-shade);
-  --border-color: var(--background-dark);
-  p {
-    color: var(--text-on-light-shade);
-  }
-
-  // Margins look bigger when the background is light, and we have a pattern
-  h4 + h2 {
-    margin-top: 0;
-  }
-}
-
 svg {
   fill: currentColor;
 }

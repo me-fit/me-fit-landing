@@ -1,30 +1,30 @@
 .card {
-    background-color: var(--background-light);
-    color: var(--text-on-light);
-    border-radius: 1.5rem;
-    padding: 1rem;
-    overflow: hidden;
-    container-type: inline-size;
+  background-color: var(--card-background, var(--background-dark));
+  color: var(--text-on-dark);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  overflow: hidden;
+  container-type: inline-size;
 }
 
 .img {
-    border-radius: 1rem;
-    object-fit: contain;
+  border-radius: 1rem;
+  object-fit: contain;
 }
 
 .flexContainer svg {
   margin-top: auto;
   margin-bottom: auto;
-  fill: var(--text-on-light);
+  fill: var(--text-on-dark);
 }
 
 .flexContainer {
   flex-direction: row;
-  color: var(--text-on-light-shade);
+  color: var(--text-on-dark-shade);
 }
 
 .header {
-  color: var(--text-on-light);
+  color: var(--text-on-dark);
 }
 
 @container (max-width: 420px) {

@@ -1,5 +1,5 @@
 import { Locale } from "@/lib/intl";
-import FeatureCard from "../FeatureCard/FeatureCard"; 
+import FeatureCard from "../FeatureCard/FeatureCard";
 import { getIntl } from "@/lib/intl";
 import styles from "./ProBenefits.module.css";
 import Flex from "../Flex/Flex";
@@ -9,7 +9,7 @@ import CalendarMonth from "../icons/CalendarMonthIcon";
 import CheckListIcon from "../icons/CheckListIcon";
 
 interface ProBenefitsProps {
-    locale: Locale;
+  locale: Locale;
 }
 
 const ProBenefits = ({ locale }: ProBenefitsProps) => {
@@ -19,22 +19,30 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
     {
       icon: <EditSquareIcon width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.one" }),
-      description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.one" }),
+      description: formatMessage({
+        id: "mefit.pro.page.benefits.paragraph.one",
+      }),
     },
     {
       icon: <TrackIcon width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.two" }),
-      description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.two" }),
+      description: formatMessage({
+        id: "mefit.pro.page.benefits.paragraph.two",
+      }),
     },
     {
       icon: <CalendarMonth width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.three" }),
-      description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.three" }),
+      description: formatMessage({
+        id: "mefit.pro.page.benefits.paragraph.three",
+      }),
     },
     {
       icon: <CheckListIcon width={"100px"} height={"auto"} />,
       title: formatMessage({ id: "mefit.pro.page.benefits.title.four" }),
-      description: formatMessage({ id: "mefit.pro.page.benefits.paragraph.four" }),
+      description: formatMessage({
+        id: "mefit.pro.page.benefits.paragraph.four",
+      }),
     },
   ];
 
