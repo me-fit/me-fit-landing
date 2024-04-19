@@ -19,7 +19,7 @@
   padding: 1rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   div.desktopMenu {
     display: none;
   }
