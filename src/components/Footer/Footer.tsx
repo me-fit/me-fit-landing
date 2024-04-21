@@ -49,7 +49,7 @@ function Footer({ locale }: FooterProps) {
         <div>
           <h5 className={"no-margin"}>{formatMessage({ id: "mefit.pro" })}</h5>
           <p className={styles.footerParagraphAboveCallToActionSpacing}>
-            {formatMessage({ id: "footer.get.me.fit.pro" })}
+            {formatMessage({ id: "mefit.pro.page.signup.callout" })}
           </p>
           <Link
             className={"button button-small"}
