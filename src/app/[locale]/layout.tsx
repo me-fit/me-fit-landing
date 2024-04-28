@@ -10,9 +10,9 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-const poppins = Poppins({ 
+const poppins = Poppins({
   weight: ["700", "500", "400"],
-  subsets: ["latin"] 
+  subsets: ["latin"],
 });
 
 export default function RootLayout({ params, children }: LayoutProps) {
@@ -28,7 +28,7 @@ export default function RootLayout({ params, children }: LayoutProps) {
           sizes="any"
           type="image/png"
         />
-        <meta property="og:title" content="Me Fit"></meta>
+        <meta property="og:title" content="ME Fit"></meta>
         <meta
           property="og:image"
           content="/img/me-fit-logo-black-background.png"
