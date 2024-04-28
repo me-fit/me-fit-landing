@@ -17,12 +17,14 @@
 }
 
 .firstSection {
+    min-height: calc(100vh - var(--header-height));
     padding: 5rem;
+    box-sizing: border-box;
 }
 
 .appMainScreenshot {
     width: calc(60% - 2rem);
-    max-height: 75vh;
+    max-height: calc(100vh - 10rem - var(--header-height));
     object-fit: contain;
 }
 
