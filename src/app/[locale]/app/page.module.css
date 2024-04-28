@@ -34,7 +34,6 @@
 }
 
 .main section:nth-child(1) {
-    clip-path: ellipse(300% 100% at 50% 0%);
     padding: 5rem;
 }
 
