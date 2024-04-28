@@ -1,72 +1,65 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { match } from "@formatjs/intl-localematcher";
+import { i18n } from "./lib/intl";
+
+import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import { I18nConfig, i18n } from "./lib/intl";
 
-function getLocale(request: NextRequest, i18nConfig: I18nConfig): string {
-  const { locales, defaultLocale } = i18nConfig;
-
+/**
+ * Copied from nextjs example repo
+ * @see https://github.com/vercel/next.js/blob/canary/examples/app-dir-i18n-routing/middleware.ts
+ */
+function getLocale(request: NextRequest): string | undefined {
+  // Negotiator expects plain object so we need to transform headers
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
-    locales as unknown as string[]
+  // @ts-ignore locales are readonly
+  const locales: string[] = i18n.locales;
+
+  // Use negotiator and intl-localematcher to get best locale
+  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
+    locales
   );
 
-  return match(languages, locales, defaultLocale);
+  const locale = matchLocale(languages, locales, i18n.defaultLocale);
+
+  return locale;
 }
 
 export function middleware(request: NextRequest) {
-  let response;
-  let nextLocale;
- 
+  const pathname = request.nextUrl.pathname;
 
-  const { locales, defaultLocale } = i18n;
+  // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
+  // // If you have one
+  // if (
+  //   [
+  //     '/manifest.json',
+  //     '/favicon.ico',
+  //     // Your other files in `public`
+  //   ].includes(pathname)
+  // )
+  //   return
 
-  const { basePath, pathname } = request.nextUrl;
-
-  const pathLocale = locales.find(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  // Check if there is any supported locale in the pathname
+  const pathnameIsMissingLocale = i18n.locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  if (pathLocale) {
-    const isDefaultLocale = pathLocale === defaultLocale;
-    if (isDefaultLocale) {
-      let pathWithoutLocale = pathname.slice(`/${pathLocale}`.length) || "/";
-      if (request.nextUrl.search) pathWithoutLocale += request.nextUrl.search;
+  // Redirect if there is no locale
+  if (pathnameIsMissingLocale) {
+    const locale = getLocale(request);
 
-      const url = basePath + pathWithoutLocale;
-
-      response = NextResponse.redirect(new URL(url, request.url));
-    }
-
-    nextLocale = pathLocale;
-  } else {
-    const isFirstVisit = !request.cookies.has("NEXT_LOCALE");
-
-    const locale = isFirstVisit ? getLocale(request, i18n) : defaultLocale;
-
-    let newPath = `/${locale}${pathname}`;
-    if (request.nextUrl.search) newPath += request.nextUrl.search;
-
-    const url = basePath + newPath;
-
-    console.log("url", request.url);
-
-    response =
-      locale === defaultLocale
-        ? NextResponse.rewrite(new URL(url, request.url))
-        : NextResponse.redirect(new URL(url, request.url));
-    nextLocale = locale;
+    // e.g. incoming request is /products
+    // The new URL is now /en-US/products
+    return NextResponse.redirect(
+      new URL(
+        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+        request.url
+      )
+    );
   }
-
-  if (!response) response = NextResponse.next();
-
-  if (nextLocale) response.cookies.set("NEXT_LOCALE", nextLocale);
-
-  return response;
 }
 
 export const config = {

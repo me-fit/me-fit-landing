@@ -59,7 +59,7 @@ const HeaderMobileMenu = ({ locale, className }: HeaderMobileMenuProps) => {
         alignItems="center"
         className={className}
       >
-        <Link href="/" className="logo-link">
+        <Link href={`/${locale}`} className="logo-link">
           <Image
             width={115}
             height={106}

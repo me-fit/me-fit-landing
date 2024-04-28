@@ -13,7 +13,7 @@ export default function Page({ params: { locale } }: PageProps) {
   return (
     <ArticlePage>
       <h1>{formatMessage({ id: "pro.sport.organization.page.header" })}</h1>
-      <h6>{formatMessage({ id: "pro.sport.organization.page.sub.header" })}</h6>
+      <h5>{formatMessage({ id: "pro.sport.organization.page.sub.header" })}</h5>
       <h2>{formatMessage({ id: "pro.sport.organization.page.header.one" })}</h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.one" })}
@@ -60,10 +60,7 @@ export default function Page({ params: { locale } }: PageProps) {
             id: "pro.sport.organization.signup.call.to.action",
           })}
         </p>
-        <Link
-          className={"button"}
-          href="https://admin.mefit.pro/onboarding"
-        >
+        <Link className={"button"} href="https://admin.mefit.pro/onboarding">
           {formatMessage({ id: "signup.call.to.action" })}
         </Link>
       </Flex>

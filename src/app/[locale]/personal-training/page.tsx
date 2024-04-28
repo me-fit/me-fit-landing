@@ -14,7 +14,7 @@ export default function Page({ params: { locale } }: PageProps) {
     <>
       <ArticlePage>
         <h1>{formatMessage({ id: "personalTrainer.page.header" })}</h1>
-        <h6>{formatMessage({ id: "personalTrainer.page.sub.header" })}</h6>
+        <h5>{formatMessage({ id: "personalTrainer.page.sub.header" })}</h5>
         <h2>{formatMessage({ id: "personalTrainer.page.header.one" })}</h2>
         <p>{formatMessage({ id: "personalTrainer.page.paragraph.one" })}</p>
         <h2>{formatMessage({ id: "personalTrainer.page.header.two" })}</h2>
