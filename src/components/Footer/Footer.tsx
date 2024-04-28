@@ -93,6 +93,7 @@ function Footer({ locale }: FooterProps) {
 
           <select
             id="language"
+            value={locale}
             className={styles.select}
             onChange={(e) => {
               onLanguageChange(e.target.value as Locale);
