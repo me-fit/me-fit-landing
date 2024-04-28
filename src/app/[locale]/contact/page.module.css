@@ -16,7 +16,11 @@
     box-sizing: border-box;
 }
 
-.contactUs {
+.aboutUS {
     margin-top: 4rem;
     margin-bottom: 4rem;
+}
+
+.aboutUsParagraph {
+    white-space: break-spaces;
 }

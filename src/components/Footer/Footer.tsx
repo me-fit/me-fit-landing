@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
 
-import Image from "next/image";
 import { Locale, getIntl } from "@/lib/intl";
-import styles from "./Footer.module.css";
+import Image from "next/image";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Flex from "../Flex/Flex";
 import StoreButtons from "../StoreButtons/StoreButtons";
 import LanguageIcon from "../icons/LanguageIcon";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import styles from "./Footer.module.css";
 
 interface FooterProps {
   locale: Locale;
@@ -19,12 +19,19 @@ function Footer({ locale }: FooterProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  const redirectedPathName = (locale: Locale) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = locale;
+    return segments.join("/");
+  };
+
   const onLanguageChange = (lang: Locale) => {
     // Replace the language prefix with the new language
-    const newPathname = `/${lang}${pathname}`;
+    // const newPathname = `/${lang}${pathname}`;
 
     // Navigate to the new language version of the page
-    router.push(newPathname);
+    router.push(redirectedPathName(lang));
   };
 
   return (
@@ -36,7 +43,7 @@ function Footer({ locale }: FooterProps) {
         className={styles.flexContainer}
         justifyContent="space-between"
       >
-        <Link href="/" className={styles.logoLink}>
+        <Link href={`/${locale}`} className={styles.logoLink}>
           <Image
             className={styles.logo}
             width={115}

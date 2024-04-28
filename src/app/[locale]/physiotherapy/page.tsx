@@ -9,11 +9,11 @@ type PageProps = {
 };
 
 export default function Page({ params: { locale } }: PageProps) {
-  const {formatMessage} = getIntl(locale);
+  const { formatMessage } = getIntl(locale);
   return (
     <ArticlePage>
       <h1>{formatMessage({ id: "physiotherapy.page.header" })}</h1>
-      <h6>{formatMessage({ id: "physiotherapy.page.sub.header" })}</h6>
+      <h5>{formatMessage({ id: "physiotherapy.page.sub.header" })}</h5>
       <h2>{formatMessage({ id: "physiotherapy.page.header.one" })}</h2>
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.one" })}</p>
       <h2>{formatMessage({ id: "physiotherapy.page.header.two" })}</h2>
@@ -28,11 +28,10 @@ export default function Page({ params: { locale } }: PageProps) {
       <hr />
 
       <Flex flexDirection="column" alignItems="center">
-        <p className="text-align-center">{formatMessage({ id: "explore.advantages.text" })}</p>
-        <Link
-          className={"button"}
-          href="https://admin.mefit.pro/onboarding"
-        >
+        <p className="text-align-center">
+          {formatMessage({ id: "explore.advantages.text" })}
+        </p>
+        <Link className={"button"} href="https://admin.mefit.pro/onboarding">
           {formatMessage({ id: "signup.call.to.action" })}
         </Link>
       </Flex>

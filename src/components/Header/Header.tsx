@@ -41,7 +41,7 @@ function Header({ locale }: HeaderProps) {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Link href="/" className="logo-link">
+        <Link href={`/${locale}`} className="logo-link">
           <Image
             width={115}
             height={106}
@@ -99,21 +99,6 @@ function Header({ locale }: HeaderProps) {
           </Link>
         </Flex>
       </Flex>
-
-      {/* <div className="languages">
-        {[...locales].sort().map((locale) => (
-          <Link
-            key={locale}
-            href={locale === defaultLocale ? "/" : `/${locale}`}
-          >
-            {locale}
-          </Link>
-        ))}
-      </div> */}
-
-      {/* <Link href={'/me-fit-pro'}>
-            ME Fit Pro
-      </Link> */}
     </header>
   );
 }
