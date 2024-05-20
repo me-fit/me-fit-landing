@@ -3,11 +3,11 @@ import FeatureCard from "../FeatureCard/FeatureCard";
 import { getIntl } from "@/lib/intl";
 import styles from "./ProBenefits.module.css";
 import Flex from "../Flex/Flex";
-import TrackIcon from "../icons/TrackIcon";
-import EditSquareIcon from "../icons/EditSquareIcon";
-import CalendarMonth from "../icons/CalendarMonthIcon";
-import CheckListIcon from "../icons/CheckListIcon";
-
+import Image from "next/image";
+import Create from "../../../public/img/pro-benefits/Create.png"
+import Track from "../../../public/img/pro-benefits/Track.gif";
+import CheckList from "../../../public/img/pro-benefits/CheckList.gif";
+import CalendarMonth from "../../../public/img/pro-benefits/CalendarMonth.png";
 interface ProBenefitsProps {
   locale: Locale;
 }
@@ -17,28 +17,28 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
 
   const benefits = [
     {
-      icon: <EditSquareIcon width={"100px"} height={"auto"} />,
+      imgSrc: "/img/pro-benefits/Create.png",
       title: formatMessage({ id: "mefit.pro.page.benefits.title.one" }),
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.one",
       }),
     },
     {
-      icon: <TrackIcon width={"100px"} height={"auto"} />,
+      imgSrc: "/img/pro-benefits/Track.gif",
       title: formatMessage({ id: "mefit.pro.page.benefits.title.two" }),
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.two",
       }),
     },
     {
-      icon: <CalendarMonth width={"100px"} height={"auto"} />,
+      imgSrc: "/img/pro-benefits/CalendarMonth.png",
       title: formatMessage({ id: "mefit.pro.page.benefits.title.three" }),
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.three",
       }),
     },
     {
-      icon: <CheckListIcon width={"100px"} height={"auto"} />,
+      imgSrc: "/img/pro-benefits/CheckList.gif",
       title: formatMessage({ id: "mefit.pro.page.benefits.title.four" }),
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.four",
@@ -52,8 +52,8 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
         <FeatureCard
           className={styles.benefitCard}
           key={index}
-          icon={benefit.icon}
           title={benefit.title}
+          imgSrc={benefit.imgSrc}
           description={benefit.description}
         />
       ))}
