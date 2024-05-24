@@ -13,7 +13,7 @@ interface SectionsSliderProps {
 function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
   const totalDots = slides.length;
   const [activeIndex, setActiveIndex] = useState(0);
-  const ANIMATION_DURATION_CONSTANT = sliderDuration ?? 5000;
+  const ANIMATION_DURATION_CONSTANT = sliderDuration ?? 10000;
   // We will set this to null if we want to pause the setInterval
   const [animationDuration, setAnimationDuration] = useState<number | null>(
     ANIMATION_DURATION_CONSTANT
