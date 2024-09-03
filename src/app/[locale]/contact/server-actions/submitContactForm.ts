@@ -9,8 +9,7 @@ export interface SubmitContactFormState {
 const submitContactForm = async (
   state: SubmitContactFormState,
   formData: FormData
-) => 
-
+) => {
   const sendGridApiKey = process.env["SEND_GRID_API_KEY"];
   if (!sendGridApiKey) {
     throw new Error("Send grid ApI key is not set");

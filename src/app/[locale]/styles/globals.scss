@@ -18,6 +18,8 @@
   --header-height: 77px;
   --header-z-index: 1;
   --interactive-element-border-radius: 0.5rem;
+  --color-success: #2dd36f;
+  --color-danger: #eb445a;
   // Will be used for centered content, so it aligns with the menu
   --content-width: 600px;
   --animation-speed: 300ms;
@@ -238,4 +240,12 @@ select:-webkit-autofill:focus {
 
 .no-padding {
   padding: 0 !important;
+}
+
+.text-color-success {
+  color: var(--color-success);
+}
+
+.text-color-danger {
+  color: var(--color-danger);
 }
