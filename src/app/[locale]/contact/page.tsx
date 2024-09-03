@@ -7,33 +7,51 @@ import submitContactForm, {
 } from "./server-actions/submitContactForm";
 import { useFormState } from "react-dom";
 
+
+
 type PageProps = {
   params: { locale: Locale };
 };
 
 const submitContactFormState: SubmitContactFormState = {
-  success: false,
+  success:  null,
+  
 };
+
+
 
 export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
   const [state, formAction] = useFormState(
     submitContactForm,
     submitContactFormState
+
+
   );
 
+
+  
+  console.log(state.success);
+    
   return (
+   
+   
+
     <main className={styles.main}>
       <section className={`${styles.section}`}>
         <h2>{formatMessage({ id: "contact.page.header" })}</h2>
-
+        {state.success===true?<p>{formatMessage({ id: "contact.page.success.message" })}</p>:""}
+        {state.success===false?<p>{formatMessage({ id: "contact.page.failure.message" })}</p>:""}
         <p>{formatMessage({ id: "contact.page.paragraph.one" })}</p>
       </section>
+    
+       
 
-      <form className={`${styles.form}`} action={formAction}>
+      <form  className={`${styles.form}`} action={formAction}>
         <Flex flexDirection="column">
           <input
             name="userName"
+            id="name"
             autoComplete="name"
             type="text"
             placeholder={formatMessage({ id: "contact.page.name.placeholder" })}
@@ -41,9 +59,10 @@ export default function Page({ params: { locale } }: PageProps) {
           />
 
           <br />
-
+          
           <input
             name="userEmail"
+            id="email"
             autoComplete="email"
             type="email"
             placeholder={formatMessage({
@@ -56,6 +75,7 @@ export default function Page({ params: { locale } }: PageProps) {
 
           <textarea
             name="message"
+            id="message"
             rows={4}
             placeholder={formatMessage({
               id: "contact.page.message.placeholder",
@@ -70,6 +90,7 @@ export default function Page({ params: { locale } }: PageProps) {
             <button>
               {formatMessage({ id: "contact.page.send.message" })}
             </button>
+
           </Flex>
         </Flex>
       </form>
@@ -80,6 +101,9 @@ export default function Page({ params: { locale } }: PageProps) {
           {formatMessage({ id: "about.us.page.text" })}
         </p>
       </section>
+
+      
     </main>
+    
   );
 }
