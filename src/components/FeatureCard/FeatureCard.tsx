@@ -9,6 +9,7 @@ interface FeatureCardProps {
   title: string;
   description: string;
   className?: string;
+  unoptimizedImage?: boolean;
 }
 
 function FeatureCard({
@@ -16,7 +17,8 @@ function FeatureCard({
   description,
   imgSrc,
   title,
-  icon
+  icon,
+  unoptimizedImage = false,
 }: FeatureCardProps) {
   return (
     <div className={`${styles.card} ${className}`}>
@@ -28,11 +30,10 @@ function FeatureCard({
             width={200}
             height={200}
             alt=""
+            unoptimized={unoptimizedImage}
           />
         )}
-        {
-          icon && icon
-        }
+        {icon && icon}
         <div>
           <h3 className={styles.header}>{title}</h3>
           <p>{description}</p>

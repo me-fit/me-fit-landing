@@ -4,7 +4,7 @@ import { getIntl } from "@/lib/intl";
 import styles from "./ProBenefits.module.css";
 import Flex from "../Flex/Flex";
 import Image from "next/image";
-import Create from "../../../public/img/pro-benefits/Create.png"
+import Create from "../../../public/img/pro-benefits/Create.png";
 import Track from "../../../public/img/pro-benefits/Track.gif";
 import CheckList from "../../../public/img/pro-benefits/CheckList.gif";
 import CalendarMonth from "../../../public/img/pro-benefits/CalendarMonth.png";
@@ -22,6 +22,7 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.one",
       }),
+      unoptimized: false,
     },
     {
       imgSrc: "/img/pro-benefits/Track.gif",
@@ -29,6 +30,7 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.two",
       }),
+      unoptimized: true,
     },
     {
       imgSrc: "/img/pro-benefits/CalendarMonth.png",
@@ -36,6 +38,7 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.three",
       }),
+      unoptimized: false,
     },
     {
       imgSrc: "/img/pro-benefits/CheckList.gif",
@@ -43,6 +46,7 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
       description: formatMessage({
         id: "mefit.pro.page.benefits.paragraph.four",
       }),
+      unoptimized: true,
     },
   ];
 
@@ -53,6 +57,7 @@ const ProBenefits = ({ locale }: ProBenefitsProps) => {
           className={styles.benefitCard}
           key={index}
           title={benefit.title}
+          unoptimizedImage={benefit.unoptimized}
           imgSrc={benefit.imgSrc}
           description={benefit.description}
         />
