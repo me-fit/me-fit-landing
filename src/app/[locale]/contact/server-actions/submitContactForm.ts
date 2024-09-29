@@ -3,7 +3,7 @@
 import sgMail from "@sendgrid/mail";
 
 export interface SubmitContactFormState {
-  success: boolean|null;
+  success: boolean | null;
 }
 
 const submitContactForm = async (
@@ -12,9 +12,7 @@ const submitContactForm = async (
 ) => {
   const sendGridApiKey = process.env["SEND_GRID_API_KEY"];
   if (!sendGridApiKey) {
-    throw new Error("Send grid ApI key is not set")
-    
-
+    throw new Error("Send grid ApI key is not set");
   }
 
   // Initialize SendGrid with your API key
@@ -27,51 +25,45 @@ const submitContactForm = async (
   const message = formData.get("message") as string;
 
   if (!userEmail) {
-    console.error("MESSAGE ALREADY THERE")
+    console.error("User email missing");
     return {
-      success:false
-    }
-      
-    
+      success: false,
+    };
   }
- 
+
   if (!userName) {
-    console.error("MESSAGE ALREADY THERE")
+    console.error("User name missing");
     return {
-      success:false
-    }
+      success: false,
+    };
   }
 
   if (!message) {
-    console.error("MESSAGE ALREADY THERE")
+    console.error("Message missing");
     return {
-      success:false
-    }
+      success: false,
+    };
   }
-  
+
   // Send email
-   try {
-      await sgMail.send({
+  try {
+    await sgMail.send({
       to: "support@mefit.pro",
       from: "support@mefit.pro",
       subject: `ME Fit Pro outreach - ${userName}`,
       text: message,
       replyTo: userEmail,
       cc: userEmail,
-      
     });
     return {
-      success:true
-    }
+      success: true,
+    };
   } catch (error) {
-    console.error("error sending email",error);
+    console.error("error sending email", error);
     return {
-      success:false
-    }
-    
-  } 
-
-  
+      success: false,
+    };
+  }
 };
 
 export default submitContactForm;
