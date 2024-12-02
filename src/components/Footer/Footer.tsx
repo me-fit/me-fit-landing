@@ -8,6 +8,7 @@ import Flex from "../Flex/Flex";
 import StoreButtons from "../StoreButtons/StoreButtons";
 import LanguageIcon from "../icons/LanguageIcon";
 import styles from "./Footer.module.css";
+import { useMemo } from "react";
 
 interface FooterProps {
   locale: Locale;
@@ -18,6 +19,7 @@ function Footer({ locale }: FooterProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
+  const year = useMemo(() => new Date().getFullYear(), []);
 
   const redirectedPathName = (locale: Locale) => {
     if (!pathname) return "/";
@@ -103,7 +105,7 @@ function Footer({ locale }: FooterProps) {
             <option value="nl">Nederlands</option>
           </select>
         </Flex>
-        <small className={styles["company-name"]}>© 2024 ME Fit B.V.</small>
+        <small className={styles["company-name"]}>© {year} ME Fit B.V.</small>
       </Flex>
     </footer>
   );
