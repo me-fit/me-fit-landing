@@ -77,12 +77,12 @@ export default function Home({ params: { locale } }: HomeProps) {
           <Image
             className={styles.proMainScreenshot}
             priority={true}
-            src="/img/me-fit-pro-exercise-library.png"
+            src="/img/me-fit-pro-exercise-libraryy.png"
             alt={formatMessage({
-              id: "mefit.pro.exercise.library.screenshot.alt",
+              id: "me-fit-pro-exercise-libraryy.png",
             })}
-            width={1278}
-            height={685}
+            width={3000}
+            height={700}
           />
         </Flex>
       </section>

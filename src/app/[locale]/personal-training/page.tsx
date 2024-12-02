@@ -2,6 +2,7 @@ import { Locale } from "@/lib/intl";
 import { getIntl } from "@/lib/intl";
 import Link from "next/link";
 import Flex from "@/components/Flex/Flex";
+import Image from "next/image";
 import ArticlePage from "@/components/ArticlePage/ArticlePage";
 
 type PageProps = {
@@ -17,15 +18,54 @@ export default function Page({ params: { locale } }: PageProps) {
         <h5>{formatMessage({ id: "personalTrainer.page.sub.header" })}</h5>
         <h2>{formatMessage({ id: "personalTrainer.page.header.one" })}</h2>
         <p>{formatMessage({ id: "personalTrainer.page.paragraph.one" })}</p>
+        <Flex justifyContent="center">
+      <Image 
+       src="/img/Workout1.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
         <h2>{formatMessage({ id: "personalTrainer.page.header.two" })}</h2>
         <p>{formatMessage({ id: "personalTrainer.page.paragraph.two" })}</p>
+        <Flex justifyContent="center">
+        <Image
+        src="/img/me-fit-pro-workout-details-front.png"
+        alt=""
+        width={1028}
+        height={400}
+        />
+       </Flex>
         <h2>{formatMessage({ id: "personalTrainer.page.header.three" })}</h2>
         <p>{formatMessage({ id: "personalTrainer.page.paragraph.three" })}</p>
+        <Flex justifyContent="center">
+      <Image 
+       src="/img/Calendarr.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
         <h2>{formatMessage({ id: "personalTrainer.page.header.four" })}</h2>
         <p>{formatMessage({ id: "personalTrainer.page.paragraph.four" })}</p>
+        <Flex justifyContent="center">
+      <Image 
+       src="/img/me-fit-pro-exercise-libraryy.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
         <h2>{formatMessage({ id: "personalTrainer.page.header.five" })}</h2>
-        <p>{formatMessage({ id: "personalTrainer.page.paragraph.five" })}</p>
-
+        <p>{formatMessage({ id: "personalTrainer.page.paragraph.five" })}</p>page npm 
+        <Flex justifyContent="center">
+        <Image
+        src="/img/Custom Exercises-front.png"
+        alt=""
+        width={1028}
+        height={400}
+        />
+       </Flex>
         <br />
 
         <hr />

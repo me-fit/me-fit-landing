@@ -6,7 +6,7 @@ import submitContactForm, {
   SubmitContactFormState,
 } from "./server-actions/submitContactForm";
 import { useFormState } from "react-dom";
-import { FALSE } from "sass";
+
 
 
 type PageProps = {
@@ -14,8 +14,11 @@ type PageProps = {
 };
 
 const submitContactFormState: SubmitContactFormState = {
-  success: false,
+  success:  null,
+  
 };
+
+
 
 export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
@@ -26,6 +29,8 @@ export default function Page({ params: { locale } }: PageProps) {
 
   );
 
+
+  
   console.log(state.success);
     
   return (
@@ -35,13 +40,12 @@ export default function Page({ params: { locale } }: PageProps) {
     <main className={styles.main}>
       <section className={`${styles.section}`}>
         <h2>{formatMessage({ id: "contact.page.header" })}</h2>
-         {state.success?<p>{formatMessage({ id: "contact.page.succes.message" })}</p>:<p>{formatMessage({ id: "contact.page.failure.message" })}</p>}
+        {state.success===true?<p>{formatMessage({ id: "contact.page.success.message" })}</p>:""}
+        {state.success===false?<p>{formatMessage({ id: "contact.page.failure.message" })}</p>:""}
         <p>{formatMessage({ id: "contact.page.paragraph.one" })}</p>
       </section>
     
        
-        
-      {!state.success&&<p>bads</p>}
 
       <form  className={`${styles.form}`} action={formAction}>
         <Flex flexDirection="column">

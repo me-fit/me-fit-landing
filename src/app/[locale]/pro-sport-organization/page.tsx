@@ -3,6 +3,7 @@ import { getIntl } from "@/lib/intl";
 import Link from "next/link";
 import Flex from "@/components/Flex/Flex";
 import ArticlePage from "@/components/ArticlePage/ArticlePage";
+import Image from "next/image";
 
 type PageProps = {
   params: { locale: Locale };
@@ -18,38 +19,94 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.one" })}
       </p>
+      <Flex justifyContent="center">
+        <Image
+        src="/img/Groups-front.png"
+        alt=""
+        width={1028}
+        height={400}
+        />
+       </Flex>
       <h2>{formatMessage({ id: "pro.sport.organization.page.header.two" })}</h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.two" })}
       </p>
+      <Flex justifyContent="center">
+      <Image 
+       src="/img/Workout1.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.three" })}
       </h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.three" })}
       </p>
+      <Flex justifyContent="center">
+      <Image 
+       src="/img/me-fit-pro-exercise-libraryy.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.four" })}
       </h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.four" })}
       </p>
+      <Flex justifyContent="center">
+      <Image 
+       src="/img/Calendarr.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.five" })}
       </h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.five" })}
       </p>
+      <Flex justifyContent="center">
+      <Image 
+       src="/img/Athlete Notes-front.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
       <h2>{formatMessage({ id: "pro.sport.organization.page.header.six" })}</h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.six" })}
       </p>
+      <Flex justifyContent="center">
+      <Image 
+       src="/img/Custom Exercises-front.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.seven" })}
       </h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.seven" })}
       </p>
+      <Flex justifyContent="center">
+      <Image 
+       src="/img/me-fit-pro-workout-details-front.png"
+       alt=""
+       width={1024}
+       height={400}
+      />
+      </Flex>
       <br />
 
       <hr />
