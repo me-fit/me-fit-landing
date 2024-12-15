@@ -22,7 +22,7 @@ export default function Page({ params: { locale } }: PageProps) {
       </p>
       <Flex justifyContent="center">
        <Image
-        src="/img/groups-front.png"
+        src="/img/me-fit-pro-groups.png"
         alt=""
         width={1028}
         height={400}
@@ -36,7 +36,7 @@ export default function Page({ params: { locale } }: PageProps) {
       </p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/workout1.png"
+        src="/img/me-fit-pro-workouts.png"
         alt=""
         width={1024}
         height={400}
@@ -52,7 +52,7 @@ export default function Page({ params: { locale } }: PageProps) {
       </p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/me-fit-pro-exercise-libraryy.png"
+        src="/img/me-fit-pro-exercise-library.png"
         alt=""
         width={1024}
         height={400}
@@ -68,7 +68,7 @@ export default function Page({ params: { locale } }: PageProps) {
       </p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/calendar-1.png"
+        src="/img/me-fit-pro-calendar-filled.png"
         alt=""
         width={1024}
         height={400}
@@ -84,7 +84,7 @@ export default function Page({ params: { locale } }: PageProps) {
       </p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/athlete-notes-front.png"
+        src="/img/me-fit-pro-customer-notes.png"
         alt=""
         width={1024}
         height={400}
@@ -98,7 +98,7 @@ export default function Page({ params: { locale } }: PageProps) {
       </p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/custom-exercises-front.png"
+        src="/img/me-fit-pro-exercises.png"
         alt=""
         width={1024}
         height={400}

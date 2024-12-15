@@ -20,7 +20,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.one" })}</p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/me-fit-pro-exercise-libraryy.png"
+        src="/img/me-fit-pro-exercise-library.png"
         alt=""
         width={1024}
         height={400}
@@ -32,7 +32,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.two" })}</p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/workout1.png"
+        src="/img/me-fit-pro-workouts.png"
         alt=""
         width={1024}
         height={400}
@@ -44,7 +44,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.three" })}</p>
       <Flex justifyContent="center">
        <Image 
-        src="/img/calendar-1.png"
+        src="/img/me-fit-pro-calendar-filled.png"
         alt=""
         width={1024}
         height={400}

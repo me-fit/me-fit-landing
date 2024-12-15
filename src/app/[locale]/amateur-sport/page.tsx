@@ -19,7 +19,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.header.one" })}</p>
       <Flex justifyContent="center">
        <Image
-        src="/img/login.png"
+        src="/img/me-fit-app-login.png"
         alt=""
         width={453}
         height={463}
@@ -31,7 +31,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.paragraph.two" })}</p>
       <Flex justifyContent="center">
         <Image
-         src = "/img/home.png"
+         src = "/img/me-fit-app-home.png"
          alt=""
          width={567}
          height={567}
@@ -43,7 +43,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.paragraph.three" })}</p>
       <Flex justifyContent="center">
         <Image
-         src = "/img/bench-press.png"
+         src = "/img/me-fit-app-workout-details .png"
          alt=""
          width={453}
          height={463}
@@ -55,7 +55,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.paragraph.four" })}</p>
       <Flex justifyContent="center">
         <Image
-         src = "/img/pre-season.png"
+         src = "/img/me-fit-app-calendar.png"
          alt=""
          width={453}
          height={463}
@@ -67,7 +67,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.paragraph.five" })}</p>
       <Flex justifyContent="center">
         <Image
-         src = "/img/calendar.png"
+         src = "/img/me-fit-app-workout-step.png"
          alt=""
          width={453}
          height={463}

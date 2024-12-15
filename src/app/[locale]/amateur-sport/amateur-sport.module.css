@@ -4,10 +4,10 @@
     object-fit: contain;
 }
 
-
-    @media (max-width: 700px) {
-        .proMainImages{
-          width: 170%; /* Image will be 50% of the container on smaller screens */
-        }
+ 
+@media (max-width: 700px) {
+       .proMainImages{
+         width: 170%;
+       }
       }
 
