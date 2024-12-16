@@ -21,13 +21,12 @@ export default function Page({ params: { locale } }: PageProps) {
         {formatMessage({ id: "pro.sport.organization.page.paragraph.one" })}
       </p>
       <Flex justifyContent="center">
-       <Image
-        src="/img/me-fit-pro-groups.png"
-        alt=""
-        width={1028}
-        height={400}
-        className={styles.proMainImages}
-
+        <Image
+          src="/img/me-fit-pro-groups.png"
+          alt=""
+          width={1028}
+          height={400}
+          className={styles.proMainImages}
         />
       </Flex>
       <h2>{formatMessage({ id: "pro.sport.organization.page.header.two" })}</h2>
@@ -35,14 +34,13 @@ export default function Page({ params: { locale } }: PageProps) {
         {formatMessage({ id: "pro.sport.organization.page.paragraph.two" })}
       </p>
       <Flex justifyContent="center">
-       <Image 
-        src="/img/me-fit-pro-workouts.png"
-        alt=""
-        width={1024}
-        height={400}
-        className={styles.proMainImages}
-
-      />
+        <Image
+          src="/img/me-fit-pro-workouts.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
       </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.three" })}
@@ -51,14 +49,13 @@ export default function Page({ params: { locale } }: PageProps) {
         {formatMessage({ id: "pro.sport.organization.page.paragraph.three" })}
       </p>
       <Flex justifyContent="center">
-       <Image 
-        src="/img/me-fit-pro-exercise-library.png"
-        alt=""
-        width={1024}
-        height={400}
-        className={styles.proMainImages}
-
-      />
+        <Image
+          src="/img/me-fit-pro-exercise-library.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
       </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.four" })}
@@ -67,14 +64,13 @@ export default function Page({ params: { locale } }: PageProps) {
         {formatMessage({ id: "pro.sport.organization.page.paragraph.four" })}
       </p>
       <Flex justifyContent="center">
-       <Image 
-        src="/img/me-fit-pro-calendar-filled.png"
-        alt=""
-        width={1024}
-        height={400}
-        className={styles.proMainImages}
-
-      />
+        <Image
+          src="/img/me-fit-pro-calendar-filled.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
       </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.five" })}
@@ -83,28 +79,26 @@ export default function Page({ params: { locale } }: PageProps) {
         {formatMessage({ id: "pro.sport.organization.page.paragraph.five" })}
       </p>
       <Flex justifyContent="center">
-       <Image 
-        src="/img/me-fit-pro-customer-notes.png"
-        alt=""
-        width={1024}
-        height={400}
-        className={styles.proMainImages}
-
-      />
+        <Image
+          src="/img/me-fit-pro-customer-notes.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
       </Flex>
       <h2>{formatMessage({ id: "pro.sport.organization.page.header.six" })}</h2>
       <p>
         {formatMessage({ id: "pro.sport.organization.page.paragraph.six" })}
       </p>
       <Flex justifyContent="center">
-       <Image 
-        src="/img/me-fit-pro-exercises.png"
-        alt=""
-        width={1024}
-        height={400}
-        className={styles.proMainImages}
-
-      />
+        <Image
+          src="/img/me-fit-pro-exercises.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
       </Flex>
       <h2>
         {formatMessage({ id: "pro.sport.organization.page.header.seven" })}
@@ -113,13 +107,13 @@ export default function Page({ params: { locale } }: PageProps) {
         {formatMessage({ id: "pro.sport.organization.page.paragraph.seven" })}
       </p>
       <Flex justifyContent="center">
-       <Image 
-        src="/img/me-fit-pro-workout-details-front.png"
-        alt=""
-        width={1024}
-        height={400}
-        className={styles.proMainImages}
-      />
+        <Image
+          src="/img/me-fit-pro-workout-details-front.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
       </Flex>
       <br />
 
