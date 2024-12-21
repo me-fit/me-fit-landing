@@ -79,7 +79,7 @@ export default function Home({ params: { locale } }: HomeProps) {
             priority={true}
             src="/img/me-fit-pro-exercise-library.png"
             alt={formatMessage({
-              id: "mefit.pro.exercise.library.alt",
+              id: "mefit.pro.exercise.library.screenshot.alt",
             })}
             width={3000}
             height={700}
