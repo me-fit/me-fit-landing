@@ -62,7 +62,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <section className={styles.screenshots}>
         <Flex justifyContent="center" gap="2rem" flexWrap="wrap">
           <Image
-            src="/img/file.png"
+            src="/img/me-fit-app-three-images.png"
             alt=""
             width={700}
             height={600}
