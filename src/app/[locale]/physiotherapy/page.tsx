@@ -2,7 +2,9 @@ import { Locale } from "@/lib/intl";
 import { getIntl } from "@/lib/intl";
 import Link from "next/link";
 import Flex from "@/components/Flex/Flex";
+import Image from "next/image";
 import ArticlePage from "@/components/ArticlePage/ArticlePage";
+import styles from "./physiotherapy.module.css";
 
 type PageProps = {
   params: { locale: Locale };
@@ -16,12 +18,48 @@ export default function Page({ params: { locale } }: PageProps) {
       <h5>{formatMessage({ id: "physiotherapy.page.sub.header" })}</h5>
       <h2>{formatMessage({ id: "physiotherapy.page.header.one" })}</h2>
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.one" })}</p>
+      <Flex justifyContent="center">
+        <Image
+          src="/img/me-fit-pro-exercise-library.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
+      </Flex>
       <h2>{formatMessage({ id: "physiotherapy.page.header.two" })}</h2>
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.two" })}</p>
+      <Flex justifyContent="center">
+        <Image
+          src="/img/me-fit-pro-workouts.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
+      </Flex>
       <h2>{formatMessage({ id: "physiotherapy.page.header.three" })}</h2>
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.three" })}</p>
+      <Flex justifyContent="center">
+        <Image
+          src="/img/me-fit-pro-calendar-filled.png"
+          alt=""
+          width={1024}
+          height={400}
+          className={styles.proMainImages}
+        />
+      </Flex>
       <h2>{formatMessage({ id: "physiotherapy.page.header.four" })}</h2>
       <p>{formatMessage({ id: "physiotherapy.page.paragraph.four" })}</p>
+      <Flex justifyContent="center">
+        <Image
+          src="/img/me-fit-pro-workout-details-front.png"
+          alt=""
+          width={1028}
+          height={400}
+          className={styles.proMainImages}
+        />
+      </Flex>
 
       <br />
 

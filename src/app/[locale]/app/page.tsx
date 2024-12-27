@@ -13,7 +13,7 @@ type PageProps = {
 export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
   return (
-    <main>
+    <main className={styles.main}>
       <section className={styles.firstSection}>
         <Flex
           gap="1rem"
@@ -62,26 +62,12 @@ export default function Page({ params: { locale } }: PageProps) {
       <section className={styles.screenshots}>
         <Flex justifyContent="center" gap="2rem" flexWrap="wrap">
           <Image
-            className={styles.screenshot}
-            width={384}
-            height={792}
+            src="/img/me-fit-app-three-images.png"
             alt=""
-            src="/img/me-fit-app-workout.jpg"
-          ></Image>
-          <Image
-            className={styles.screenshot}
-            width={384}
-            height={792}
-            alt=""
-            src="/img/me-fit-app-exercise.jpg"
-          ></Image>
-          <Image
-            className={styles.screenshot}
-            width={384}
-            height={792}
-            alt=""
-            src="/img/me-fit-app-calendar.jpg"
-          ></Image>
+            width={700}
+            height={600}
+            className={styles.appMainImages}
+          />
         </Flex>
       </section>
 
