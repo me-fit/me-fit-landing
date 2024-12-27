@@ -59,7 +59,7 @@ export default function Page({ params: { locale } }: PageProps) {
         </Flex>
       </section>
 
-      <section className={styles.screenshots}>
+      <section>
         <Flex justifyContent="center" gap="2rem" flexWrap="wrap">
           <Image
             src="/img/me-fit-app-three-images.png"
