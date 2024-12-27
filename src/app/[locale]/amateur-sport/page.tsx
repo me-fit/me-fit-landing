@@ -30,10 +30,10 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.paragraph.two" })}</p>
       <Flex justifyContent="center">
         <Image
-          src="/img/me-fit-app-home.png"
+          src="/img/me-fit-app-home.png "
           alt=""
-          width={567}
-          height={567}
+          width={453}
+          height={463}
           className={styles.proMainImages}
         />
       </Flex>
