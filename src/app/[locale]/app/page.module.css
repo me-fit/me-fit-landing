@@ -1,3 +1,7 @@
+.main {
+  overflow: hidden;
+}
+
 .padding {
   padding: 1.25rem;
 }
@@ -33,10 +37,6 @@
   width: calc(40% - 2rem);
 }
 
-.main section:nth-child(1) {
-  padding: 5rem;
-}
-
 @media (max-width: 1000px) {
   .appMainScreenshot {
     width: 100%;
@@ -53,6 +53,9 @@
 
 @media (max-width: 700px) {
   .appMainImages {
-    width: 150%;
+    width: 100vw;
+  }
+  .firstSection {
+    padding: 2rem;
   }
 }

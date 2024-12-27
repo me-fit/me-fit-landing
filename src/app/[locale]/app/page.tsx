@@ -13,7 +13,7 @@ type PageProps = {
 export default function Page({ params: { locale } }: PageProps) {
   const { formatMessage } = getIntl(locale);
   return (
-    <main>
+    <main className={styles.main}>
       <section className={styles.firstSection}>
         <Flex
           gap="1rem"
