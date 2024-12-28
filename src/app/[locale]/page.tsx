@@ -81,8 +81,8 @@ export default function Home({ params: { locale } }: HomeProps) {
             alt={formatMessage({
               id: "mefit.pro.exercise.library.screenshot.alt",
             })}
-            width={1278}
-            height={685}
+            width={3000}
+            height={700}
           />
         </Flex>
       </section>

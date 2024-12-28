@@ -71,7 +71,7 @@ function ProFeatures({ locale }: ProFeaturesProps) {
       <h4 className={`text-align-center ${styles.header}`}>
         {formatMessage({ id: "mefit.pro.page.features.header" })}
       </h4>
-      <h1 className={`text-align-center ${styles.subheader}`}>
+      <h1 className={`text-align-center ${styles.subHeader}`}>
         {formatMessage({ id: "mefit.pro.page.features.subheader" })}
       </h1>
       <div className={styles.sectionsSliderContainer}>
