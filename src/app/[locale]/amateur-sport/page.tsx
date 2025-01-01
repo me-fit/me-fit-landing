@@ -30,7 +30,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.paragraph.two" })}</p>
       <Flex justifyContent="center">
         <Image
-          src="/img/me-fit-app-home.png "
+          src="/img/me-fit-app-home.png"
           alt=""
           width={453}
           height={463}
@@ -41,7 +41,7 @@ export default function Page({ params: { locale } }: PageProps) {
       <p>{formatMessage({ id: "amateur.sports.page.paragraph.three" })}</p>
       <Flex justifyContent="center">
         <Image
-          src="/img/me-fit-app-workout-details .png"
+          src="/img/me-fit-app-workout-details.png"
           alt=""
           width={453}
           height={463}
