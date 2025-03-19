@@ -19,6 +19,14 @@ const customers = [
     imgSrc: "/img/customers/fctwente-heracles.png",
     name: "FC Twente Heracles academie",
     link: "https://fctwenteheraclesacademie.nl/2023/10/04/academie-en-me-fit-werken-samen-aan-optimalisatie-van-krachttrainingen/",
+  },{
+    imgSrc: "/img/customers/heracles-almelo.svg",
+    name: "Heracles Almelo",
+    link: "https://www.heracles.nl/",
+  },{
+    imgSrc: "/img/customers/pec-zwolle.svg",
+    name: "PEC Zwolle",
+    link: "https://peczwolle.nl/",
   },
 ] as const;
 
@@ -26,7 +34,7 @@ function CustomersList({ locale, className }: CustomersListProps) {
   const { formatMessage } = getIntl(locale);
 
   return (
-    <Flex gap="3rem" justifyContent="center" className={className}>
+    <Flex gap="3rem" justifyContent="center" className={className} flexWrap="wrap">
       {customers.map((customer) => {
         return (
           <Link
