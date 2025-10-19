@@ -1,0 +1,163 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-on-dark);
+  background-color: var(--background-dark);
+}
+
+.container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--text-on-dark-shade);
+  line-height: 1.3;
+}
+
+.container h2 {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: var(--text-on-dark-secondary);
+  line-height: 1.5;
+}
+
+.logoTransition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 60px 0;
+}
+
+.quickcoachlogo {
+  width: 200px;
+  height: auto;
+}
+
+.fitlogo {
+  width: 90px;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.features,
+.offer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--background-dark-tint);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform var(--animation-speed) ease,
+    background-color var(--animation-speed) ease;
+  border: 1px solid var(--border-color);
+}
+
+.card h2 {
+  color: var(--text-on-dark-shade);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--background-dark-shade);
+}
+
+.icon {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-on-dark-shade);
+  font-size: 1rem;
+}
+
+.highlight {
+  background: var(--background-dark-tint);
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 8px rgba(var(--background-dark-rgb), 0.6);
+}
+
+.offers h3 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  margin-top: 2rem;
+}
+
+.callout {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .container h1 {
+    font-size: 1.8rem;
+  }
+
+  .container h2 {
+    font-size: 1.1rem;
+  }
+
+  .quickcoachlogo {
+    width: 130px;
+  }
+
+  .fitlogo {
+    width: 75px;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBtn {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 1.6rem;
+  }
+
+  .container h2 {
+    font-size: 1rem;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+}
