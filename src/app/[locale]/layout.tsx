@@ -1,9 +1,9 @@
-import { Locale } from "@/lib/intl";
-import { Poppins } from "next/font/google";
-import Header from "@/components/Header/Header";
-import "./styles/globals.scss";
-import Footer from "@/components/Footer/Footer";
-import Script from "next/script";
+import { Locale } from '@/lib/intl';
+import { Poppins } from 'next/font/google';
+import Header from '@/components/Header/Header';
+import './styles/globals.scss';
+import Footer from '@/components/Footer/Footer';
+import { Analytics } from '@vercel/analytics/next';
 
 type LayoutProps = {
   params: { locale: Locale };
@@ -11,8 +11,8 @@ type LayoutProps = {
 };
 
 const poppins = Poppins({
-  weight: ["700", "500", "400"],
-  subsets: ["latin"],
+  weight: ['700', '500', '400'],
+  subsets: ['latin'],
 });
 
 export default function RootLayout({ params, children }: LayoutProps) {
@@ -46,6 +46,8 @@ export default function RootLayout({ params, children }: LayoutProps) {
         {children}
 
         <Footer locale={locale} />
+
+        <Analytics />
       </body>
     </html>
   );
