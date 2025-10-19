@@ -26,12 +26,12 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-   gap: 25px; 
-  margin: 60px 0; 
+  gap: 25px;
+  margin: 60px 0;
 }
 
 .quickcoachlogo {
-  width: 160px;
+  width: 200px;
   height: auto;
 }
 
@@ -61,8 +61,13 @@
   background: var(--background-dark-tint);
   padding: 20px;
   border-radius: 10px;
-  transition: transform var(--animation-speed) ease, background var(--animation-speed) ease;
+  transition: transform var(--animation-speed) ease,
+    background-color var(--animation-speed) ease;
   border: 1px solid var(--border-color);
+}
+
+.card h2 {
+  color: var(--text-on-dark-shade);
 }
 
 .card:hover {
@@ -87,26 +92,17 @@
   box-shadow: 0 0 8px rgba(var(--background-dark-rgb), 0.6);
 }
 
-.ctaBtn {
-  margin-top: 40px;
-  padding: 14px 24px;
-  font-size: 1.1rem;
-  background: var(--primary);
-  color: var(--text-on-light);
-  border: none;
-  border-radius: var(--interactive-element-border-radius);
-  cursor: pointer;
-  transition: background var(--animation-speed) ease;
+.offers h3 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
-.ctaBtn:hover {
-  background: var(--primary-shade);
+.footer {
+  margin-top: 2rem;
 }
 
-.container footer {
-  color: var(--text-on-dark-secondary);
-  font-size: 1rem;
-  margin-top: 40px;
+.callout {
+  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {

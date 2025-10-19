@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import {
   IoVideocamOutline,
   IoCloudUploadOutline,
@@ -6,10 +6,15 @@ import {
   IoPhonePortraitOutline,
   IoSyncOutline,
   IoCallOutline,
-} from "react-icons/io5";
+} from 'react-icons/io5';
 
-import styles from "./quickcoach.module.css";
+import styles from './quickcoach.module.css';
+import Link from 'next/link';
+import BoltIcon from '@/components/icons/BoltIcon';
+import { getIntl } from '@/lib/intl';
+import Flex from '@/components/Flex/Flex';
 export default function QuickCoach() {
+  const { formatMessage } = getIntl('en');
   return (
     <div className={styles.container}>
       <h1>
@@ -19,17 +24,17 @@ export default function QuickCoach() {
         <Image
           src="/img/quickcoach.png"
           alt=""
-          width={100}
-          height={100}
+          width={256}
+          height={51}
           className={styles.quickcoachlogo}
         />
         <span className={styles.arrow}>→</span>
         <Image
-          src="/img/me-fit-logo-black-background.png"
-          alt=""
+          className={styles.mefitlogo}
           width={100}
           height={100}
-          className={styles.mefitlogo}
+          src="/img/me-fit-logo-white-background.svg"
+          alt="ME Fit Logo"
         />
       </div>
       <h2>
@@ -41,28 +46,40 @@ export default function QuickCoach() {
         <h3>Why ME Fit Pro?</h3>
         <div className={styles.cards}>
           <div className={styles.card}>
+            <IoSyncOutline className={styles.icon} />
+            <h2>Easy client import</h2>
+            <p>
+              We built a migration tool that will seamlessly transfer your
+              clients from quickcoach to ME Fit
+            </p>
+          </div>
+          <div className={styles.card}>
             <IoVideocamOutline className={styles.icon} />
+            <h2>Extensive exercise library</h2>
             <p>3,700+ exercises with professional video demos</p>
           </div>
           <div className={styles.card}>
             <IoFlashOutline className={styles.icon} />
+            <h2>Quick workout creation</h2>
             <p>Build workouts fast with flexible templates</p>
           </div>
           <div className={styles.card}>
             <IoPhonePortraitOutline className={styles.icon} />
-            <p>Client app available on iOS & Android</p>
-          </div>
-          <div className={styles.card}>
-            <IoSyncOutline className={styles.icon} />
-            <p>Easy client import</p>
+            <h2>Client app available on iOS & Android</h2>
+            <p>Access your coaching tools on the go</p>
           </div>
           <div className={styles.card}>
             <IoCallOutline className={styles.icon} />
-            <p>Onboarding call available upon request</p>
+            <h2>Quick onboarding</h2>
+            <h2>Onboarding call available upon request</h2>
           </div>
           <div className={styles.card}>
             <IoCloudUploadOutline className={styles.icon} />
-            <p>Upload your own exercise videos</p>
+            <h2>Upload your own exercise videos</h2>
+            <p>
+              Can't find an exercise in our library? No problem, you can upload
+              your own.
+            </p>
           </div>
         </div>
       </section>
@@ -84,10 +101,20 @@ export default function QuickCoach() {
           </div>
         </div>
       </section>
-      <button className={styles.ctaBtn}>Start Your Free Trial</button>
-      <footer>
-        <p>Instant Access, No Credit Card Required</p>
-      </footer>
+      <div className={styles.footer}>
+        <Link className={`button`} href="https://admin.mefit.pro/onboarding">
+          Start Your Free Trial
+        </Link>
+        <Flex
+          gap="1rem"
+          alignItems="center"
+          justifyContent="center"
+          className={styles.callout}
+        >
+          <BoltIcon />
+          {formatMessage({ id: 'mefit.pro.page.signup.callout' })}
+        </Flex>
+      </div>
     </div>
   );
 }
