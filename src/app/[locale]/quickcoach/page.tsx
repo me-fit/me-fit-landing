@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import {
   IoVideocamOutline,
   IoCloudUploadOutline,
@@ -6,15 +6,15 @@ import {
   IoPhonePortraitOutline,
   IoSyncOutline,
   IoCallOutline,
-} from 'react-icons/io5';
+} from "react-icons/io5";
 
-import styles from './quickcoach.module.css';
-import Link from 'next/link';
-import BoltIcon from '@/components/icons/BoltIcon';
-import { getIntl } from '@/lib/intl';
-import Flex from '@/components/Flex/Flex';
+import styles from "./quickcoach.module.css";
+import Link from "next/link";
+import BoltIcon from "@/components/icons/BoltIcon";
+import { getIntl } from "@/lib/intl";
+import Flex from "@/components/Flex/Flex";
 export default function QuickCoach() {
-  const { formatMessage } = getIntl('en');
+  const { formatMessage } = getIntl("en");
   return (
     <div className={styles.container}>
       <h1>
@@ -77,7 +77,7 @@ export default function QuickCoach() {
             <IoCloudUploadOutline className={styles.icon} />
             <h2>Upload your own exercise videos</h2>
             <p>
-              Can't find an exercise in our library? No problem, you can upload
+              Cant find an exercise in our library? No problem, you can upload
               your own.
             </p>
           </div>
@@ -103,7 +103,7 @@ export default function QuickCoach() {
       </section>
       <div className={styles.footer}>
         <Link
-          className={`button`}
+          className={"button"}
           href="https://admin.mefit.pro/onboarding?source=quickcoach"
         >
           Start Your Free Trial
@@ -115,7 +115,7 @@ export default function QuickCoach() {
           className={styles.callout}
         >
           <BoltIcon />
-          {formatMessage({ id: 'mefit.pro.page.signup.callout' })}
+          {formatMessage({ id: "mefit.pro.page.signup.callout" })}
         </Flex>
       </div>
     </div>
