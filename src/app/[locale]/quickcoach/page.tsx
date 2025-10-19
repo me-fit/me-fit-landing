@@ -102,7 +102,10 @@ export default function QuickCoach() {
         </div>
       </section>
       <div className={styles.footer}>
-        <Link className={`button`} href="https://admin.mefit.pro/onboarding">
+        <Link
+          className={`button`}
+          href="https://admin.mefit.pro/onboarding?source=quickcoach"
+        >
           Start Your Free Trial
         </Link>
         <Flex
