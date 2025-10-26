@@ -1,7 +1,5 @@
 "use server";
 
-import sgMail from "@sendgrid/mail";
-
 export interface SubmitContactFormState {
   success: boolean | null;
 }
@@ -10,15 +8,16 @@ const submitContactForm = async (
   state: SubmitContactFormState,
   formData: FormData
 ) => {
-  const sendGridApiKey = process.env["SEND_GRID_API_KEY"];
-  if (!sendGridApiKey) {
-    throw new Error("Send grid ApI key is not set");
+  const messageBirdApiKey = process.env["MESSAGE_BIRD_API_KEY"];
+  const workspaceId = 'f00120af-345e-4ede-a51e-a8d7997c635b';
+  // todo update to use '7533eb22-bbe8-54f0-bf61-53809f36448a' when verification is complete
+  // see https://app.bird.com/workspaces/f00120af-345e-4ede-a51e-a8d7997c635b/channels/email-messagebird:1/e968a27f-ecc2-4173-a212-6b71d8518dc0/configurations
+  const channelId = '8362fa40-9ff1-5430-a3ab-79ecc61b96b1';
+
+  if (!messageBirdApiKey) {
+    throw new Error("MessageBird API key is not set");
   }
 
-  // Initialize SendGrid with your API key
-  sgMail.setApiKey(sendGridApiKey);
-
-  console.log("API KEY", sendGridApiKey);
 
   const userEmail = formData.get("userEmail") as string;
   const userName = formData.get("userName") as string;
@@ -45,21 +44,65 @@ const submitContactForm = async (
     };
   }
 
-  // Send email
+  // Send email using MessageBird API
   try {
-    await sgMail.send({
-      to: "support@mefit.pro",
-      from: "support@mefit.pro",
-      subject: `ME Fit Pro outreach - ${userName}`,
-      text: message,
-      replyTo: userEmail,
-      cc: userEmail,
-    });
-    return {
-      success: true,
+    const messageBirdUrl = `https://api.bird.com/workspaces/${workspaceId}/channels/${channelId}/messages`;
+
+    const emailPayload = {
+      receiver: {
+        contacts: [
+          {
+            identifierKey: "emailaddress",
+            identifierValue: "support@mefit.pro"
+          },
+          {
+            identifierKey: "emailaddress",
+            identifierValue: userEmail,
+            type: "cc"
+          }
+        ]
+      },
+      body: {
+        type: "html",
+        html: {
+          text: message,
+          html: `<p>${message.replace(/\n/g, '<br>')}</p>`,
+          metadata: {
+            subject: `ME Fit Pro outreach - ${userName}`,
+            headers: {
+              "reply-to": userEmail
+            },
+            emailFrom: {
+              username: "support",
+              displayName: "ME Fit Pro Support"
+            }
+          }
+        }
+      }
     };
+
+    const response = await fetch(messageBirdUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `AccessKey ${messageBirdApiKey}`
+      },
+      body: JSON.stringify(emailPayload)
+    });
+
+    if (response.ok) {
+      return {
+        success: true,
+      };
+    } else {
+      const errorData = await response.text();
+      console.error("MessageBird API error:", response.status, errorData);
+      return {
+        success: false,
+      };
+    }
   } catch (error) {
-    console.error("error sending email", error);
+    console.error("Error sending email via MessageBird:", error);
     return {
       success: false,
     };
