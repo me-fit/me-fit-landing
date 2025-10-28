@@ -5,106 +5,61 @@ import Flex from "@/components/Flex/Flex";
 import Image from "next/image";
 import ArticlePage from "@/components/ArticlePage/ArticlePage";
 import styles from "./personal-traning.module.css";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import Divider from "@/components/Divider/Divider";
 
 type PageProps = {
   params: { locale: Locale };
 };
 
-export default function PersonalTrainingPage({ params: { locale } }: PageProps) {
+export default function PersonalTrainingPage({
+  params: { locale },
+}: PageProps) {
   const { formatMessage } = getIntl(locale);
 
   return (
     <main className={styles.main}>
-      <section className={styles.firstSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h1>{formatMessage({ id: "personalTrainer.page.header" })}</h1>
-            <h5>{formatMessage({ id: "personalTrainer.page.sub.header" })}</h5>
-            <p>{formatMessage({ id: "personalTrainer.page.header.one" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-pro-workouts.png"
-            alt="Workouts"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
-
-      <section className={styles.altSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "personalTrainer.page.header.two" })}</h2>
-            <p>{formatMessage({ id: "personalTrainer.page.paragraph.two" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-pro-workout-details-front.png"
-            alt="Workout Details"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
-
-      <section className={styles.firstSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "personalTrainer.page.header.three" })}</h2>
-            <p>{formatMessage({ id: "personalTrainer.page.paragraph.three" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-pro-calendar-filled.png"
-            alt="Calendar"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
-
-      <section className={styles.altSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "personalTrainer.page.header.four" })}</h2>
-            <p>{formatMessage({ id: "personalTrainer.page.paragraph.four" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-pro-exercise-library.png"
-            alt="Exercise Library"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
-
-      <section className={styles.firstSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "personalTrainer.page.header.five" })}</h2>
-            <p>{formatMessage({ id: "personalTrainer.page.paragraph.five" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-pro-exercises.png"
-            alt="Exercises"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-         
-      </section>
-       
+      <HeroSection
+        header={formatMessage({ id: "personalTrainer.page.header" })}
+        subHeader={formatMessage({ id: "personalTrainer.page.sub.header" })}
+        text={formatMessage({ id: "personalTrainer.page.header.one" })}
+        imageSrc="/img/me-fit-pro-workouts.png"
+        variant="light"
+      />
+      <HeroSection
+        header={formatMessage({ id: "personalTrainer.page.header.two" })}
+        text={formatMessage({ id: "personalTrainer.page.paragraph.two" })}
+        imageSrc="/img/me-fit-pro-workout-details-front.png"
+        variant="dark"
+        reverse={true}
+      />
+      <HeroSection
+        header={formatMessage({ id: "personalTrainer.page.header.three" })}
+        text={formatMessage({ id: "personalTrainer.page.paragraph.three" })}
+        imageSrc="/img/me-fit-pro-calendar-filled.png"
+        variant="light"
+      />
+      <HeroSection
+        header={formatMessage({ id: "personalTrainer.page.header.four" })}
+        text={formatMessage({ id: "personalTrainer.page.paragraph.four" })}
+        imageSrc="/img/me-fit-pro-exercise-library.png"
+        variant="dark"
+        reverse={true}
+      />
+      <HeroSection
+        header={formatMessage({ id: "personalTrainer.page.header.five" })}
+        text={formatMessage({ id: "personalTrainer.page.paragraph.five" })}
+        imageSrc="/img/me-fit-pro-exercises.png"
+        variant="light"
+      />
       <section className={styles.ctaSection}>
-       <Flex flexDirection="column" alignItems="center" gap="1rem">
-  <div className={styles.yellowLine}></div> 
-  <p>{formatMessage({ id: "explore.advantages.text" })}</p>
-  <Link className="button" href="https://admin.mefit.pro/onboarding">
-    {formatMessage({ id: "signup.call.to.action" })}
-  </Link>
-</Flex>
+        <Flex flexDirection="column" alignItems="center" gap="1rem">
+          <Divider />
+          <p>{formatMessage({ id: "amateur.sports.page.header.six" })}</p>
+          <Link className="button" href="contact">
+            {formatMessage({ id: "contact.us" })}
+          </Link>
+        </Flex>
       </section>
     </main>
   );

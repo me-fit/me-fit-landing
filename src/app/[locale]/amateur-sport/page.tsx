@@ -4,6 +4,8 @@ import Link from "next/link";
 import Flex from "@/components/Flex/Flex";
 import Image from "next/image";
 import styles from "./amateur-sport.module.css";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import Divider from "@/components/Divider/Divider";
 
 type PageProps = {
   params: { locale: Locale };
@@ -14,92 +16,45 @@ export default function AmateurSportPage({ params: { locale } }: PageProps) {
 
   return (
     <main className={styles.main}>
-      <section className={styles.firstSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h1>{formatMessage({ id: "amateur.sports.page.header" })}</h1>
-            <h5>{formatMessage({ id: "amateur.sports.page.sub.header" })}</h5>
-            <p>{formatMessage({ id: "amateur.sports.page.header.one" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-app-login.png"
-            alt="Login Screen"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
+      <HeroSection
+        header={formatMessage({ id: "amateur.sports.page.header" })}
+        subHeader={formatMessage({ id: "amateur.sports.page.sub.header" })}
+        text={formatMessage({ id: "amateur.sports.page.header.one" })}
+        imageSrc="/img/me-fit-app-login.png"
+        variant="light"
+      />
 
-      <section className={styles.altSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "amateur.sports.page.header.two" })}</h2>
-            <p>{formatMessage({ id: "amateur.sports.page.paragraph.two" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-app-home.png"
-            alt="Home Screen"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
+      <HeroSection
+        header={formatMessage({ id: "amateur.sports.page.header.two" })}
+        text={formatMessage({ id: "amateur.sports.page.paragraph.two" })}
+        imageSrc="/img/me-fit-app-home.png"
+        reverse={true}
+        variant="dark"
+      />
 
-      <section className={styles.firstSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "amateur.sports.page.header.three" })}</h2>
-            <p>
-              {formatMessage({ id: "amateur.sports.page.paragraph.three" })}
-            </p>
-          </div>
-          <Image
-            src="/img/me-fit-app-workout-details.png"
-            alt="Workout Details"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
+      <HeroSection
+        header={formatMessage({ id: "amateur.sports.page.header.three" })}
+        text={formatMessage({ id: "amateur.sports.page.paragraph.three" })}
+        imageSrc="/img/me-fit-app-workout-details.png"
+        variant="light"
+      />
 
-      <section className={styles.altSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "amateur.sports.page.header.four" })}</h2>
-            <p>{formatMessage({ id: "amateur.sports.page.paragraph.four" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-app-calendar.png"
-            alt="Calendar"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
-
-      <section className={styles.firstSection}>
-        <Flex className={styles.sectionContainer}>
-          <div className={styles.textContent}>
-            <h2>{formatMessage({ id: "amateur.sports.page.header.five" })}</h2>
-            <p>{formatMessage({ id: "amateur.sports.page.paragraph.five" })}</p>
-          </div>
-          <Image
-            src="/img/me-fit-app-workout-step.png"
-            alt="Workout Step"
-            width={900}
-            height={700}
-            className={styles.proMainScreenshot}
-          />
-        </Flex>
-      </section>
-
+      <HeroSection
+        header={formatMessage({ id: "amateur.sports.page.header.four" })}
+        text={formatMessage({ id: "amateur.sports.page.paragraph.four" })}
+        imageSrc="/img/me-fit-app-calendar.png"
+        reverse={true}
+        variant="dark"
+      />
+      <HeroSection
+        header={formatMessage({ id: "amateur.sports.page.header.five" })}
+        text={formatMessage({  id: "amateur.sports.page.paragraph.five" })}
+        imageSrc="/img/me-fit-app-workout-step.png"
+        variant="light"
+      />
       <section className={styles.ctaSection}>
         <Flex flexDirection="column" alignItems="center" gap="1rem">
-          <div className={styles.yellowLine}></div>
+          <Divider />
           <p>{formatMessage({ id: "amateur.sports.page.header.six" })}</p>
           <Link className="button" href="contact">
             {formatMessage({ id: "contact.us" })}
