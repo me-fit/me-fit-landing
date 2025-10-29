@@ -9,10 +9,8 @@ const submitContactForm = async (
   formData: FormData
 ) => {
   const messageBirdApiKey = process.env["MESSAGE_BIRD_API_KEY"];
-  const workspaceId = 'f00120af-345e-4ede-a51e-a8d7997c635b';
-  // todo update to use '7533eb22-bbe8-54f0-bf61-53809f36448a' when verification is complete
-  // see https://app.bird.com/workspaces/f00120af-345e-4ede-a51e-a8d7997c635b/channels/email-messagebird:1/e968a27f-ecc2-4173-a212-6b71d8518dc0/configurations
-  const channelId = '8362fa40-9ff1-5430-a3ab-79ecc61b96b1';
+  const workspaceId = "f00120af-345e-4ede-a51e-a8d7997c635b";
+  const channelId = "7533eb22-bbe8-54f0-bf61-53809f36448a";
 
   if (!messageBirdApiKey) {
     throw new Error("MessageBird API key is not set");
