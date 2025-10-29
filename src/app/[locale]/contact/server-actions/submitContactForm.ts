@@ -64,7 +64,7 @@ const submitContactForm = async (
         type: "html",
         html: {
           text: message,
-          html: `<p>${message.replace(/\n/g, '<br>')}</p>`,
+          html: `<p>${message.replace(/\n/g, "<br>")}</p>`,
           metadata: {
             subject: `ME Fit Pro outreach - ${userName}`,
             headers: {

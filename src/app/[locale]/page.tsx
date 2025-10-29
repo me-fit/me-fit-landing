@@ -77,7 +77,7 @@ export default function Home({ params: { locale } }: HomeProps) {
           <Image
             className={styles.proMainScreenshot}
             priority={true}
-            src="/img/me-fit-pro-exercise-library.png"
+            src="/img/homescreen-illustration.png"
             alt={formatMessage({
               id: "mefit.pro.exercise.library.screenshot.alt",
             })}
