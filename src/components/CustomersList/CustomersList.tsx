@@ -28,6 +28,12 @@ const customers = [
     name: "PEC Zwolle",
     link: "https://peczwolle.nl/",
   },
+    {
+       imgSrc: "/img/customers/vvv-venlo.svg.png",
+    name: "VVV-Venlo",
+    link: "https://www.vvv-venlo.nl/",
+    }
+  
 ] as const;
 
 function CustomersList({ locale, className }: CustomersListProps) {

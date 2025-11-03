@@ -1,4 +1,23 @@
 .main {
   overflow-x: clip;
 }
+.ctaSection {
+  padding: 2rem 1rem;
+}
+.ctaSection .button {
+  margin-bottom: 2rem;
+}
 
+@media (max-width: 600px) {
+  .ctaSection {
+    padding: 2rem 1rem;
+  }
+
+  .ctaSection p {
+    margin-bottom: 1rem;
+  }
+
+  .ctaSection .button {
+    margin-bottom: 2rem;
+  }
+}
