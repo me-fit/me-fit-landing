@@ -2,12 +2,21 @@
   overflow-x: clip;
 }
 .ctaSection {
+  width: 100%;
   padding: 2rem 1rem;
-}
-.ctaSection .button {
-  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
+.ctaSection p {
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 @media (max-width: 600px) {
   .ctaSection {
     padding: 2rem 1rem;
