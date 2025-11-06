@@ -1,114 +1,36 @@
 .main {
   overflow-x: clip;
 }
-
-.main section {
-  box-sizing: border-box;
-  padding: 1.25rem;
-}
-
-.sectionContainer {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-}
-
-.firstSection {
-  background-color: var(--background-dark-tint);
-  color: var(--text-light);
-}
-
-.altSection {
-  background-color: var(--background-light-tint);
-  color: var(--text-dark);
-}
-
-.proMainScreenshot {
+.ctaSection {
   width: 100%;
-  height: auto;
-  max-width: 600px;
-  object-fit: contain;
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.textContent {
-  width: calc(40% - 2rem);
+.ctaSection p {
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.ctaSection .button {
+  margin-bottom: 2rem;
 }
 
-.firstSection .sectionContainer {
-  flex-direction: row;
-}
-
-.altSection .sectionContainer {
-  flex-direction: row-reverse;
-}
-.yellowLine {
-  width: 25%;
-  height: 2px;
-  background-color: #f1c40f;
-  border-radius: 2px;
-  margin-bottom: 1rem;
-}
-@media (max-width: 1024px) {
-  .main section {
-    padding: 3rem 1rem;
+@media (max-width: 600px) {
+  .ctaSection {
+    padding: 2rem 1rem;
   }
 
-  .textContent {
-    max-width: 700px;
+  .ctaSection p {
+    margin-bottom: 1rem;
   }
 
-  .proMainScreenshot {
-    max-width: 600px;
-  }
-}
-@media (max-width: 1024px) {
-  .sectionContainer {
-    gap: 2rem;
-  }
-
-  .textContent {
-    width: 45%;
-  }
-
-  .proMainScreenshot {
-    max-width: 500px;
-  }
-}
-@media (max-width: 800px) {
-  .sectionContainer {
-    flex-direction: column !important;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .textContent {
-    width: 100%;
-  }
-
-  .proMainScreenshot {
-    max-width: 90%;
-  }
-}
-@media (max-width: 500px) {
-  .main section {
-    padding: 1rem;
-  }
-
-  .textContent {
-    width: 100%;
-  }
-
-  .proMainScreenshot {
-    max-width: 100%;
-  }
-
-  .sectionContainer {
-    gap: 1.5rem;
-  }
-  .yellowLine {
-    width: 60%;
-    height: 4px;
+  .ctaSection .button {
+    margin-bottom: 2rem;
   }
 }
