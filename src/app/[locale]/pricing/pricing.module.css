@@ -1,0 +1,101 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: var(--text-on-dark);
+}
+
+.subtitle {
+  background-color: var(--background-dark-tint);
+  padding: 3rem 2rem;
+  font-size: 1.15rem;
+  margin-bottom: 3.5rem;
+  border-radius: 15px;
+  border-bottom: none;
+  text-align: center;
+  color: var(--text-muted);
+}
+.subtitle h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.section {
+  margin-bottom: 5rem;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-subtle);
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  line-height: 1.7;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.card {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border-dark);
+  color: var(--text-on-dark);
+}
+
+.card:last-child {
+  border-bottom: none;
+}
+
+.card h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--text-on-dark);
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 720px;
+}
+
+.card ul li {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.6;
+  color: var(--text-subtle);
+}
+
+.card ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--primary-tint);
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.card p strong {
+  color: var(--primary);
+}
+
+.cards > .card:nth-child(2) {
+  background-color: var(--background-dark-tint);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  border-bottom: none;
+}
+
+.cards > .card:nth-child(2) h2 {
+  color: var(--text-on-dark);
+}
