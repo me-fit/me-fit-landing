@@ -46,11 +46,11 @@ const useMenuStructure = ({ locale }: MenuStructureProps) => {
         label: "Pricing",
         items: [
           {
-            label: "Pricing: Practitioners",
+            label: "Practitioners",
             href: `/${locale}/pricing?type=practitioners`,
           },
           {
-            label: "Pricing: Teams & Organizations",
+            label: "Teams & Organizations",
             href: `/${locale}/pricing?type=teams`,
           },
         ],

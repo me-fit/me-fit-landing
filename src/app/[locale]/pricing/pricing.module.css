@@ -2,22 +2,33 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 60px 20px;
-  color: var(--text-on-dark);
+  font-family: "Poppins", sans-serif;
 }
-
 .subtitle {
   background-color: var(--background-dark-tint);
-  padding: 3rem 2rem;
-  font-size: 1.15rem;
-  margin-bottom: 3.5rem;
-  border-radius: 15px;
-  border-bottom: none;
+  color: var(--text-on-dark);
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: calc(6rem + var(--header-height));
+  padding-bottom: 5rem;
   text-align: center;
-  color: var(--text-muted);
 }
+
 .subtitle h1 {
   font-size: 3rem;
   font-weight: 700;
+  max-width: 900px;
+  margin: 0 auto 1rem auto;
+}
+
+.subtitle p {
+  font-size: 1.15rem;
+  color: var(--text-on-dark-secondary);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .section {
@@ -27,10 +38,9 @@
 .description {
   text-align: center;
   font-size: 1.1rem;
-  color: var(--text-subtle);
   max-width: 720px;
-  margin: 0 auto 4rem;
   line-height: 1.7;
+  margin: 5rem;
 }
 
 .cards {
@@ -89,13 +99,22 @@
   color: var(--primary);
 }
 
+.cards > .card:nth-child(2) h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
 .cards > .card:nth-child(2) {
   background-color: var(--background-dark-tint);
-  padding: 3rem 2rem;
-  border-radius: 15px;
+  padding: 3rem 0;
   border-bottom: none;
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
-.cards > .card:nth-child(2) h2 {
-  color: var(--text-on-dark);
+.cards > .card:nth-child(2) > * {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
