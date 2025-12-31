@@ -43,14 +43,14 @@ const useMenuStructure = ({ locale }: MenuStructureProps) => {
       },
       { label: formatMessage({ id: "mefit.app" }), href: `/${locale}/app` },
       {
-        label: "Pricing",
+        label: formatMessage({ id: "pricing.menu" }),
         items: [
           {
-            label: "Practitioners",
+            label: formatMessage({ id: "pricing.practitioners" }),
             href: `/${locale}/pricing?type=practitioners`,
           },
           {
-            label: "Teams & Organizations",
+            label: formatMessage({ id: "pricing.teams" }),
             href: `/${locale}/pricing?type=teams`,
           },
         ],

@@ -1,67 +1,60 @@
 "use client";
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
 
+import { useSearchParams } from "next/navigation";
+import { Locale, getIntl } from "@/lib/intl";
 import styles from "./pricing.module.css";
-export default function PricingPage() {
+
+type PageProps = {
+  params: { locale: Locale };
+};
+
+export default function PricingPage({ params: { locale } }: PageProps) {
+  const { formatMessage } = getIntl(locale);
   const searchParams = useSearchParams();
 
-  const initialType =
-    searchParams.get("type") === "teams" ? "teams" : "practitioners";
-
-  const [type, setType] = useState<"practitioners" | "teams">(initialType);
-
-  useEffect(() => {
-    const urlType = searchParams.get("type");
-
-    if (urlType === "teams" || urlType === "practitioners") {
-      setType(urlType);
-    }
-  }, [searchParams]);
+  const type = searchParams.get("type") === "teams" ? "teams" : "practitioners";
 
   return (
     <div className={styles.container}>
       <div className={styles.subtitle}>
-        <h1>ME Fit Pro Pricing</h1>
-        <p> Pricing plans built for professionals, teams, and organizations</p>
+        <h1>{formatMessage({ id: "pricing.page.header" })}</h1>
+        <p>{formatMessage({ id: "pricing.page.subheader" })}</p>
       </div>
 
       {type === "practitioners" && (
         <section className={styles.section}>
           <p className={styles.description}>
-            Built for physiotherapists, personal trainers, and small teams.
+            {formatMessage({ id: "pricing.practitioners.description" })}
           </p>
 
           <div className={styles.cards}>
             <div className={styles.card}>
-              <h2>Workout Builder</h2>
+              <h2>{formatMessage({ id: "pricing.workoutBuilder" })}</h2>
               <ul>
-                <li>Personalized workout builder</li>
-                <li>Phase & periodization planning</li>
-                <li>3,700+ exercise video demonstrations</li>
-                <li>Custom exercise creation</li>
-                <li>Workout templates & reusable libraries</li>
+                <li>{formatMessage({ id: "pricing.workout.item1" })}</li>
+                <li>{formatMessage({ id: "pricing.workout.item2" })}</li>
+                <li>{formatMessage({ id: "pricing.workout.item3" })}</li>
+                <li>{formatMessage({ id: "pricing.workout.item4" })}</li>
+                <li>{formatMessage({ id: "pricing.workout.item5" })}</li>
               </ul>
             </div>
 
             <div className={styles.card}>
-              <h2>Assessments & Testing</h2>
+              <h2>{formatMessage({ id: "pricing.assessments" })}</h2>
               <ul>
-                <li>Ready-to-use assessments & questionnaires</li>
-                <li>Custom assessments</li>
-                <li>Longitudinal tracking of results</li>
-                <li>Professional assessment notes</li>
+                <li>{formatMessage({ id: "pricing.assessments.item1" })}</li>
+                <li>{formatMessage({ id: "pricing.assessments.item2" })}</li>
+                <li>{formatMessage({ id: "pricing.assessments.item3" })}</li>
+                <li>{formatMessage({ id: "pricing.assessments.item4" })}</li>
               </ul>
             </div>
 
             <div className={styles.card}>
-              <h2>Pricing</h2>
+              <h2>{formatMessage({ id: "pricing.pricing" })}</h2>
               <p>
-                Pricing is based on the number of professionals using the
-                platform.
+                {formatMessage({ id: "pricing.practitioners.pricing" })}
                 <br />
-                <strong>Contact us to discuss your setup.</strong>
+                <strong>{formatMessage({ id: "pricing.contact" })}</strong>
               </p>
             </div>
           </div>
@@ -71,36 +64,35 @@ export default function PricingPage() {
       {type === "teams" && (
         <section className={styles.section}>
           <p className={styles.description}>
-            Built for teams, academies, and multi-staff environments.
+            {formatMessage({ id: "pricing.teams.description" })}
           </p>
 
           <div className={styles.cards}>
             <div className={styles.card}>
-              <h2>Workout Builder</h2>
+              <h2>{formatMessage({ id: "pricing.workoutBuilder" })}</h2>
               <ul>
-                <li>Team & squad workout planning</li>
-                <li>Advanced phase & periodization</li>
-                <li>Shared exercise libraries</li>
+                <li>{formatMessage({ id: "pricing.teams.workout1" })}</li>
+                <li>{formatMessage({ id: "pricing.teams.workout2" })}</li>
+                <li>{formatMessage({ id: "pricing.teams.workout3" })}</li>
               </ul>
             </div>
 
             <div className={styles.card}>
-              <h2>Organization Management</h2>
+              <h2>{formatMessage({ id: "pricing.organization" })}</h2>
               <ul>
-                <li>Multi-professional access</li>
-                <li>Team, squad & department structure</li>
-                <li>Centralized data management</li>
-                <li>Scalable organization setup</li>
+                <li>{formatMessage({ id: "pricing.organization.item1" })}</li>
+                <li>{formatMessage({ id: "pricing.organization.item2" })}</li>
+                <li>{formatMessage({ id: "pricing.organization.item3" })}</li>
+                <li>{formatMessage({ id: "pricing.organization.item4" })}</li>
               </ul>
             </div>
 
             <div className={styles.card}>
-              <h2>Pricing</h2>
+              <h2>{formatMessage({ id: "pricing.pricing" })}</h2>
               <p>
-                Pricing is tailored to your organization and based on the number
-                of professionals.
+                {formatMessage({ id: "pricing.teams.pricing" })}
                 <br />
-                <strong>Contact us to discuss your setup.</strong>
+                <strong>{formatMessage({ id: "pricing.contact" })}</strong>
               </p>
             </div>
           </div>
