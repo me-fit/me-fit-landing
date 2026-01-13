@@ -22,10 +22,13 @@ function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
     return Array(totalDots).fill(0);
   }, [totalDots]);
 
-  // Swipe handling state
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
-  const isDragging = useRef<boolean>(false);
+  // Swipe handling state and constants
+  const SWIPE_THRESHOLD = 50; // minimum distance in pixels for swipe detection
+  const swipeState = useRef({
+    startX: 0,
+    endX: 0,
+    isDragging: false,
+  });
 
   // Reset the timer
   const resetTimer = () => {
@@ -61,18 +64,17 @@ function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
 
   // Touch handlers
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    swipeState.current.startX = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
+    swipeState.current.endX = e.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    const swipeThreshold = 50; // minimum distance for swipe
-    const diff = touchStartX.current - touchEndX.current;
+    const diff = swipeState.current.startX - swipeState.current.endX;
 
-    if (Math.abs(diff) > swipeThreshold) {
+    if (Math.abs(diff) > SWIPE_THRESHOLD) {
       if (diff > 0) {
         // Swiped left
         handleSwipeLeft();
@@ -85,22 +87,22 @@ function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
 
   // Mouse drag handlers for desktop
   const handleMouseDown = (e: React.MouseEvent) => {
-    isDragging.current = true;
-    touchStartX.current = e.clientX;
+    swipeState.current.isDragging = true;
+    swipeState.current.startX = e.clientX;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging.current) {
-      touchEndX.current = e.clientX;
+    if (swipeState.current.isDragging) {
+      e.preventDefault(); // Prevent text selection during drag
+      swipeState.current.endX = e.clientX;
     }
   };
 
   const handleMouseUp = () => {
-    if (isDragging.current) {
-      const swipeThreshold = 50; // minimum distance for swipe
-      const diff = touchStartX.current - touchEndX.current;
+    if (swipeState.current.isDragging) {
+      const diff = swipeState.current.startX - swipeState.current.endX;
 
-      if (Math.abs(diff) > swipeThreshold) {
+      if (Math.abs(diff) > SWIPE_THRESHOLD) {
         if (diff > 0) {
           // Swiped left
           handleSwipeLeft();
@@ -109,12 +111,12 @@ function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
           handleSwipeRight();
         }
       }
-      isDragging.current = false;
+      swipeState.current.isDragging = false;
     }
   };
 
   const handleMouseLeave = () => {
-    isDragging.current = false;
+    swipeState.current.isDragging = false;
   };
 
   // TODO only execute this when the controls bar is in screen
