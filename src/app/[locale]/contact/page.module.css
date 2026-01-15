@@ -10,11 +10,7 @@
     max-width: var(--content-width);
 }
 
-.form {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-}
+
 
 .aboutUS {
     margin-top: 4rem;
