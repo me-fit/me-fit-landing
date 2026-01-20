@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { Locale, getIntl } from "@/lib/intl";
 import styles from "./pricing.module.css";
-import ContactForm from "@/components/ContactForm/page";
+import ContactForm from "@/components/ContactForm/ContactForm";
 import { useEffect, useState } from "react";
 
 type PageProps = {
@@ -15,15 +15,6 @@ export default function PricingPage({ params: { locale } }: PageProps) {
   const searchParams = useSearchParams();
 
   const type = searchParams.get("type") === "teams" ? "teams" : "practitioners";
-  const [success, setSuccess] = useState<boolean | null>(null);
-  const [hasScrolledForSubmission, updateScrolledStatus] = useState(false);
-
-  useEffect(() => {
-    if (success !== null && !hasScrolledForSubmission) {
-      window.scrollTo({ top: 0, behavior: "auto" });
-      updateScrolledStatus(true);
-    }
-  }, [success, hasScrolledForSubmission]);
 
   return (
     <div className={styles.container}>
@@ -88,12 +79,15 @@ export default function PricingPage({ params: { locale } }: PageProps) {
             </div>
 
             <div className={styles.card}>
-              <h2>{formatMessage({ id: "pricing.pricing" })}</h2>
               <p>
-                {formatMessage({ id: "pricing.practitioners.pricing" })}
-                <br />
                 <strong>{formatMessage({ id: "pricing.contact" })}</strong>
+                <br />
+
+                {formatMessage({ id: "pricing.practitioners.pricing" })}
               </p>
+              <section className={styles.contactSection}>
+                <ContactForm locale={locale} className={styles.contactForm} />
+              </section>
             </div>
           </div>
         </section>
@@ -184,42 +178,20 @@ export default function PricingPage({ params: { locale } }: PageProps) {
             </div>
 
             <div className={styles.card}>
-              <h2>{formatMessage({ id: "pricing.pricing" })}</h2>
               <p>
-                {formatMessage({ id: "pricing.teams.pricing" })}
-                <br />
                 <strong>{formatMessage({ id: "pricing.contact" })}</strong>
+                <br />
+                {formatMessage({ id: "pricing.teams.pricing" })}
               </p>
+              <br />
+
+              <section className={styles.contactSection}>
+                <ContactForm locale={locale} className={styles.contactForm} />
+              </section>
             </div>
           </div>
         </section>
-
       )}
-      {success !== null && (
-    <div className={styles.contactResult}>
-      {success ? (
-        <p className="text-color-success no-margin">
-          {formatMessage({ id: "contact.page.success.message" })}
-        </p>
-      ) : (
-        <p className="text-color-danger no-margin">
-          {formatMessage({ id: "contact.page.failure.message" })}
-        </p>
-      )}
-    </div>
-  )}
-
-
-      <section className={styles.contactSection}>
-        <ContactForm
-          locale={locale}
-          className={styles.contactForm}
-          onSubmitSuccess={(result) => {
-            setSuccess(result);
-            updateScrolledStatus(false);
-          }}
-        />
-      </section>
     </div>
   );
 }

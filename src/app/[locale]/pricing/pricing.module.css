@@ -16,15 +16,11 @@
 }
 
 .subtitle h1 {
-  font-family: Poppins;
-  font-size: 3rem;
-  font-weight: 700;
   max-width: 900px;
   margin: 0 auto 1rem auto;
 }
 
 .subtitle p {
-  font-size: 1.15rem;
   color: var(--text-on-dark-secondary);
   max-width: 900px;
   margin: 0 auto;
@@ -34,15 +30,12 @@
   margin-bottom: 0.5rem;
 }
 .subheader {
-  font-size: 1.1rem;
   max-width: 720px;
   line-height: 1.7;
   text-align: center;
   margin: 1.5rem auto;
 }
-.description {
-  font-size: 1.1rem;
-}
+
 
 .cards {
   display: flex;
@@ -61,7 +54,6 @@
 }
 
 .card h2 {
-  font-size: 1.7rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
   color: var(--text-on-dark);
@@ -74,7 +66,6 @@
 }
 
 .card ul li {
-  font-size: 1.05rem;
   margin-bottom: 0.75rem;
   padding-left: 1.4rem;
   position: relative;
@@ -91,23 +82,23 @@
 }
 
 .card p {
-  font-size: 1.05rem;
   line-height: 1.7;
   max-width: 720px;
 }
 
 .card p strong {
   color: var(--primary);
-  font-size: 30px;
 }
 
 .cards > .card:nth-child(2) h2 {
-  font-size: 1.7rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
 }
 .cards > .card:nth-child(4) h2 {
-  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+.cards > .card:nth-child(6) h2 {
   font-weight: 600;
   margin-bottom: 1.25rem;
 }
@@ -119,6 +110,13 @@
   margin-left: calc(50% - 50vw);
 }
 .cards > .card:nth-child(4) {
+  background-color: var(--background-dark-tint);
+  padding: 3rem 0;
+  border-bottom: none;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+.cards > .card:nth-child(6) {
   background-color: var(--background-dark-tint);
   padding: 3rem 0;
   border-bottom: none;
@@ -137,21 +135,18 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.cards > .card:nth-child(6) > * {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .contactSection {
   display: flex;
+  flex-direction: column;
 }
 
 .contactForm {
   max-width: var(--content-width);
   width: 100%;
-}
-.text-color-success {
-  color: var(--color-success);
-}
-
-.text-color-danger {
-  color: var(--color-danger);
-}
-.no-margin {
-  margin: 0 !important;
 }

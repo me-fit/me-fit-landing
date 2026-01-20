@@ -6,7 +6,10 @@
 .form input,
 .form textarea {
   width: 100%;
-  padding: 0.75rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
+}
+.result {
+  max-width: var(--content-width);
+  margin-bottom: 2rem;
 }
