@@ -54,7 +54,6 @@
 }
 
 .card h2 {
-  font-weight: 600;
   margin-bottom: 1.25rem;
   color: var(--text-on-dark);
 }
@@ -78,7 +77,6 @@
   position: absolute;
   left: 0;
   color: var(--primary-tint);
-  font-weight: bold;
 }
 
 .card p {
@@ -91,15 +89,12 @@
 }
 
 .cards > .card:nth-child(2) h2 {
-  font-weight: 600;
   margin-bottom: 1.25rem;
 }
 .cards > .card:nth-child(4) h2 {
-  font-weight: 600;
   margin-bottom: 1.25rem;
 }
 .cards > .card:nth-child(6) h2 {
-  font-weight: 600;
   margin-bottom: 1.25rem;
 }
 .cards > .card:nth-child(2) {
