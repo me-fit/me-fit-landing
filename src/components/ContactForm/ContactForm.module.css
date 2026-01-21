@@ -1,0 +1,15 @@
+.form {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.form input,
+.form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+.result {
+  max-width: var(--content-width);
+  margin-bottom: 2rem;
+}
