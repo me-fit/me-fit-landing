@@ -18,19 +18,19 @@ export default function PricingPage({ params: { locale } }: PageProps) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.subtitle}>
-        <h1>{formatMessage({ id: "pricing.page.header" })}</h1>
-      </div>
-
       {type === "practitioners" && (
         <section className={styles.section}>
-          <p className={styles.subheader}>
-            {formatMessage({ id: "pricing.practitioners.subheader" })}
-          </p>
-
-          <p className={styles.description}>
-            {formatMessage({ id: "pricing.practitioners.description" })}
-          </p>
+          <div className={styles.header}>
+            <div className={styles.PricingHeader}>
+              <h1>{formatMessage({ id: "pricing.page.header" })}</h1>
+              <h5>
+                {formatMessage({ id: "pricing.practitioners.subheader" })}
+              </h5>
+              <p>
+                {formatMessage({ id: "pricing.practitioners.description" })}
+              </p>
+            </div>
+          </div>
 
           <div className={styles.cards}>
             <div className={styles.card}>
@@ -95,9 +95,13 @@ export default function PricingPage({ params: { locale } }: PageProps) {
 
       {type === "teams" && (
         <section className={styles.section}>
-          <p className={styles.subheader}>
-            {formatMessage({ id: "pricing.teams.description" })}
-          </p>
+          <div className={styles.header}>
+            <div className={styles.PricingHeader}>
+              <h1>{formatMessage({ id: "pricing.page.header" })}</h1>
+              <h5>{formatMessage({ id: "pricing.teams.subheader" })}</h5>
+              <p>{formatMessage({ id: "pricing.teams.description" })}</p>
+            </div>
+          </div>
 
           <div className={styles.cards}>
             <div className={styles.card}>
