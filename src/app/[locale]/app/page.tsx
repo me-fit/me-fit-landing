@@ -6,6 +6,7 @@ import Flex from "@/components/Flex/Flex";
 import Image from "next/image";
 import TestimonialsList from "@/components/TestimonialsList/TestimonialsList";
 import StoreButtons from "@/components/StoreButtons/StoreButtons";
+import Link from "next/link";
 type PageProps = {
   params: { locale: Locale };
 };
@@ -82,6 +83,24 @@ export default function Page({ params: { locale } }: PageProps) {
           </p>
 
           <TestimonialsList />
+        </Flex>
+      </section>
+      <section className={styles.footerLinks}>
+        <Flex gap="2rem" justifyContent="center" flexWrap="wrap">
+          <Link
+            href="https://getmefit.app/privacy-policy.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {formatMessage({ id: "footer.privacy.policy" })}
+          </Link>
+          <Link
+            href="https://getmefit.app/terms-and-conditions.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {formatMessage({ id: "footer.terms.and.conditions" })}
+          </Link>
         </Flex>
       </section>
     </main>

@@ -177,5 +177,7 @@
   "pricing.pricing": "Pricing",
   "pricing.practitioners.pricing": "Pricing is based on the number of professionals using the platform.",
   "pricing.teams.pricing": "Pricing is tailored to your organization and based on the number",
-  "pricing.contact": "Contact us to discuss your setup."
+  "pricing.contact": "Contact us to discuss your setup.",
+  "footer.privacy.policy": "Privacy Policy",
+  "footer.terms.and.conditions": "Terms and Conditions"
 }
