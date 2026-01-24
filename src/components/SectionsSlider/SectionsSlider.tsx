@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useMemo, useState } from "react";
+import { ReactNode, useMemo, useState, useRef } from "react";
 import Flex from "../Flex/Flex";
 import styles from "./SectionsSlider.module.scss";
 import classNames from "classnames";
@@ -21,6 +21,103 @@ function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
   const totalSlidesPlaceholdingArray: Array<number> = useMemo(() => {
     return Array(totalDots).fill(0);
   }, [totalDots]);
+
+  // Swipe handling state and constants
+  const SWIPE_THRESHOLD = 50; // minimum distance in pixels for swipe detection
+  const swipeState = useRef({
+    startX: 0,
+    endX: 0,
+    isDragging: false,
+  });
+
+  // Reset the timer
+  const resetTimer = () => {
+    setAnimationDuration(null);
+    setTimeout(() => {
+      setAnimationDuration(ANIMATION_DURATION_CONSTANT);
+    }, ANIMATION_DURATION_CONSTANT);
+  };
+
+  // Handle swipe left (go to next slide)
+  const handleSwipeLeft = () => {
+    setActiveIndex((value) => {
+      if (value + 1 === slides.length) {
+        return 0;
+      } else {
+        return value + 1;
+      }
+    });
+    resetTimer();
+  };
+
+  // Handle swipe right (go to previous slide)
+  const handleSwipeRight = () => {
+    setActiveIndex((value) => {
+      if (value === 0) {
+        return slides.length - 1;
+      } else {
+        return value - 1;
+      }
+    });
+    resetTimer();
+  };
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    swipeState.current.startX = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    swipeState.current.endX = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = swipeState.current.startX - swipeState.current.endX;
+
+    if (Math.abs(diff) > SWIPE_THRESHOLD) {
+      if (diff > 0) {
+        // Swiped left
+        handleSwipeLeft();
+      } else {
+        // Swiped right
+        handleSwipeRight();
+      }
+    }
+  };
+
+  // Mouse drag handlers for desktop
+  const handleMouseDown = (e: React.MouseEvent) => {
+    swipeState.current.isDragging = true;
+    swipeState.current.startX = e.clientX;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (swipeState.current.isDragging) {
+      e.preventDefault(); // Prevent text selection during drag
+      swipeState.current.endX = e.clientX;
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (swipeState.current.isDragging) {
+      const diff = swipeState.current.startX - swipeState.current.endX;
+
+      if (Math.abs(diff) > SWIPE_THRESHOLD) {
+        if (diff > 0) {
+          // Swiped left
+          handleSwipeLeft();
+        } else {
+          // Swiped right
+          handleSwipeRight();
+        }
+      }
+      swipeState.current.isDragging = false;
+    }
+  };
+
+  const handleMouseLeave = () => {
+    swipeState.current.isDragging = false;
+  };
 
   // TODO only execute this when the controls bar is in screen
   useInterval(() => {
@@ -48,6 +145,13 @@ function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
             activeIndex * 100
           }% - var(--section-horizontal-padding) * ${activeIndex}))`,
         }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
       >
         {totalSlidesPlaceholdingArray.map((_, index) => {
           return (
@@ -70,12 +174,8 @@ function SectionsSlider({ slides, sliderDuration }: SectionsSliderProps) {
               role="button"
               onClick={() => {
                 setActiveIndex(index);
-                // Stop timer
-                setAnimationDuration(null);
-                // We will continue the timer after animation duration, that way previous intervals dont affect the current slide
-                setTimeout(() => {
-                  setAnimationDuration(ANIMATION_DURATION_CONSTANT);
-                }, ANIMATION_DURATION_CONSTANT);
+                // Stop timer and reset it
+                resetTimer();
               }}
               className={classNames(styles.circle, {
                 [styles.circleActive]: index == activeIndex,
