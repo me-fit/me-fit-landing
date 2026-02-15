@@ -1,5 +1,6 @@
 import { Locale } from "@/lib/intl";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import Header from "@/components/Header/Header";
 import "./styles/globals.scss";
 import Footer from "@/components/Footer/Footer";
@@ -48,6 +49,13 @@ export default function RootLayout({ params, children }: LayoutProps) {
         <Footer locale={locale} />
 
         <Analytics />
+
+        {/* HubSpot Chat Widget */}
+        <Script
+          id="hs-script-loader"
+          src="//js-na1.hs-scripts.com/49177217.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
