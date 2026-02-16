@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import "./styles/globals.scss";
 import Footer from "@/components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import HubSpotRefresher from "@/components/HubSpotRefresher/HubSpotRefresher";
 
 type LayoutProps = {
   params: { locale: Locale };
@@ -49,6 +50,8 @@ export default function RootLayout({ params, children }: LayoutProps) {
         <Footer locale={locale} />
 
         <Analytics />
+
+        <HubSpotRefresher />
 
         {/* HubSpot Chat Widget */}
         <Script
