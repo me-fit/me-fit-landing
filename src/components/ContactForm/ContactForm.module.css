@@ -13,3 +13,8 @@
   max-width: var(--content-width);
   margin-bottom: 2rem;
 }
+
+.recaptchaContainer {
+  /* This will prevent layout shift when reCAPTCHA loads */
+  min-height: 78px;
+}

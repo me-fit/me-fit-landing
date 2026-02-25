@@ -126,14 +126,16 @@ export default function ContactForm({
             required
           />
 
-          <ReCAPTCHA
-            // see supported locales https://developers.google.com/recaptcha/docs/language
-            hl={locale}
-            theme="dark"
-            ref={recaptchaRef}
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-            onChange={handleRecaptchaChange}
-          />
+          <div className={styles.recaptchaContainer}>
+            <ReCAPTCHA
+              // see supported locales https://developers.google.com/recaptcha/docs/language
+              hl={locale}
+              theme="dark"
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+              onChange={handleRecaptchaChange}
+            />
+          </div>
 
           <Flex justifyContent="flex-end">
             <SubmitButton locale={locale} />
