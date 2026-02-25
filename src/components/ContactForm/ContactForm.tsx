@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Flex from "@/components/Flex/Flex";
 import Spinner from "@/components/Spinner/Spinner";
 import Card from "@/components/Card/Card";
@@ -41,14 +42,37 @@ export default function ContactForm({
   onSubmitSuccess,
 }: Props) {
   const { formatMessage } = getIntl(locale);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const onSubmitSuccessRef = useRef(onSubmitSuccess);
 
   const [state, formAction] = useFormState(submitContactForm, initialState);
 
+  // Update ref when callback changes
+  useEffect(() => {
+    onSubmitSuccessRef.current = onSubmitSuccess;
+  }, [onSubmitSuccess]);
+
   useEffect(() => {
     if (state.success !== null) {
-      onSubmitSuccess?.(state.success);
+      onSubmitSuccessRef.current?.(state.success);
+      
+      // Reset reCAPTCHA after submission (success or failure)
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(null);
     }
-  }, [state.success, onSubmitSuccess]);
+  }, [state.success]);
+
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
+
+  const handleFormAction = async (formData: FormData) => {
+    if (recaptchaToken) {
+      formData.append("recaptchaToken", recaptchaToken);
+    }
+    return formAction(formData);
+  };
 
   return (
     <>
@@ -68,7 +92,10 @@ export default function ContactForm({
         </div>
       )}
 
-      <form className={`${styles.form} ${className ?? ""}`} action={formAction}>
+      <form
+        className={`${styles.form} ${className ?? ""}`}
+        action={handleFormAction}
+      >
         <Flex flexDirection="column">
           <input
             name="userName"
@@ -97,6 +124,15 @@ export default function ContactForm({
               id: "contact.page.message.placeholder",
             })}
             required
+          />
+
+          <ReCAPTCHA
+            // see supported locales https://developers.google.com/recaptcha/docs/language
+            hl={locale}
+            theme="dark"
+            ref={recaptchaRef}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+            onChange={handleRecaptchaChange}
           />
 
           <Flex justifyContent="flex-end">

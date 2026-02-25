@@ -9,6 +9,7 @@ const submitContactForm = async (
   formData: FormData
 ) => {
   const messageBirdApiKey = process.env["MESSAGE_BIRD_API_KEY"];
+  const recaptchaSecretKey = process.env["RECAPTCHA_SECRET_KEY"];
   const workspaceId = "f00120af-345e-4ede-a51e-a8d7997c635b";
   const channelId = "7533eb22-bbe8-54f0-bf61-53809f36448a";
 
@@ -16,10 +17,14 @@ const submitContactForm = async (
     throw new Error("MessageBird API key is not set");
   }
 
+  if (!recaptchaSecretKey) {
+    throw new Error("reCAPTCHA secret key is not set");
+  }
 
   const userEmail = formData.get("userEmail") as string;
   const userName = formData.get("userName") as string;
   const message = formData.get("message") as string;
+  const recaptchaToken = formData.get("recaptchaToken") as string;
 
   if (!userEmail) {
     console.error("User email missing");
@@ -37,6 +42,41 @@ const submitContactForm = async (
 
   if (!message) {
     console.error("Message missing");
+    return {
+      success: false,
+    };
+  }
+
+  if (!recaptchaToken) {
+    console.error("reCAPTCHA token missing");
+    return {
+      success: false,
+    };
+  }
+
+  // Verify reCAPTCHA token
+  try {
+    const recaptchaResponse = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${recaptchaSecretKey}&response=${recaptchaToken}`,
+      }
+    );
+
+    const recaptchaData = await recaptchaResponse.json();
+
+    if (!recaptchaData.success) {
+      console.error("reCAPTCHA verification failed:", recaptchaData);
+      return {
+        success: false,
+      };
+    }
+  } catch (error) {
+    console.error("Error verifying reCAPTCHA:", error);
     return {
       success: false,
     };

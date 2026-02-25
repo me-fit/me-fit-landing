@@ -1,5 +1,8 @@
 {
     "eslint.format.enable": true,
     "editor.formatOnSaveMode": "file",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
 }
