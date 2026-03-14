@@ -8,10 +8,12 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import Divider from "@/components/Divider/Divider";
 
 type PageProps = {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 };
 
-export default function PhysiotherapyPage({ params: { locale } }: PageProps) {
+export default async function PhysiotherapyPage({ params }: PageProps) {
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as Locale;
   const { formatMessage } = getIntl(locale);
 
   return (

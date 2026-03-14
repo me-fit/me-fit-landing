@@ -4,14 +4,16 @@ import Flex from "@/components/Flex/Flex";
 import { Locale, getIntl } from "@/lib/intl";
 import styles from "./page.module.css";
 import Card from "@/components/Card/Card";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 import ContactForm from "@/components/ContactForm/ContactForm";
 
 type PageProps = {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 };
 
-export default function Page({ params: { locale } }: PageProps) {
+export default function Page({ params }: PageProps) {
+  const { locale: rawLocale } = use(params);
+  const locale = rawLocale as Locale;
   const { formatMessage } = getIntl(locale);
 
   const [success, setSuccess] = useState<boolean | null>(null);

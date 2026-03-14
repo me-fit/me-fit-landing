@@ -4,13 +4,15 @@ import { useSearchParams } from "next/navigation";
 import { Locale, getIntl } from "@/lib/intl";
 import styles from "./pricing.module.css";
 import ContactForm from "@/components/ContactForm/ContactForm";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 
 type PageProps = {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 };
 
-export default function PricingPage({ params: { locale } }: PageProps) {
+export default function PricingPage({ params }: PageProps) {
+  const { locale: rawLocale } = use(params);
+  const locale = rawLocale as Locale;
   const { formatMessage } = getIntl(locale);
   const searchParams = useSearchParams();
 

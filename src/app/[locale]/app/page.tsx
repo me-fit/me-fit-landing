@@ -8,10 +8,12 @@ import TestimonialsList from "@/components/TestimonialsList/TestimonialsList";
 import StoreButtons from "@/components/StoreButtons/StoreButtons";
 import Link from "next/link";
 type PageProps = {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 };
 
-export default function Page({ params: { locale } }: PageProps) {
+export default async function Page({ params }: PageProps) {
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as Locale;
   const { formatMessage } = getIntl(locale);
   return (
     <main className={styles.main}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import Flex from "@/components/Flex/Flex";
 import Spinner from "@/components/Spinner/Spinner";
@@ -9,7 +9,7 @@ import { Locale, getIntl } from "@/lib/intl";
 import submitContactForm, {
   SubmitContactFormState,
 } from "@/app/[locale]/contact/server-actions/submitContactForm";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import styles from "./ContactForm.module.css";
 
 type Props = {
@@ -46,7 +46,7 @@ export default function ContactForm({
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const onSubmitSuccessRef = useRef(onSubmitSuccess);
 
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState);
 
   // Update ref when callback changes
   useEffect(() => {

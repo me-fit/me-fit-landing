@@ -10,10 +10,12 @@ import { getIntl } from "../../lib/intl";
 import styles from "./page.module.css";
 
 type HomeProps = {
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 };
 
-export default function Home({ params: { locale } }: HomeProps) {
+export default async function Home({ params }: HomeProps) {
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as Locale;
   const { formatMessage } = getIntl(locale);
 
   return (

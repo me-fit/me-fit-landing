@@ -7,18 +7,17 @@ import Footer from "@/components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import HubSpotRefresher from "@/components/HubSpotRefresher/HubSpotRefresher";
 
-type LayoutProps = {
-  params: { locale: Locale };
-  children: React.ReactNode;
-};
-
 const poppins = Poppins({
   weight: ["700", "500", "400"],
   subsets: ["latin"],
 });
 
-export default function RootLayout({ params, children }: LayoutProps) {
-  const { locale } = params;
+export default async function RootLayout({ params, children }: {
+  params: Promise<{ locale: string }>;
+  children: React.ReactNode;
+}) {
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as Locale;
 
   return (
     <html lang={locale}>

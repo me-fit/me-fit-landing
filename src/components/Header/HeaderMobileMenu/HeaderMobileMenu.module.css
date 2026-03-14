@@ -14,7 +14,6 @@
   overflow-y: auto;
 }
 
-
 .mobileMenuOverlayContainer {
   padding: 1rem;
 }
@@ -32,6 +31,7 @@
 a.menuItem {
   display: block;
   color: var(--text-on-dark-secondary);
+  width: 100%;
 }
 
 .menuItemsContainer a.menuItem:not(:hover) {
