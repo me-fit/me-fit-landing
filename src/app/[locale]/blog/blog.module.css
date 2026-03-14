@@ -1,0 +1,52 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 50vh;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--interactive-element-border-radius);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--animation-speed);
+}
+
+.card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.postTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.excerpt {
+  color: var(--text-on-dark-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: var(--text-on-dark-secondary);
+}

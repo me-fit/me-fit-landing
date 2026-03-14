@@ -55,6 +55,7 @@ const useMenuStructure = ({ locale }: MenuStructureProps) => {
           },
         ],
       },
+      { label: formatMessage({ id: "blog" }), href: `/${locale}/blog` },
       {
         label: formatMessage({ id: "contact.us" }),
         href: `/${locale}/contact`,
