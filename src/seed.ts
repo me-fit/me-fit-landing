@@ -57,7 +57,6 @@ async function seed() {
             data: {
                 title: faker.lorem.sentence({ min: 4, max: 8 }).replace(/\.$/, ''),
                 slug,
-                excerpt: faker.lorem.sentences(2),
                 thumbnail: media.id,
                 content: makeRichText([
                     faker.lorem.paragraph(),
@@ -75,7 +74,6 @@ async function seed() {
             data: {
                 title: faker.lorem.sentence({ min: 4, max: 8 }).replace(/\.$/, ''),
                 slug: slug + '-nl',
-                excerpt: faker.lorem.sentences(2),
                 content: makeRichText([
                     faker.lorem.paragraph(),
                     faker.lorem.paragraph(),
