@@ -9,7 +9,6 @@
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 3rem;
-  letter-spacing: -0.02em;
 }
 
 .grid {
@@ -21,6 +20,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   width: 100%;
   text-decoration: none;
   color: inherit;
