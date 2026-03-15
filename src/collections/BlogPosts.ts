@@ -26,12 +26,6 @@ export const BlogPosts: CollectionConfig = {
       required: false,
     },
     {
-      name: 'excerpt',
-      type: 'textarea',
-      required: true,
-      localized: true,
-    },
-    {
       name: 'content',
       type: 'richText',
       required: true,

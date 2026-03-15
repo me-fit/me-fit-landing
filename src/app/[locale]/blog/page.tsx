@@ -4,7 +4,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import styles from './blog.module.css'
 import { Media } from '@payload-types'
-import { Locale } from '@/lib/intl'
+import { Locale, getIntl } from '@/lib/intl'
 
 interface BlogPageProps {
   params: Promise<{ locale: Locale }>
@@ -12,6 +12,7 @@ interface BlogPageProps {
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { locale } = await params
+  const { formatMessage } = getIntl(locale)
   const payload = await getPayload({ config })
   const { docs: posts } = await payload.find({
     collection: 'blog-posts',
@@ -25,7 +26,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Blog</h1>
+      <h1>{formatMessage({ id: 'blog' })}</h1>
       <div className={styles.grid}>
         {posts.map((post) => {
           const thumbnail = post.thumbnail as Media | null | undefined
@@ -47,10 +48,10 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 <div className={styles.thumbnailPlaceholder} />
               )}
               <div className={styles.cardBody}>
+                <h3 className={styles.postTitle}>{post.title}</h3>
                 <time className={styles.date}>
                   {new Date(post.publishedAt).toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' })}
                 </time>
-                <h2 className={styles.postTitle}>{post.title}</h2>
               </div>
             </Link>
           )
