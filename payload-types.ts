@@ -68,6 +68,8 @@ export interface Config {
   blocks: {};
   collections: {
     'blog-posts': BlogPost;
+    'support-articles': SupportArticle;
+    'support-categories': SupportCategory;
     media: Media;
     'payload-kv': PayloadKv;
     users: User;
@@ -78,6 +80,8 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     'blog-posts': BlogPostsSelect<false> | BlogPostsSelect<true>;
+    'support-articles': SupportArticlesSelect<false> | SupportArticlesSelect<true>;
+    'support-categories': SupportCategoriesSelect<false> | SupportCategoriesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -203,6 +207,54 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-articles".
+ */
+export interface SupportArticle {
+  id: number;
+  title: string;
+  slug: string;
+  /**
+   * Short excerpt shown in article listings and search results.
+   */
+  summary?: string | null;
+  category?: (number | null) | SupportCategory;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Other support articles that may be helpful.
+   */
+  relatedArticles?: (number | SupportArticle)[] | null;
+  status: 'draft' | 'published';
+  publishedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-categories".
+ */
+export interface SupportCategory {
+  id: number;
+  name: string;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -253,6 +305,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'blog-posts';
         value: number | BlogPost;
+      } | null)
+    | ({
+        relationTo: 'support-articles';
+        value: number | SupportArticle;
+      } | null)
+    | ({
+        relationTo: 'support-categories';
+        value: number | SupportCategory;
       } | null)
     | ({
         relationTo: 'media';
@@ -314,6 +374,32 @@ export interface BlogPostsSelect<T extends boolean = true> {
   thumbnail?: T;
   content?: T;
   publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-articles_select".
+ */
+export interface SupportArticlesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  summary?: T;
+  category?: T;
+  content?: T;
+  relatedArticles?: T;
+  status?: T;
+  publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "support-categories_select".
+ */
+export interface SupportCategoriesSelect<T extends boolean = true> {
+  name?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

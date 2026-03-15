@@ -76,6 +76,16 @@ function Footer({ locale }: FooterProps) {
           </p>
           <StoreButtons locale={locale} />
         </div>
+
+        <div>
+          <h5 className={"no-margin"}>{formatMessage({ id: "footer.support" })}</h5>
+          <p className={styles.footerParagraphAboveCallToActionSpacing}>
+            {formatMessage({ id: "footer.support.description" })}
+          </p>
+          <Link className="button secondary button-small" href={`/${locale}/support`}>
+            {formatMessage({ id: "footer.support" })}
+          </Link>
+        </div>
       </Flex>
 
       <Flex

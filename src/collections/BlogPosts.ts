@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload'
+import { kebabCase } from 'lodash-es'
 
 export const BlogPosts: CollectionConfig = {
   slug: 'blog-posts',
@@ -18,6 +19,14 @@ export const BlogPosts: CollectionConfig = {
       required: true,
       unique: true,
       localized: true,
+      admin: {
+        hidden: true,
+      },
+      hooks: {
+        beforeChange: [
+          ({ data }) => data?.title ? kebabCase(data.title) : undefined,
+        ],
+      },
     },
     {
       name: 'thumbnail',

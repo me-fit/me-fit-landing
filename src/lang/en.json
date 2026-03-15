@@ -181,5 +181,10 @@
   "pricing.teams.pricing": "Pricing is tailored to each organization and depends on how ME Fit Pro is configured to support your teams, staff, and workflows.",
   "pricing.contact": "Contact us to discuss your setup.",
   "footer.privacy.policy": "Privacy Policy",
-  "footer.terms.and.conditions": "Terms and Conditions"
+  "footer.terms.and.conditions": "Terms and Conditions",
+  "footer.support": "Support",
+  "footer.support.description": "Find answers and get help using ME Fit.",
+  "support.page.heading": "Support",
+  "support.article.last.updated": "Last updated",
+  "support.article.related.articles": "Related articles"
 }
