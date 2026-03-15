@@ -20,6 +20,12 @@ export const BlogPosts: CollectionConfig = {
       localized: true,
     },
     {
+      name: 'thumbnail',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+    },
+    {
       name: 'excerpt',
       type: 'textarea',
       required: true,
