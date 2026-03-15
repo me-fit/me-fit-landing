@@ -18,6 +18,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
     locale,
     depth: 1,
     limit: 100,
+    where: {
+      slug: { exists: true },
+    },
   })
 
   return (
