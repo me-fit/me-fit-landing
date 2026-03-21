@@ -35,6 +35,13 @@ export const BlogPosts: CollectionConfig = {
       required: false,
     },
     {
+      name: 'category',
+      type: 'relationship',
+      relationTo: 'blog-categories',
+      required: false,
+      hasMany: false,
+    },
+    {
       name: 'content',
       type: 'richText',
       required: true,

@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     'blog-posts': BlogPost;
+    'blog-categories': BlogCategory;
     'support-articles': SupportArticle;
     'support-categories': SupportCategory;
     media: Media;
@@ -80,6 +81,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     'blog-posts': BlogPostsSelect<false> | BlogPostsSelect<true>;
+    'blog-categories': BlogCategoriesSelect<false> | BlogCategoriesSelect<true>;
     'support-articles': SupportArticlesSelect<false> | SupportArticlesSelect<true>;
     'support-categories': SupportCategoriesSelect<false> | SupportCategoriesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -132,6 +134,7 @@ export interface BlogPost {
   title: string;
   slug: string;
   thumbnail?: (number | null) | Media;
+  category?: (number | null) | BlogCategory;
   content: {
     root: {
       type: string;
@@ -204,6 +207,17 @@ export interface Media {
       filename?: string | null;
     };
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-categories".
+ */
+export interface BlogCategory {
+  id: number;
+  name: string;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -307,6 +321,10 @@ export interface PayloadLockedDocument {
         value: number | BlogPost;
       } | null)
     | ({
+        relationTo: 'blog-categories';
+        value: number | BlogCategory;
+      } | null)
+    | ({
         relationTo: 'support-articles';
         value: number | SupportArticle;
       } | null)
@@ -372,8 +390,19 @@ export interface BlogPostsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   thumbnail?: T;
+  category?: T;
   content?: T;
   publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-categories_select".
+ */
+export interface BlogCategoriesSelect<T extends boolean = true> {
+  name?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

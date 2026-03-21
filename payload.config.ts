@@ -5,6 +5,7 @@ import { lexicalEditor, FixedToolbarFeature } from '@payloadcms/richtext-lexical
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload'
 import { BlogPosts } from './src/collections/BlogPosts'
+import { BlogCategories } from './src/collections/BlogCategories'
 import { SupportArticles } from './src/collections/SupportArticles'
 import { SupportCategories } from './src/collections/SupportCategories'
 import { Media } from './src/collections/Media'
@@ -31,7 +32,7 @@ export default buildConfig({
     }),
 
     // Define and configure your collections in this array
-    collections: [BlogPosts, SupportArticles, SupportCategories, Media],
+    collections: [BlogPosts, BlogCategories, SupportArticles, SupportCategories, Media],
 
     // Your Payload secret - should be a complex and secure string, unguessable
     secret: process.env.PAYLOAD_SECRET || '',
