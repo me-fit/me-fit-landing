@@ -77,7 +77,7 @@ export default async function Home({ params }: HomeProps) {
           </div>
 
           <Image
-            className={styles.proMainScreenshot}
+            className={`${styles.proMainScreenshot} ${styles.proMainScreenshotDesktop}`}
             priority={true}
             src="/img/homescreen-illustration.png"
             alt={formatMessage({
@@ -85,6 +85,17 @@ export default async function Home({ params }: HomeProps) {
             })}
             width={3000}
             height={700}
+          />
+
+          <Image
+            className={`${styles.proMainScreenshot} ${styles.proMainScreenshotMobile}`}
+            priority={true}
+            src="/img/homescreen-illustration-mobile.png"
+            alt={formatMessage({
+              id: "mefit.pro.exercise.library.screenshot.alt",
+            })}
+            width={1000}
+            height={1000}
           />
         </Flex>
       </section>
